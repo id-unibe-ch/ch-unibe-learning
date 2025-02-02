@@ -4,3 +4,6 @@
 [submodule "site/plugins/git-content"]
 	path = site/plugins/git-content
 	url = https://github.com/thathoff/kirby-git-content.git
+[submodule "content"]
+	path = content
+	url = https://github.com/id-unibe-ch/ch-unibe-learning-content.git
