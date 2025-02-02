@@ -10,9 +10,24 @@ use Kirby\Filesystem\F;
  */
 
 return [
-    'debug' => true,
+    'debug' => false,
     'yaml.handler' => 'symfony', // already makes use of the more modern Symfony YAML parser: https://getkirby.com/docs/reference/system/options/yaml (will become the default in a future Kirby version)
     'url' => getenv('KIRBY_URL'),
+    'languages' => true,
+    'languages' => [
+        'detect' => true
+    ],
+    'content' => [
+        'extension' => 'md'
+    ],
+    'markdown' => [
+        'extra' => true,
+        'breaks' => true
+    ],
+    'panel' => true,
+    'panel' =>[
+        'install' => true
+    ],
     'ready' => function($kirbyLicense) {
         $license_file = $kirbyLicense->root('license');
         $license = getenv('KIRBY_LICENSE');
