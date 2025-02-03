@@ -1,0 +1,1 @@
+Testing the deployment having the content folder connected to a Azure Blob Storage
