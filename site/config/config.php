@@ -18,7 +18,7 @@ return [
         'detect' => true
     ],
     'content' => [
-        'extension' => 'md'
+        'extension' => 'txt'
     ],
     'markdown' => [
         'extra' => true,
