@@ -21,6 +21,20 @@ options:
 # and have the additional contact fields in a secondary
 # tab. Tabs can really help to clean up the interface
 # when it otherwise gets too complicated
-fields:
-  text:
-    type: blocks
+columns:
+  main:
+    width: 2/3
+    sections:
+      fields:
+        type: fields
+        fields:
+          text:
+            type: blocks
+  sidebar:
+    width: 1/3
+    sections:
+      pages:
+        type: pages
+        template: default
+      files:
+        type: files
