@@ -13,3 +13,17 @@ fi
 # NGINX Kirby CMS configuration
 echo "Copying NGINX configuration for Kirby CMS" 
 cp /home/site/wwwroot/azsys/nginx/default /etc/nginx/sites-available/default && service nginx reload
+
+# PHP Composer Installation
+if ! command -v composer &> /dev/null  
+then  
+    echo "PHP Composer could not be found. Attempting to install PHP Composer..."
+    cd /home
+    curl -sS https://getcomposer.org/installer -o composer-setup.php
+    php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+    echo composer -v
+else  
+    echo "PHP Composer is already installed. Attempting to update PHP Composer..."
+    composer self-update
+    echo composer -v
+fi
