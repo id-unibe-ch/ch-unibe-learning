@@ -31,9 +31,25 @@ return [
     'thathoff' => [
         'oauth' => [
             'providers' => [
+                'azure' => [
+                    'name'                   => 'University of Bern', // The name is optional
+                    'icon'                   => 'account',  // Pick any default Kirby icon for the login button (optional)
+                    'class'                  => "TheNetworg\OAuth2\Client\Provider\Azure",
+                    'clientId'               => getenv('KIRBY_OIDC_CLIENT_ID'),
+                    'clientSecret'           => getenv('KIRBY_OIDC_CLIENT_SECRET'),
+                    'redirectUri'            => getenv('KIRBY_OIDC_REDIRECT_URI'),
+                    //Optional using key pair instead of secret
+                    //'clientCertificatePrivateKey' => '{azure-client-certificate-private-key}',
+                    //Optional using key pair instead of secret
+                    //'clientCertificateThumbprint' => '{azure-client-certificate-thumbprint}',
+                    //Optional
+                    'scopes'            => ['openid email profile User.Read'],
+                    //Optional
+                    'defaultEndPointVersion' => '2.0'
+                ],
                 'custom' => [
                     // this one uses \League\OAuth2\Client\Provider\GenericProvider automatically
-                    'name'                    => 'University of Bern', // The name is optional
+                    'name'                    => 'DIRECT TEST', // The name is optional
                     'clientId'                => getenv('KIRBY_OIDC_CLIENT_ID'),    // The client ID assigned to you by the provider
                     'clientSecret'            => getenv('KIRBY_OIDC_CLIENT_SECRET'),   // The client password assigned to you by the provider
                     'redirectUri'             => getenv('KIRBY_OIDC_REDIRECT_URI'),

@@ -27,3 +27,8 @@ else
     composer self-update
     echo composer -v
 fi
+
+# Kirby CMS oAuth2 Installation
+echo "Installing Kirby CMS oAuth2 plugin"
+composer require thathoff/kirby-oauth
+composer require thenetworg/oauth2-azure
