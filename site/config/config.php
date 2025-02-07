@@ -47,7 +47,7 @@ return [
                     'scopes'            => ['openid email profile User.Read'],
                     //Optional
                     'defaultEndPointVersion' => '2.0'
-                ]
+                ],
                 // 'custom' => [
                 //     // this one uses \League\OAuth2\Client\Provider\GenericProvider automatically
                 //     'name'                    => 'DIRECT TEST', // The name is optional
@@ -78,7 +78,7 @@ return [
                 // For details see “Configure Allowed Users” below.
             ],
             // Remove the standard Kirby login form and only display OAuth options.
-            'onlyOauth' => true,
+            'onlyOauth' => true
         ],
     ],
     'ready' => function($kirbyLicense) {
