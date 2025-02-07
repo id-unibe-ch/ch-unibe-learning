@@ -30,5 +30,6 @@ fi
 
 # Kirby CMS oAuth2 Installation
 echo "Installing Kirby CMS oAuth2 plugin"
+cd /home/site/wwwroot
 composer require thathoff/kirby-oauth
 composer require thenetworg/oauth2-azure
