@@ -1,0 +1,7 @@
+empty: No posts yet
+headline: Posts
+info: "{{ page.date.toDate('M d, Y') }}"
+template:
+  - post
+  - default
+type: pages

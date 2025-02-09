@@ -1,0 +1,30 @@
+columns:
+  type:
+    width: 1/1
+label: Text fill
+max: 1
+type: structure
+fields:
+  type:
+    default: color
+    empty: false
+    label: Type
+    options:
+      color: Color
+      gradient: Gradient
+    type: toggles
+
+  color:
+    before: #
+    label: Custom
+    pattern: ^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+    type: text
+    when:
+      type: color
+
+  gradient:
+    label: Custom
+    placeholder: linear-gradient(...)
+    type: text
+    when:
+      type: gradient

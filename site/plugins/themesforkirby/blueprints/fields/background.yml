@@ -1,0 +1,275 @@
+columns:
+  type:
+    width: 1/4
+  size:
+    width: 1/4
+  border:
+    width: 1/4
+  shadow:
+    width: 1/4
+label: Background
+max: 1
+type: structure
+fields:
+  type:
+    default: color
+    empty: false
+    label: Type
+    options:
+      color: Color
+      gradient: Gradient
+      image: Image
+    type: toggles
+    width: 1/2
+  size:
+    default: full-width
+    empty: false
+    label: Size
+    options:
+      full-screen: Full screen
+      full-width: Full width
+      lg: Large
+    type: select
+    width: 1/2
+  brightness:
+    label: Text color
+    text:
+      - Dark
+      - Light
+    type: toggle
+
+  color:
+    columns:
+      fill:
+        width: 1/1
+    label: Color
+    max: 1
+    type: structure
+    when:
+      type: color
+    fields:
+      fill:
+        default: light
+        empty: false
+        label: Fill
+        options:
+          custom: Custom
+          dark: Dark
+          light: Light
+          primary: Primary
+          white: White
+        type: toggles
+      custom:
+        before: #
+        label: Custom
+        pattern: ^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+        type: text
+        when:
+          fill: custom
+      customDark:
+        before: #
+        label: Custom dark
+        pattern: ^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+        type: text
+        when:
+          fill: custom
+
+  gradient:
+    columns:
+      fill:
+        width: 1/1
+    label: Gradient
+    max: 1
+    type: structure
+    when:
+      type: gradient
+    fields:
+      fill:
+        default: light
+        empty: false
+        label: Fill
+        options:
+          custom: Custom
+          dark: Dark
+          light: Light
+        type: toggles
+      custom:
+        label: Custom
+        placeholder: linear-gradient(...)
+        type: text
+        when:
+          fill: custom
+      customDark:
+        label: Custom dark
+        placeholder: linear-gradient(...)
+        type: text
+        when:
+          fill: custom
+
+  image:
+    columns:
+      media:
+        width: 1/1
+    label: Image
+    max: 1
+    type: structure
+    when:
+      type: image
+    fields:
+      media:
+        label: File
+        max: 1
+        query: page.files.add(site.files).filterBy('template', 'image').sortBy('date', 'desc')
+        type: files
+        uploads: image
+      positionHorizontal:
+        default: center
+        empty: false
+        label: Position horizontal
+        options:
+          center: Center
+          left: Left
+          right: right
+        type: select
+        width: 1/2
+      positionVertical:
+        default: center
+        empty: false
+        label: Position vertical
+        options:
+          bottom: Bottom
+          center: Center
+          top: Top
+        type: select
+        width: 1/2
+
+      overlay:
+        default: color
+        empty: false
+        label: Overlay
+        options:
+          color: Color
+          gradient: Gradient
+        type: select
+        width: 1/2
+      overlayColorFill:
+        default: dark
+        empty: false
+        label: Overlay color
+        options:
+          custom: Custom
+          dark: Dark
+          light: Light
+          primary: Primary
+        type: select
+        when:
+          overlay: color
+        width: 1/2
+      overlayColorCustom:
+        before: #
+        label: Custom
+        pattern: ^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+        type: text
+        when:
+          overlay: color
+          overlayColorFill: custom
+        width: 1/2
+      overlayColorOpacity:
+        default: 0.8
+        label: Opacity
+        max: 1
+        min: 0
+        step: 0.05
+        type: range
+        when:
+          overlay: color
+          overlayColorFill: custom
+        width: 1/2
+      overlayGradientFill:
+        default: dark
+        empty: false
+        label: Overlay gradient
+        options:
+          custom: Custom
+          dark: Dark
+          light: Light
+        type: select
+        when:
+          overlay: gradient
+        width: 1/2
+      overlayGradientCustom:
+        label: Custom
+        placeholder: linear-gradient(...)
+        type: text
+        when:
+          overlay: gradient
+          overlayGradientFill: custom
+
+  svg:
+    columns:
+      positionHorizontal:
+        width: 1/2
+      positionVertical:
+        width: 1/2
+    label: SVG
+    max: 1
+    type: structure
+    fields:
+      code:
+        label: Code
+        placeholder: <svg>...</svg>
+        type: text
+      positionHorizontal:
+        default: left
+        empty: false
+        label: Position horizontal
+        options:
+          left: Left
+          right: right
+        type: select
+        width: 1/2
+      positionVertical:
+        default: top
+        empty: false
+        label: Position vertical
+        options:
+          bottom: Bottom
+          top: Top
+        type: select
+        width: 1/2
+
+  border:
+    label: Border
+    text:
+      - Inactive
+      - Active
+    type: toggle
+  borderBottom:
+    label: Border bottom
+    text:
+      - Inactive
+      - Active
+    type: toggle
+    when:
+      border: false
+    width: 1/2
+  borderTop:
+    label: Border top
+    text:
+      - Inactive
+      - Active
+    type: toggle
+    when:
+      border: false
+    width: 1/2
+  shadow:
+    default: none
+    empty: false
+    label: Shadow
+    options:
+      lg: Large
+      md: Medium
+      sm: Small
+      xs: Extra small
+      none: None
+    type: select

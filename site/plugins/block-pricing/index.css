@@ -1,0 +1,56 @@
+.k-block.k-block-type-pricing img {
+  display: block;
+  margin-bottom: 0.75rem;
+  max-height: 8rem;
+  max-width: 8rem;
+}
+
+.k-block .k-block-type-pricing-heading .k-text {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.k-block .k-block-type-pricing-price-wrapper {
+  margin-bottom: 0.5rem;
+}
+
+.k-block .k-block-type-pricing-price {
+  display: inline-block;
+  width: fit-content;
+}
+
+.k-block .k-block-type-pricing-price .k-text {
+  font-size: 2rem;
+  line-height: 2.375rem;
+}
+
+.k-block .k-block-type-pricing-price-details {
+  display: inline-block;
+  width: fit-content
+}
+
+.k-block .k-block-type-pricing-price-details .k-text {
+  opacity: 0.5;
+}
+
+.k-block .k-block-type-pricing-text .k-text {
+  margin-bottom: 0.5rem;
+}
+
+.k-block .k-block-type-pricing-features {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.k-block.k-block-type-pricing button.k-block-button {
+  margin-top: 0.5rem;
+}
+
+.k-block [class*="k-block-type-pricing-"]:first-child,
+.k-block.k-block-type-pricing button.k-block-button:first-child {
+  margin-top: 0;
+}
+
+.k-block [class*="k-block-type-pricing-"]:last-child {
+  margin-bottom: 0;
+}

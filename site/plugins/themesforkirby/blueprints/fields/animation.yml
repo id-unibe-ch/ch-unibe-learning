@@ -1,0 +1,179 @@
+columns:
+  type:
+    width: 1/2
+  delay:
+    width: 1/2
+label: Animation
+max: 1
+type: structure
+fields:
+  type:
+    default: fade-in
+    empty: false
+    label: Type
+    options:
+      custom: Custom
+      fade-in: Fade-in
+      bottom: Bottom
+      left: Left
+      right: Right
+      top: Top
+    type: toggles
+  delay:
+    default: 0
+    label: Delay
+    max: 2
+    min: 0
+    step: 0.2
+    type: range
+  duration:
+    default: 0.8
+    label: Duration
+    max: 2
+    min: 0.2
+    step: 0.2
+    type: range
+    when:
+      type: custom
+  motion:
+    label: Motion
+    text:
+      - Inactive
+      - Active
+    type: toggle
+    when:
+      type: custom
+  motionHorizontalStart:
+    default: 0
+    label: Horizontal start
+    max: 95
+    min: -95
+    step: 5
+    type: range
+    when:
+      motion: true
+      type: custom
+    width: 1/2
+  motionHorizontalEnd:
+    default: 0
+    label: Horizontal end
+    max: 95
+    min: -95
+    step: 5
+    type: range
+    when:
+      motion: true
+      type: custom
+    width: 1/2
+  motionVerticalStart:
+    default: 0
+    label: Vertical start
+    max: 95
+    min: -95
+    step: 5
+    type: range
+    when:
+      motion: true
+      type: custom
+    width: 1/2
+  motionVerticalEnd:
+    default: 0
+    label: Vertical end
+    max: 95
+    min: -95
+    step: 5
+    type: range
+    when:
+      motion: true
+      type: custom
+    width: 1/2
+  opacity:
+    label: Opacity
+    text:
+      - Inactive
+      - Active
+    type: toggle
+    when:
+      type: custom
+  opacityStart:
+    default: 0
+    label: Opacity start
+    max: 1
+    min: 0
+    step: 0.05
+    type: range
+    when:
+      opacity: true
+      type: custom
+    width: 1/2
+  opacityEnd:
+    default: 1
+    label: Opacity end
+    max: 1
+    min: 0
+    step: 0.05
+    type: range
+    when:
+      opacity: true
+      type: custom
+    width: 1/2
+  rotation:
+    label: Rotation
+    text:
+      - Inactive
+      - Active
+    type: toggle
+    when:
+      type: custom
+  rotationStart:
+    default: 0
+    label: Rotation start
+    max: 360
+    min: 0
+    step: 5
+    type: range
+    when:
+      rotation: true
+      type: custom
+    width: 1/2
+  rotationEnd:
+    default: 0
+    label: Rotation end
+    max: 360
+    min: 0
+    step: 5
+    type: range
+    when:
+      rotation: true
+      type: custom
+    width: 1/2
+  scale:
+    label: Scale
+    text:
+      - Inactive
+      - Active
+    type: toggle
+    when:
+      type: custom
+  scaleStart:
+    default: 0.9
+    label: Scale start
+    max: 2
+    min: 0
+    step: 0.05
+    type: range
+    when:
+      scale: true
+      type: custom
+    width: 1/2
+  scaleEnd:
+    default: 1
+    label: Scale end
+    max: 2
+    min: 0
+    step: 0.05
+    type: range
+    when:
+      scale: true
+      type: custom
+    width: 1/2

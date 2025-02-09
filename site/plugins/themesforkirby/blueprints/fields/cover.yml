@@ -1,0 +1,10 @@
+image:
+  cover: true
+  ratio: 16/9
+label: Cover
+layout: cards
+max: 1
+query: page.files.add(site.files).filterBy('template', 'image').sortBy('date', 'desc')
+translate: false
+type: files
+uploads: image

@@ -1,0 +1,10 @@
+.k-block.k-block-type-testimonial img {
+  display: block;
+  margin-bottom: 0.75rem;
+  max-height: 8rem;
+  max-width: 8rem;
+}
+
+.k-block .k-block-type-testimonial-caption .k-text {
+  opacity: 0.5;
+}

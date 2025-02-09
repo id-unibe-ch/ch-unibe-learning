@@ -1,0 +1,51 @@
+title: Video
+
+accept: video/mp4, video/ogg, video/webm
+
+columns:
+  - width: 3/4
+    fields:
+      caption:
+        inline: true
+        label: Caption
+        type: writer
+      date:
+        default: now
+        disabled: true
+        label: Uploaded on
+        time: true
+        translate: false
+        type: date
+
+  - width: 1/4
+    fields:
+      autoplay:
+        label: Autoplay
+        text:
+          - Inactive
+          - Active
+        type: toggle
+      controls:
+        label: Controls
+        text:
+          - Inactive
+          - Active
+        type: toggle
+      loop:
+        label: Loop
+        text:
+          - Inactive
+          - Active
+        type: toggle
+      muted:
+        label: Muted
+        text:
+          - Inactive
+          - Active
+        type: toggle
+      playsinline:
+        label: Plays inline
+        text:
+          - Inactive
+          - Active
+        type: toggle

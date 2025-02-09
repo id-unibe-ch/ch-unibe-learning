@@ -1,0 +1,238 @@
+type: group
+fields:
+  heroHeading:
+    inline: true
+    label: Heading
+    marks:
+      - italic
+      - strike
+      - underline
+      - link
+    placeholder: "{{ page.title }}"
+    type: writer
+    width: 1/2
+  heroHeadingFontSize:
+    default: h1
+    empty: false
+    label: Heading font size
+    options:
+      hero: Hero
+      h1: H1
+      h2: H2
+      h3: H3
+      h4: H4
+      h5: H5
+      h6: H6
+    translate: false
+    type: toggles
+    width: 1/2
+  heroHeadingFill:
+    extends: fields/text-fill
+    label: Heading fill
+  heroText:
+    inline: true
+    label: Text
+    placeholder: Text...
+    type: writer
+  heroButtons: fields/buttons
+  heroBlocks:
+    label: Blocks
+    layouts:
+      - "1/1"
+      - "1/2, 1/2"
+      - "1/3, 1/3, 1/3"
+      - "1/4, 1/4, 1/4, 1/4"
+      - "1/3, 2/3"
+      - "2/3, 1/3"
+    type: layout
+    fieldsets:
+      text:
+        label: Text
+        type: group
+        fieldsets:
+          blurb: blocks/blurb
+          button: blocks/button
+          code: blocks/code
+          heading: blocks/heading
+          info: blocks/info
+          list: blocks/list
+          markdown: blocks/markdown
+          pricing: blocks/pricing
+          quote: blocks/quote
+          testimonial: blocks/testimonial
+          text: blocks/text
+          timeline: blocks/timeline
+      media:
+        label: Media
+        type: group
+        fieldsets:
+          gallery: blocks/gallery
+          image: blocks/image
+          slider: blocks/slider
+          video: blocks/video
+      embeds:
+        label: Embeds
+        type: group
+        fieldsets:
+          imageurl: blocks/imageurl
+          newsletter: blocks/newsletter
+          posts: blocks/posts
+          products: blocks/products
+          vimeo: blocks/vimeo
+          youtube: blocks/youtube
+      misc:
+        label: Misc
+        type: group
+        fieldsets:
+          line: blocks/line
+          spacer: blocks/spacer
+    settings:
+      fields:
+        alignVertical:
+          default: top
+          empty: false
+          label: Vertical alignment
+          options:
+            middle: Middle
+            top: Top
+          type: select
+          width: 1/3
+        gutter:
+          default: lg
+          empty: false
+          label: Gutter
+          options:
+            lg: Large
+            md: Medium
+            sm: Small
+          type: select
+          width: 1/3
+        oneColumn:
+          default: md
+          empty: false
+          label: One column
+          options:
+            xl: Extra large
+            lg: Large
+            md: Medium
+            sm: Small
+          type: select
+          width: 1/3
+        paddingTop:
+          help: Ignored by first row.
+          label: Spacing top
+          text:
+            - Inactive
+            - Active
+          type: toggle
+          width: 1/2
+        paddingBottom:
+          help: Ignored by last row.
+          label: Spacing bottom
+          text:
+            - Inactive
+            - Active
+          type: toggle
+          width: 1/2
+        columnReverse:
+          label: Reverse columns on mobile
+          text:
+            - Inactive
+            - Active
+          type: toggle
+          width: 1/2
+        visibility:
+          default: true
+          label: Visibility
+          text:
+            - Hide
+            - Show
+          type: toggle
+          width: 1/2
+        customId:
+          label: ID
+          type: text
+          width: 1/2
+        customClass:
+          label: Class
+          type: text
+          width: 1/2
+  line:
+    type: line
+  heroBackground:
+    extends: fields/background
+    translate: false
+    fields:
+      borderBottom:
+        label: Border bottom
+        text:
+          - Inactive
+          - Active
+        type: toggle
+        when:
+          border: false
+        width: 1/1
+      borderTop: false
+  heroColumns:
+    default: '1'
+    empty: false
+    label: Columns
+    options:
+      1: '1'
+      2: '2'
+    translate: false
+    type: select
+  heroColumnWidth:
+    default: equal
+    empty: false
+    label: Column width
+    options:
+      equal: Equal
+      left: Wider left column
+      right: Wider right column
+    translate: false
+    type: select
+    when:
+      heroColumns: '2'
+  heroAlign:
+    default: center
+    empty: false
+    label: Alignment
+    options:
+      center: Center
+      center--md: Center on mobile
+      left: Left
+      right: Right
+    translate: false
+    type: select
+    width: 1/2
+  heroWidth:
+    default: lg
+    empty: false
+    label: Width
+    options:
+      lg: Large
+      md: Medium
+      sm: Small
+      xs: Extra small
+    translate: false
+    type: select
+    width: 1/2
+  heroPaddingBottom:
+    default: true
+    label: Spacing bottom
+    text:
+      - Inactive
+      - Active
+    translate: false
+    type: toggle
+    width: 1/2
+  heroVisibility:
+    default: true
+    label: Visibility
+    text:
+      - Hide
+      - Show
+    translate: false
+    type: toggle
+    width: 1/2

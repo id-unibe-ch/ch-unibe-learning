@@ -1,0 +1,18 @@
+.k-block.k-block-type-blurb img {
+  display: block;
+  margin-bottom: 0.75rem;
+  max-height: 8rem;
+  max-width: 8rem;
+}
+
+.k-block .k-block-type-blurb-heading .k-text {
+  font-weight: 700;
+}
+
+.k-block.k-block-type-blurb button.k-block-button {
+  margin-top: 0.5rem;
+}
+
+.k-block.k-block-type-blurb button.k-block-button:first-child {
+  margin-top: 0;
+}

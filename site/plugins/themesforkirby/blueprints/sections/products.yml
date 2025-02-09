@@ -1,0 +1,7 @@
+empty: No products yet
+headline: Products
+info: "{{ page.date.toDate('M d, Y') }}"
+template:
+  - product
+  - default
+type: pages

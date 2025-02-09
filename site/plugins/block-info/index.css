@@ -1,0 +1,26 @@
+.k-block .k-block-type-info-text {
+  border-left: 0.25rem solid;
+  padding: 0.75rem;
+}
+
+/* Context */
+
+.k-block .k-block-type-info-default {
+  background: #efefef;
+  border-left-color: #000;
+}
+
+.k-block .k-block-type-info-negative {
+  background: rgba(200, 64, 64, 0.2);
+  border-left-color: #c84040;
+}
+
+.k-block .k-block-type-info-positive {
+  background: rgba(60, 164, 85, 0.2);
+  border-left-color: #3ca455;
+}
+
+.k-block .k-block-type-info-warning {
+  background: rgba(230, 115, 55, 0.2);
+  border-left-color: #e67337;
+}

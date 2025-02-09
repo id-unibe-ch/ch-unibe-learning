@@ -1,0 +1,91 @@
+columns:
+  type:
+    width: 1/1
+label: Background
+max: 1
+type: structure
+fields:
+  type:
+    default: color
+    empty: false
+    label: Type
+    options:
+      color: Color
+      gradient: Gradient
+    type: toggles
+    width: 1/2
+  brightness:
+    label: Text color
+    text:
+      - Dark
+      - Light
+    type: toggle
+    width: 1/2
+
+  color:
+    columns:
+      fill:
+        width: 1/1
+    label: Color
+    max: 1
+    type: structure
+    when:
+      type: color
+    fields:
+      fill:
+        default: light
+        empty: false
+        label: Fill
+        options:
+          custom: Custom
+          dark: Dark
+          light: Light
+          primary: Primary
+          white: White
+        type: toggles
+      custom:
+        before: #
+        label: Custom
+        pattern: ^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+        type: text
+        when:
+          fill: custom
+      customDark:
+        before: #
+        label: Custom dark
+        pattern: ^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+        type: text
+        when:
+          fill: custom
+
+  gradient:
+    columns:
+      fill:
+        width: 1/1
+    label: Gradient
+    max: 1
+    type: structure
+    when:
+      type: gradient
+    fields:
+      fill:
+        default: light
+        empty: false
+        label: Fill
+        options:
+          custom: Custom
+          dark: Dark
+          light: Light
+        type: toggles
+      custom:
+        label: Custom
+        placeholder: linear-gradient(...)
+        type: text
+        when:
+          fill: custom
+      customDark:
+        label: Custom dark
+        placeholder: linear-gradient(...)
+        type: text
+        when:
+          fill: custom

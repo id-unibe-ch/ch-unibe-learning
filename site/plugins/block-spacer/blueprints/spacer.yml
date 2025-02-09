@@ -1,0 +1,9 @@
+icon: expand
+name: Spacer
+preview: spacer
+wysiwyg: true
+fields:
+  info:
+    label: Info
+    text: This block just adds some invisible space, there are no settings available.
+    type: info

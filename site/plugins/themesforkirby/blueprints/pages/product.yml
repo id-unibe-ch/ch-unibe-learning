@@ -1,0 +1,315 @@
+title: Product
+
+status:
+  draft:
+    label: Draft
+    text: The product is in draft mode and only visible for logged in users.
+  unlisted:
+    label: Unlisted
+    text: The product is public but only accessible via URL.
+  listed:
+    label: Published
+    text: The product is public.
+
+columns:
+
+  - width: 2/3
+    fields:
+      text:
+        label: Subtitle
+        type: text
+      price:
+        before: "{{ site.currencySymbol.or('$') }}"
+        label: Price
+        type: number
+        width: 1/4
+      priceDetails:
+        inline: true
+        label: Price details
+        marks:
+          - italic
+          - strike
+          - underline
+        placeholder: /mo
+        type: writer
+        width: 1/4
+      soldOut:
+        label: Sold out
+        text:
+          - Inactive
+          - Active
+        translate: false
+        type: toggle
+        width: 1/4
+      comingSoon:
+        label: Coming soon
+        text:
+          - Inactive
+          - Active
+        translate: false
+        type: toggle
+        width: 1/4
+      comingSoonText:
+        help: Override the coming soon text from the parent settings.
+        label: Coming soon text
+        placeholder: Coming Soon
+        type: text
+        when:
+          comingSoon: true
+      buttonPurchaseType:
+        default: url
+        empty: false
+        label: Purchase type
+        options:
+          code: Code
+          url: URL
+        translate: false
+        type: select
+      buttonPurchaseLink:
+        icon: url
+        label: Purchase link
+        placeholder: https://
+        spellcheck: false
+        translate: false
+        type: text
+        when:
+          buttonPurchaseType: url
+      buttonPurchaseCode:
+        buttons: false
+        label: Purchase code
+        placeholder: <script>...</script>
+        spellcheck: false
+        type: textarea
+        when:
+          buttonPurchaseType: code
+      buttonDemoLink:
+        icon: url
+        label: Demo link
+        placeholder: https://
+        spellcheck: false
+        translate: false
+        type: text
+      line:
+        type: line
+      sliderMedia:
+        label: Slider
+        query: page.files.add(site.files).sortBy('date', 'desc')
+        translate: false
+        type: files
+      features:
+        columns:
+          category:
+            width: 1/1
+        label: Features
+        type: structure
+        fields:
+          category:
+            label: Category
+            type: text
+          blocks:
+            label: Content
+            layouts:
+              - "1/1"
+              - "1/2, 1/2"
+              - "1/3, 1/3, 1/3"
+            type: layout
+            fieldsets:
+              popular:
+                label: Popular
+                type: group
+                fieldsets:
+                  heading:
+                    extends: blocks/heading
+                    fields:
+                      level:
+                        default: "h4"
+                        disabled: true
+                      fontSize:
+                        default: h4
+                        disabled: true
+                      alignContent:
+                        disabled: true
+                      alignBlock:
+                        disabled: true
+                      width:
+                        disabled: true
+                      animation: false
+                  text:
+                    extends: blocks/text
+                    fields:
+                      alignContent:
+                        disabled: true
+                      alignBlock:
+                        disabled: true
+                      width:
+                        disabled: true
+                      background: false
+                      animation: false
+                  image:
+                    extends: blocks/image
+                    fields:
+                      link: false
+                      linkPage: false
+                      linkUrl: false
+                      linkTarget: false
+                      alignContent:
+                        disabled: true
+                      alignBlock:
+                        disabled: true
+                      width:
+                        disabled: true
+                      animation: false
+              text:
+                label: Text
+                open: false
+                type: group
+                fieldsets:
+                  info:
+                    extends: blocks/info
+                    fields:
+                      alignBlock:
+                        disabled: true
+                      width:
+                        disabled: true
+                      animation: false
+                  list:
+                    extends: blocks/list
+                    fields:
+                      alignContent:
+                        disabled: true
+                      alignBlock:
+                        disabled: true
+                      width:
+                        disabled: true
+                      animation: false
+                  quote:
+                    extends: blocks/quote
+                    fields:
+                      alignBlock:
+                        disabled: true
+                      width:
+                        disabled: true
+                      animation: false
+                  testimonial:
+                    extends: blocks/testimonial
+                    fields:
+                      alignContent:
+                        disabled: true
+                      alignBlock:
+                        disabled: true
+                      width:
+                        disabled: true
+                      background: false
+                      animation: false
+                  timeline:
+                    extends: blocks/timeline
+                    fields:
+                      alignBlock:
+                        disabled: true
+                      width:
+                        disabled: true
+                      animation: false
+              media:
+                label: Media
+                open: false
+                type: group
+                fieldsets:
+                  gallery:
+                    extends: blocks/gallery
+                    fields:
+                      alignBlock:
+                        disabled: true
+                      width:
+                        disabled: true
+                      animation: false
+                  video:
+                    extends: blocks/video
+                    fields:
+                      alignBlock:
+                        disabled: true
+                      width:
+                        disabled: true
+                      animation: false
+              embeds:
+                label: Embeds
+                open: false
+                type: group
+                fieldsets:
+                  imageurl:
+                    extends: blocks/imageurl
+                    fields:
+                      link: false
+                      linkPage: false
+                      linkUrl: false
+                      linkTarget: false
+                      alignContent:
+                        disabled: true
+                      alignBlock:
+                        disabled: true
+                      width:
+                        disabled: true
+                      animation: false
+                  vimeo:
+                    extends: blocks/vimeo
+                    fields:
+                      alignBlock:
+                        disabled: true
+                      width:
+                        disabled: true
+                      animation: false
+                  youtube:
+                    extends: blocks/youtube
+                    fields:
+                      alignBlock:
+                        disabled: true
+                      width:
+                        disabled: true
+                      animation: false
+            settings:
+              extends: fields/layout-settings
+              fields:
+                background:
+                  extends: fields/background-fill-shadow
+                  fields:
+                    borderBottom: false
+                    borderTop: false
+                alignVertical:
+                  disabled: true
+                gutter:
+                  disabled: true
+                oneColumn:
+                  disabled: true
+                paddingTop: false
+                paddingBottom: false
+                columnReverse: false
+                visibility:
+                  width: 1/1
+                customId: false
+                customClass: false
+
+  - width: 1/3
+    sections:
+      content:
+        type: fields
+        fields:
+          date:
+            default: now
+            label: Published
+            translate: false
+            type: date
+          author:
+            default: false
+            help: Leave empty for "{{ site.title }}" as author.
+            label: Author
+            multiple: false
+            translate: false
+            type: users
+          tags:
+            label: Tags
+            options: query
+            query: page.siblings.pluck("tags", ",", true)
+            type: tags
+          cover: fields/cover
+      files:
+        headline: Files
+        type: files

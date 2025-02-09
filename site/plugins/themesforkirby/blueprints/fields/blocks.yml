@@ -1,0 +1,54 @@
+type: group
+fields:
+  blocks:
+    label: Blocks
+    type: blocks
+    fieldsets:
+      popular:
+        label: Popular
+        type: group
+        fieldsets:
+          heading: blocks/heading
+          text: blocks/text
+          button: blocks/button
+          image: blocks/image
+      text:
+        label: Text
+        type: group
+        fieldsets:
+          blurb: blocks/blurb
+          button: blocks/button
+          code: blocks/code
+          heading: blocks/heading
+          info: blocks/info
+          list: blocks/list
+          markdown: blocks/markdown
+          pricing: blocks/pricing
+          quote: blocks/quote
+          testimonial: blocks/testimonial
+          text: blocks/text
+          timeline: blocks/timeline
+      media:
+        label: Media
+        type: group
+        fieldsets:
+          gallery: blocks/gallery
+          image: blocks/image
+          slider: blocks/slider
+          video: blocks/video
+      embeds:
+        label: Embeds
+        type: group
+        fieldsets:
+          imageurl: blocks/imageurl
+          newsletter: blocks/newsletter
+          posts: blocks/posts
+          products: blocks/products
+          vimeo: blocks/vimeo
+          youtube: blocks/youtube
+      misc:
+        label: Misc
+        type: group
+        fieldsets:
+          line: blocks/line
+          spacer: blocks/spacer

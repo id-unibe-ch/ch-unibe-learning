@@ -1,0 +1,363 @@
+title: Post
+
+status:
+  draft:
+    label: Draft
+    text: The post is in draft mode and only visible for logged in editors.
+  unlisted:
+    label: Unlisted
+    text: The post is public but only accessible via URL.
+  listed:
+    label: Published
+    text: The post is public.
+
+columns:
+
+  - width: 2/3
+    fields:
+      blocks:
+        extends: fields/blocks
+        fields:
+          blocks:
+            fieldsets:
+              popular:
+                fieldsets:
+                  heading:
+                    extends: blocks/heading
+                    fields:
+                      fontSize:
+                        default: h3
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  text:
+                    extends: blocks/text
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  button:
+                    extends: blocks/button
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  image:
+                    extends: blocks/image
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+              text:
+                fieldsets:
+                  blurb:
+                    extends: blocks/blurb
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  button:
+                    extends: blocks/button
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  code:
+                    extends: blocks/code
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  heading:
+                    extends: blocks/heading
+                    fields:
+                      fontSize:
+                        default: h3
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  info:
+                    extends: blocks/info
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  list:
+                    extends: blocks/list
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  markdown:
+                    extends: blocks/markdown
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  pricing:
+                    extends: blocks/pricing
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  quote:
+                    extends: blocks/quote
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  testimonial:
+                    extends: blocks/testimonial
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  text:
+                    extends: blocks/text
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  timeline:
+                    extends: blocks/timeline
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+              media:
+                fieldsets:
+                  gallery:
+                    extends: blocks/gallery
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  image:
+                    extends: blocks/image
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  slider:
+                    extends: blocks/slider
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  video:
+                    extends: blocks/video
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+              embeds:
+                fieldsets:
+                  imageurl:
+                    extends: blocks/imageurl
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  newsletter:
+                    extends: blocks/newsletter
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  posts:
+                    extends: blocks/posts
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  products:
+                    extends: blocks/products
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  vimeo:
+                    extends: blocks/vimeo
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+                  youtube:
+                    extends: blocks/youtube
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+              misc:
+                fieldsets:
+                  line:
+                    extends: blocks/line
+                    fields:
+                      alignBlock:
+                        default: center
+                      width:
+                        default: none
+                        label: Width override
+                        options:
+                          none: None
+                      animation: false
+
+  - width: 1/3
+    sections:
+      content:
+        type: fields
+        fields:
+          date:
+            default: now
+            label: Published
+            translate: false
+            type: date
+          author:
+            default: false
+            help: Leave empty for "{{ site.title }}" as author.
+            label: Author
+            multiple: false
+            translate: false
+            type: users
+          tags:
+            label: Tags
+            options: query
+            query: page.siblings.pluck("tags", ",", true)
+            type: tags
+          externalLink:
+            label: External link
+            type: url
+          cover: fields/cover
+      files:
+        headline: Files
+        type: files

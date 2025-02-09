@@ -1,0 +1,10 @@
+.k-block .k-block-type-quote-text {
+  border-left: 0.25rem solid;
+  border-left-color: #000;
+  margin-bottom: 0;
+  padding-left: 0.75rem;
+}
+
+.k-block .k-block-type-quote-caption .k-text {
+  opacity: 0.5;
+}

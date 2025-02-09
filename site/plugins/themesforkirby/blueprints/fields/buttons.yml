@@ -1,0 +1,58 @@
+columns:
+  text:
+    width: 1/4
+  style:
+    width: 1/4
+  page:
+    width: 1/4
+  url:
+    width: 1/4
+label: Buttons
+max: 2
+type: structure
+fields:
+  text:
+    label: Text
+    type: text
+    width: 2/3
+  style:
+    default: primary
+    empty: false
+    label: Style
+    options:
+      primary: Primary
+      secondary: Secondary
+      tertiary: Tertiary
+    type: select
+    width: 1/3
+  link:
+    default: page
+    empty: false
+    label: Link
+    options:
+      page: Page
+      url: URL
+    type: select
+    width: 1/3
+  page:
+    label: Page
+    max: 1
+    type: pages
+    when:
+      link: page
+    width: 2/3
+  url:
+    label: URL
+    type: url
+    when:
+      link: url
+    width: 1/3
+  target:
+    label: Open
+    text:
+      - New tab
+      - New tab
+    type: toggle
+    when:
+      link: url
+    width: 1/3

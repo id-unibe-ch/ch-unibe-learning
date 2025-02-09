@@ -1,0 +1,149 @@
+icon: check
+name: Blurb
+preview: blurb
+wysiwyg: true
+fields:
+  iconType:
+    default: image
+    empty: false
+    label: Icon
+    options:
+      image: Image
+      svg: SVG
+    type: select
+    width: 1/2
+  iconImage:
+    label: Image
+    max: 1
+    query: page.files.add(site.files).filterBy('template', 'image').sortBy('date', 'desc')
+    type: files
+    uploads: image
+    when:
+      iconType: image
+    width: 1/2
+  iconSvg:
+    label: Code
+    placeholder: <svg>...</svg>
+    type: text
+    when:
+      iconType: svg
+    width: 1/2
+  heading:
+    autofocus: true
+    inline: true
+    label: Heading
+    marks:
+      - italic
+      - strike
+      - underline
+      - link
+    placeholder: Heading...
+    type: writer
+    width: 1/2
+  tag:
+    label: Tag
+    placeholder: Tag...
+    type: text
+    width: 1/2
+  text:
+    inline: true
+    label: Text
+    placeholder: Text...
+    type: writer
+  buttonText:
+    label: Button
+    placeholder: Text...
+    type: text
+    width: 2/4
+  buttonStyle:
+    default: primary
+    empty: false
+    label: Style
+    options:
+      primary: Primary
+      secondary: Secondary
+      tertiary: Tertiary
+      disabled: Disabled
+    type: select
+    width: 1/4
+  buttonFullWidth:
+    label: Full width
+    text:
+      - Inactive
+      - Active
+    type: toggle
+    width: 1/4
+  link:
+    default: page
+    empty: false
+    label: Link
+    options:
+      page: Page
+      url: URL
+    type: select
+    width: 1/4
+  linkPage:
+    label: Page
+    max: 1
+    type: pages
+    when:
+      link: page
+    width: 3/4
+  linkUrl:
+    icon: url
+    label: URL
+    spellcheck: false
+    type: text
+    when:
+      link: url
+    width: 2/4
+  linkTarget:
+    label: Open
+    text:
+      - New tab
+      - New tab
+    type: toggle
+    when:
+      link: url
+    width: 1/4
+  line:
+    type: line
+  alignContent:
+    default: left
+    empty: false
+    label: Content align
+    options:
+      center: Center
+      center--md: Center on mobile
+      left: Left
+      right: Right
+    type: select
+    width: 1/3
+  alignBlock:
+    default: left
+    empty: false
+    label: Block align
+    options:
+      center: Center
+      center--md: Center on mobile
+      left: Left
+      right: Right
+    type: select
+    width: 1/3
+  width:
+    default: lg
+    empty: false
+    label: Width
+    options:
+      lg: Large
+      md: Medium
+      sm: Small
+      xs: Extra small
+    type: select
+    width: 1/3
+  background:
+    extends: fields/background-fill-shadow
+    fields:
+      borderBottom: false
+      borderTop: false
+  animation: fields/animation

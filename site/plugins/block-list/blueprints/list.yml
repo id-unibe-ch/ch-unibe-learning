@@ -1,0 +1,45 @@
+icon: list-bullet
+name: List
+preview: list
+wysiwyg: true
+fields:
+  text:
+    autofocus: true
+    label: List
+    type: list
+  line:
+    type: line
+  alignContent:
+    default: left
+    empty: false
+    label: Content align
+    options:
+      center: Center
+      center--md: Center on mobile
+      left: Left
+      right: Right
+    type: select
+    width: 1/3
+  alignBlock:
+    default: left
+    empty: false
+    label: Block align
+    options:
+      center: Center
+      center--md: Center on mobile
+      left: Left
+      right: Right
+    type: select
+    width: 1/3
+  width:
+    default: lg
+    empty: false
+    label: Width
+    options:
+      lg: Large
+      md: Medium
+      sm: Small
+      xs: Extra small
+    type: select
+    width: 1/3
+  animation: fields/animation

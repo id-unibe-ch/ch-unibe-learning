@@ -1,0 +1,695 @@
+title: Products
+
+options:
+  changeSlug:
+    admin: true
+    author: false
+    editor: true
+  changeStatus:
+    admin: true
+    author: false
+    editor: true
+  changeTitle:
+    admin: true
+    author: false
+    editor: true
+  create:
+    admin: true
+    author: false
+    editor: true
+  delete:
+    admin: true
+    author: false
+    editor: true
+  duplicate:
+    admin: true
+    author: false
+    editor: true
+  update:
+    admin: true
+    author: false
+    editor: true
+
+status:
+  draft:
+    label: Draft
+    text: The products page is in draft mode and only visible for logged in editors.
+  unlisted:
+    label: Unlisted
+    text: The products page is public and accessible via URL.
+  listed:
+    label: Listed
+    text: The products page is public and added to the main menu.
+
+tabs:
+
+  products:
+    columns:
+
+      - width: 1/3
+        sections:
+          drafts:
+            extends: sections/products
+            headline: Drafts
+            image: page.cover.toFile
+            status: draft
+          unlisted:
+            extends: sections/products
+            headline: Unlisted
+            image: page.cover.toFile
+            status: unlisted
+
+      - width: 2/3
+        sections:
+          listed:
+            extends: sections/products
+            headline: Published
+            image: page.cover.toFile
+            status: listed
+
+  content:
+    fields:
+      blocks: fields/layout
+
+  hero:
+    fields:
+      hero: fields/hero
+
+  settings:
+    columns:
+
+      - width: 2/3
+        fields:
+          align:
+            default: left
+            empty: false
+            label: Alignment
+            options:
+              center: Center
+              center--md: Center on mobile
+              left: Left
+              right: Right
+            translate: false
+            type: select
+            width: 1/4
+          layout:
+            default: grid
+            empty: false
+            label: Layout
+            options:
+              box: Box
+              cards: Cards
+              grid: Grid
+              list: List
+            translate: false
+            type: select
+            width: 1/4
+          boxColumns:
+            default: '3'
+            empty: false
+            label: Columns
+            options:
+              2: '2'
+              3: '3'
+            translate: false
+            type: select
+            when:
+              layout: box
+            width: 1/4
+          cardsColumns:
+            default: '3'
+            empty: false
+            label: Columns
+            options:
+              2: '2'
+              3: '3'
+            translate: false
+            type: select
+            when:
+              layout: cards
+            width: 1/4
+          gridColumns:
+            default: '3'
+            empty: false
+            label: Columns
+            options:
+              2: '2'
+              3: '3'
+            translate: false
+            type: select
+            when:
+              layout: grid
+            width: 1/4
+          listStyle:
+            default: default
+            empty: false
+            label: Style
+            options:
+              default: Default
+              compact: Compact
+              wide: Wide
+            translate: false
+            type: select
+            when:
+              layout: list
+            width: 1/4
+          width:
+            default: lg
+            empty: false
+            label: Width
+            options:
+              lg: Large
+              md: Medium
+              sm: Small
+              xs: Extra small
+            translate: false
+            type: select
+            width: 1/4
+          price:
+            default: true
+            label: Price
+            text:
+              - Hide
+              - Show
+            translate: false
+            type: toggle
+            width: 1/4
+          author:
+            label: Author
+            text:
+              - Hide
+              - Show
+            translate: false
+            type: toggle
+            width: 1/4
+          datePublished:
+            label: Date
+            text:
+              - Hide
+              - Show
+            translate: false
+            type: toggle
+            width: 1/4
+          media:
+            default: true
+            label: Cover
+            text:
+              - Hide
+              - Show
+            translate: false
+            type: toggle
+            width: 1/4
+          mediaBorder:
+            label: Cover border
+            text:
+              - Inactive
+              - Active
+            translate: false
+            type: toggle
+            when:
+              media: true
+            width: 1/4
+          mediaRounded:
+            default: true
+            label: Cover rounded
+            text:
+              - Inactive
+              - Active
+            translate: false
+            type: toggle
+            when:
+              media: true
+            width: 1/4
+          mediaShadow:
+            default: none
+            empty: false
+            label: Cover shadow
+            options:
+              lg: Large
+              md: Medium
+              sm: Small
+              xs: Extra small
+              none: None
+            translate: false
+            type: select
+            when:
+              media: true
+            width: 1/4
+          mediaFixedHeight:
+            default: true
+            label: Fixed cover height
+            text:
+              - Inactive
+              - Active
+            translate: false
+            type: toggle
+            when:
+              media: true
+            width: 1/4
+          mediaPositionHorizontal:
+            default: center
+            empty: false
+            label: Horizontal cover position
+            options:
+              center: Center
+              left: Left
+              right: Right
+            translate: false
+            type: select
+            when:
+              media: true
+              mediaFixedHeight: true
+            width: 1/2
+          mediaPositionVertical:
+            default: center
+            empty: false
+            label: Vertical cover position
+            options:
+              bottom: Bottom
+              center: Center
+              top: Top
+            translate: false
+            type: select
+            when:
+              media: true
+              mediaFixedHeight: true
+            width: 1/2
+          postsPerPage:
+            label: Products per page
+            placeholder: 10
+            translate: false
+            type: number
+          readMore:
+            label: Read more
+            text:
+              - Inactive
+              - Active
+            translate: false
+            type: toggle
+            when:
+              layout: cards
+          readMoreText:
+            label: Read more text
+            placeholder: Read More
+            type: text
+            when:
+              layout: cards
+              readMore: true
+          comingSoonText:
+            label: Coming soon text
+            placeholder: Coming Soon
+            type: text
+            width: 1/2
+          soldOutText:
+            label: Sold out text
+            placeholder: Sold Out
+            type: text
+            width: 1/2
+
+          postHeroHeadline:
+            label: Product page hero
+            numbered: false
+            type: headline
+          postHeroBackground:
+            extends: fields/background
+            translate: false
+            fields:
+              borderBottom:
+                label: Border bottom
+                text:
+                  - Inactive
+                  - Active
+                type: toggle
+                when:
+                  border: false
+                width: 1/1
+              borderTop: false
+          postHeroPrice:
+            default: true
+            label: Price
+            text:
+              - Hide
+              - Show
+            translate: false
+            type: toggle
+            width: 1/4
+          postHeroMediaBorder:
+            label: Cover border
+            text:
+              - Inactive
+              - Active
+            translate: false
+            type: toggle
+            width: 1/4
+          postHeroMediaRounded:
+            default: true
+            label: Cover rounded
+            text:
+              - Inactive
+              - Active
+            translate: false
+            type: toggle
+            width: 1/4
+          postHeroMediaShadow:
+            default: none
+            empty: false
+            label: Cover shadow
+            options:
+              lg: Large
+              md: Medium
+              sm: Small
+              xs: Extra small
+              none: None
+            translate: false
+            type: select
+            width: 1/4
+          postHeroColumns:
+            default: '1'
+            empty: false
+            label: Columns
+            options:
+              1: '1'
+              2: '2'
+            translate: false
+            type: select
+          postHeroColumnWidth:
+            default: equal
+            empty: false
+            label: Column width
+            options:
+              equal: Equal
+              left: Wider left column
+              right: Wider right column
+            translate: false
+            type: select
+            when:
+              postHeroColumns: '2'
+          postHeroAlign:
+            default: center
+            empty: false
+            label: Alignment
+            options:
+              center: Center
+              center--md: Center on mobile
+              left: Left
+              right: Right
+            translate: false
+            type: select
+            width: 1/2
+          postHeroWidth:
+            default: lg
+            empty: false
+            label: Width
+            options:
+              lg: Large
+              md: Medium
+              sm: Small
+              xs: Extra small
+            translate: false
+            type: select
+            width: 1/2
+          postHeroPaddingBottom:
+            default: true
+            label: Spacing bottom
+            text:
+              - Inactive
+              - Active
+            translate: false
+            type: toggle
+
+          postButtonsHeadline:
+            label: Buttons
+            numbered: false
+            type: headline
+          postButtons:
+            extends: fields/buttons
+            label: Global buttons
+          postButtonPurchaseText:
+            label: Purchase button text
+            placeholder: Purchase
+            type: text
+            width: 2/3
+          postButtonPurchaseStyle:
+            default: tertiary
+            empty: false
+            label: Purchase button style
+            options:
+              primary: Primary
+              secondary: Secondary
+              tertiary: Tertiary
+            translate: false
+            type: select
+            width: 1/3
+          postButtonDemoText:
+            label: Demo button text
+            placeholder: View Demo
+            type: text
+            width: 2/3
+          postButtonDemoStyle:
+            default: tertiary
+            empty: false
+            label: Demo button style
+            options:
+              primary: Primary
+              secondary: Secondary
+              tertiary: Tertiary
+            translate: false
+            type: select
+            width: 1/3
+
+          postSliderHeadline:
+            label: Product page slider
+            numbered: false
+            type: headline
+          postSliderMediaPositionHorizontal:
+            default: center
+            empty: false
+            label: Horizontal image position
+            options:
+              center: Center
+              left: Left
+              right: Right
+            translate: false
+            type: select
+            width: 1/3
+          postSliderMediaPositionVertical:
+            default: center
+            empty: false
+            label: Vertical image position
+            options:
+              bottom: Bottom
+              center: Center
+              top: Top
+            translate: false
+            type: select
+            width: 1/3
+          postSliderHeight:
+            after: px
+            label: Media height
+            placeholder: Optional
+            translate: false
+            type: number
+            width: 1/3
+          postSliderBorder:
+            label: Border
+            text:
+              - Inactive
+              - Active
+            translate: false
+            type: toggle
+            width: 1/3
+          postSliderRounded:
+            default: true
+            label: Rounded
+            text:
+              - Inactive
+              - Active
+            translate: false
+            type: toggle
+            width: 1/3
+          postSliderShadow:
+            default: none
+            empty: false
+            label: Shadow
+            options:
+              lg: Large
+              md: Medium
+              sm: Small
+              xs: Extra small
+              none: None
+            translate: false
+            type: select
+            width: 1/3
+          postSliderCaption:
+            label: Caption
+            text:
+              - Hide
+              - Show
+            translate: false
+            type: toggle
+            width: 1/3
+          postSliderDraggable:
+            default: true
+            label: Draggable
+            text:
+              - Inactive
+              - Active
+            translate: false
+            type: toggle
+            width: 1/3
+          postSliderPrevNextButtons:
+            label: Hide navigation buttons
+            text:
+              - Inactive
+              - Active
+            type: toggle
+            width: 1/3
+          postSliderWrapAround:
+            label: Wrap-around
+            text:
+              - Inactive
+              - Active
+            type: toggle
+            width: 1/3
+          postSliderThumbnails:
+            label: Thumbnails
+            text:
+              - Inactive
+              - Active
+            translate: false
+            type: toggle
+            width: 1/3
+          postSliderSpanAcross:
+            label: Span across
+            text:
+              - Inactive
+              - Active
+            type: toggle
+            width: 1/3
+          postSliderAutoPlay:
+            label: Auto-play
+            text:
+              - Inactive
+              - Active
+            translate: false
+            type: toggle
+          postSliderAutoPlayTime:
+            after: ms
+            label: Auto-play speed
+            placeholder: 1500
+            translate: false
+            type: number
+            when:
+              postSliderAutoPlay: true
+            width: 1/2
+          postSliderPauseAutoPlayOnHover:
+            label: Disable pause on hover
+            text:
+              - Inactive
+              - Active
+            type: toggle
+            when:
+              postSliderAutoPlay: true
+            width: 1/2
+          postSliderBackground:
+            extends: fields/background-fill
+            label: Background
+            translate: false
+            fields:
+              borderBottom:
+                label: Border bottom
+                text:
+                  - Inactive
+                  - Active
+                type: toggle
+          postSliderAnimation: fields/animation
+          postSliderPaddingTop:
+            default: true
+            label: Spacing top
+            text:
+              - Inactive
+              - Active
+            translate: false
+            type: toggle
+
+          postOptionsHeadline:
+            label: Product page options
+            numbered: false
+            type: headline
+          postShare:
+            help: Show a module to share the product at the bottom.
+            label: Share product
+            text:
+              - Hide
+              - Show
+            translate: false
+            type: toggle
+          postRelated:
+            help: Show a collection of related products at the bottom.
+            label: Related products
+            text:
+              - Hide
+              - Show
+            translate: false
+            type: toggle
+          postRelatedTitle:
+            label: Related products title
+            type: text
+            when:
+              postRelated: true
+          postRelatedBackground:
+            extends: fields/background-fill
+            label: Related products background
+            translate: false
+            fields:
+              borderTop:
+                label: Border top
+                text:
+                  - Inactive
+                  - Active
+                type: toggle
+            when:
+              postRelated: true
+
+      - width: 1/3
+        sections:
+          content:
+            type: fields
+            fields:
+              background: fields/background-fill
+              date:
+                default: now
+                label: Published
+                translate: false
+                type: date
+              cover: fields/cover
+          files:
+            headline: Files
+            type: files
+
+  advanced:
+    fields:
+      customCss:
+        buttons: false
+        help: Add your own CSS code here to customize the appearance and layout of this page.
+        label: Custom CSS
+        size: medium
+        spellcheck: false
+        translate: false
+        type: textarea
+      codeHeader:
+        buttons: false
+        help: Add custom scripts to the header of this page.
+        label: Custom header code
+        size: medium
+        spellcheck: false
+        translate: false
+        type: textarea
+      codeFooter:
+        buttons: false
+        help: Add custom scripts to the footer of this page.
+        label: Custom footer code
+        size: medium
+        spellcheck: false
+        translate: false
+        type: textarea

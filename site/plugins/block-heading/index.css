@@ -1,0 +1,96 @@
+.k-block.k-block-type-heading > div {
+	display: flex;
+	align-items: center;
+}
+
+.k-block.k-block-type-heading .k-block-type-heading-wrapper {
+	width: 100%;
+}
+
+.k-block.k-block-type-heading .k-input {
+	margin-left: 0.75rem;
+}
+
+.k-block.k-block-type-heading .k-writer.k-block-type-heading-hero:before,
+.k-block.k-block-type-heading .k-writer.k-block-type-heading-hero .k-text {
+  font-size: 4.5rem;
+  font-weight: 900;
+  line-height: 5.5rem;
+}
+
+.k-block.k-block-type-heading .k-writer.k-block-type-heading-h1:before,
+.k-block.k-block-type-heading .k-writer.k-block-type-heading-h1 .k-text {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 4.5rem;
+}
+
+.k-block.k-block-type-heading .k-writer.k-block-type-heading-h2:before,
+.k-block.k-block-type-heading .k-writer.k-block-type-heading-h2 .k-text {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 3.5rem;
+}
+
+.k-block.k-block-type-heading .k-writer.k-block-type-heading-h3:before,
+.k-block.k-block-type-heading .k-writer.k-block-type-heading-h3 .k-text {
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 2.5rem;
+}
+
+.k-block.k-block-type-heading .k-writer.k-block-type-heading-h4:before,
+.k-block.k-block-type-heading .k-writer.k-block-type-heading-h4 .k-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+.k-block.k-block-type-heading .k-writer.k-block-type-heading-h5:before,
+.k-block.k-block-type-heading .k-writer.k-block-type-heading-h5 .k-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+}
+
+.k-block.k-block-type-heading .k-writer.k-block-type-heading-h6:before,
+.k-block.k-block-type-heading .k-writer.k-block-type-heading-h6 .k-text {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+
+.k-block.k-block-type-heading .k-block-type-heading-label-hero .k-text {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+.k-block.k-block-type-heading .k-block-type-heading-label-h1 .k-text {
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+
+.k-block.k-block-type-heading .k-block-type-heading-label-h2 .k-text {
+  font-size: 0.875rem;
+  line-height: 1rem;
+}
+
+.k-block.k-block-type-heading .k-block-type-heading-label-h3 .k-text {
+  font-size: 0.875rem;
+  line-height: 1rem;
+}
+
+.k-block.k-block-type-heading .k-block-type-heading-label-h4 .k-text {
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+}
+
+.k-block.k-block-type-heading .k-block-type-heading-label-h5 .k-text {
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+}
+
+.k-block.k-block-type-heading .k-block-type-heading-label-h6 .k-text {
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+}

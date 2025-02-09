@@ -1,0 +1,70 @@
+fields:
+  alignVertical:
+    default: top
+    empty: false
+    label: Vertical alignment
+    options:
+      middle: Middle
+      top: Top
+    type: select
+    width: 1/3
+  gutter:
+    default: lg
+    empty: false
+    label: Gutter
+    options:
+      lg: Large
+      md: Medium
+      sm: Small
+    type: select
+    width: 1/3
+  oneColumn:
+    default: md
+    empty: false
+    label: One column
+    options:
+      xl: Extra large
+      lg: Large
+      md: Medium
+      sm: Small
+    type: select
+    width: 1/3
+  paddingTop:
+    default: true
+    label: Spacing top
+    text:
+      - Inactive
+      - Active
+    type: toggle
+    width: 1/2
+  paddingBottom:
+    default: true
+    label: Spacing bottom
+    text:
+      - Inactive
+      - Active
+    type: toggle
+    width: 1/2
+  columnReverse:
+    label: Reverse columns on mobile
+    text:
+      - Inactive
+      - Active
+    type: toggle
+    width: 1/2
+  visibility:
+    default: true
+    label: Visibility
+    text:
+      - Hide
+      - Show
+    type: toggle
+    width: 1/2
+  customId:
+    label: ID
+    type: text
+    width: 1/2
+  customClass:
+    label: Class
+    type: text
+    width: 1/2

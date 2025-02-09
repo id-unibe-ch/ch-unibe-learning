@@ -1,0 +1,29 @@
+.k-block.k-block-type-line hr {
+  width: 32px;
+}
+
+.k-block.k-block-type-line hr.k-block-full-width {
+  width: 100%;
+}
+
+/* Style */
+
+.k-block.k-block-type-line hr.k-block-type-line-dashed {
+  border: 1px dashed #000;
+}
+
+.k-block.k-block-type-line hr.k-block-type-line-solid {
+  border: 1px solid #000;
+}
+
+/* Aligning the line */
+
+.k-block.k-block-type-line .k-block-align-center hr {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.k-block.k-block-type-line .k-block-align-right hr {
+  margin-left: auto;
+  margin-right: 0;
+}

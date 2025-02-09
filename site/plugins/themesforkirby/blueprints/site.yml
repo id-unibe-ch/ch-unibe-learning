@@ -1,0 +1,1149 @@
+title: Site
+
+tabs:
+
+  pages:
+    columns:
+
+      - width: 1/3
+        sections:
+          drafts:
+            headline: Drafts
+            image: page.cover.toFile
+            status: draft
+            template:
+              - default
+              - posts
+              - products
+            type: pages
+          unlisted:
+            headline: Unlisted
+            image: page.cover.toFile
+            status: unlisted
+            type: pages
+
+      - width: 2/3
+        sections:
+          listed:
+            headline: Listed
+            image:
+              cover: true
+              query: page.cover.toFile
+              ratio: 2/1
+            layout: cards
+            status: listed
+            type: pages
+
+  media:
+    sections:
+      info:
+        text: Media files that are added to this library can be accessed from any page.
+        type: info
+      files:
+        headline: Files
+        layout: cards
+        limit: 50
+        sortBy: date desc
+        type: files
+
+  header:
+    fields:
+      headerMenus:
+        columns:
+          link:
+            width: 1/5
+          label:
+            width: 1/5
+          page:
+            width: 1/5
+          url:
+            width: 1/5
+          subMenus:
+            width: 1/5
+        label: Menus
+        type: structure
+        fields:
+          link:
+            default: page
+            empty: false
+            label: Link
+            options:
+              page: Page
+              subMenus: Submenus
+              url: URL
+            type: select
+            width: 1/2
+          label:
+            label: Label
+            type: text
+            width: 1/2
+          page:
+            help: The label field will override the page title.
+            label: Page
+            max: 1
+            type: pages
+            when:
+              link: page
+          url:
+            label: URL
+            type: url
+            when:
+              link: url
+            width: 3/4
+          target:
+            label: Open
+            text:
+              - New tab
+              - New tab
+            type: toggle
+            when:
+              link: url
+            width: 1/4
+          subMenus:
+            columns:
+              page:
+                width: 1/3
+              label:
+                width: 1/3
+              url:
+                width: 1/3
+            label: Submenus
+            type: structure
+            when:
+              link: subMenus
+            fields:
+              link:
+                default: page
+                empty: false
+                label: Link
+                options:
+                  page: Page
+                  url: URL
+                type: select
+                width: 1/4
+              label:
+                label: Label
+                type: text
+                width: 1/4
+              page:
+                label: Page
+                max: 1
+                type: pages
+                when:
+                  link: page
+                width: 2/4
+              url:
+                label: URL
+                type: url
+                when:
+                  link: url
+                width: 1/4
+              target:
+                label: Open
+                text:
+                  - New tab
+                  - New tab
+                type: toggle
+                when:
+                  link: url
+                width: 1/4
+      headerAlign:
+        default: right
+        empty: false
+        label: Alignment
+        options:
+          left: Left
+          right: Right
+        translate: false
+        type: select
+        width: 1/4
+      headerLanguages:
+        label: Language selection
+        text:
+          - Hide
+          - Show
+        translate: false
+        type: toggle
+        width: 1/4
+      headerSearch:
+        label: Search icon
+        text:
+          - Hide
+          - Show
+        translate: false
+        type: toggle
+        width: 1/4
+      headerAppearanceSwitch:
+        label: Appearance switch
+        text:
+          - Hide
+          - Show
+        translate: false
+        type: toggle
+        width: 1/4
+      headerButtons: fields/buttons
+      headerBreakpoint:
+        help: This is the width of the browser when the navigation turns into a mobile menu. Default breakpoint is 767px.
+        label: Mobile breakpoint
+        max: 1600
+        min: 0
+        step: 1
+        translate: false
+        type: range
+      headerPosition:
+        default: default
+        empty: false
+        label: Position
+        options:
+          default: Default
+          fixed: Fixed
+          fixed--sm: Fixed on mobile
+        translate: false
+        type: select
+        width: 1/2
+      headerFullWidth:
+        label: Full width
+        text:
+          - Inactive
+          - Active
+        translate: false
+        type: toggle
+        width: 1/2
+      headerBackground:
+        extends: fields/background-fill
+        translate: false
+        columns:
+          type:
+            width: 1/3
+          shadow:
+            width: 1/3
+          borderBottom:
+            width: 1/3
+        fields:
+          shadow:
+            default: sm
+            empty: false
+            label: Shadow
+            options:
+              lg: Large
+              md: Medium
+              sm: Small
+              xs: Extra small
+              none: None
+            type: select
+          borderBottom:
+            label: Border bottom
+            text:
+              - Inactive
+              - Active
+            type: toggle
+
+  footer:
+    fields:
+      footerMenus:
+        columns:
+          title:
+            width: 1/1
+        label: Menus
+        max: 4
+        type: structure
+        fields:
+          title:
+            label: Title
+            type: text
+          links:
+            columns:
+              page:
+                width: 1/3
+              label:
+                width: 1/3
+              url:
+                width: 1/3
+            label: Links
+            type: structure
+            fields:
+              link:
+                default: page
+                empty: false
+                label: Link
+                options:
+                  page: Page
+                  url: URL
+                type: select
+                width: 1/4
+              label:
+                label: Label
+                type: text
+                width: 1/4
+              page:
+                label: Page
+                max: 1
+                type: pages
+                when:
+                  link: page
+                width: 2/4
+              url:
+                label: URL
+                type: url
+                when:
+                  link: url
+                width: 1/4
+              target:
+                label: Open
+                text:
+                  - New tab
+                  - New tab
+                type: toggle
+                when:
+                  link: url
+                width: 1/4
+      footerHeading:
+        inline: true
+        label: Heading
+        marks:
+          - italic
+          - strike
+          - underline
+          - link
+        placeholder: Heading...
+        type: writer
+      footerText:
+        inline: true
+        label: Text
+        placeholder: Text...
+        type: writer
+      footerNewsletter:
+        help: The newsletter can be configured under the "Settings" tab.
+        label: Newsletter
+        text:
+          - Hide
+          - Show
+        translate: false
+        type: toggle
+      footerLanguages:
+        label: Language selection
+        text:
+          - Hide
+          - Show
+        translate: false
+        type: toggle
+      footerCopyright:
+        default: default
+        empty: false
+        label: Copyright
+        options:
+          default: Default
+          custom: Custom
+        translate: false
+        type: select
+      footerCopyrightCustom:
+        label: Copyright text
+        translate: false
+        type: text
+        when:
+          footerCopyright: custom
+      footerPoweredBy:
+        label: Powered by Themes for Kirby
+        text:
+          - Hide
+          - Show
+        translate: false
+        type: toggle
+      footerBackground:
+        extends: fields/background-fill
+        translate: false
+        columns:
+          type:
+            width: 1/2
+          borderTop:
+            width: 1/2
+        fields:
+          borderTop:
+            label: Border top
+            text:
+              - Inactive
+              - Active
+            type: toggle
+      footerPaddingTop:
+        label: Spacing top
+        text:
+          - Inactive
+          - Active
+        translate: false
+        type: toggle
+
+  settings:
+    columns:
+
+      - width: 1/2
+        fields:
+          generalHeadline:
+            label: General
+            numbered: false
+            type: headline
+          tagline:
+            help: In a few words, explain what this site is about.
+            label: Tagline
+            type: text
+          dateFormat:
+            help: Click <a href="https://www.php.net/manual/en/function.date" target="_blank" rel="noopener noreferrer">here</a> for available formats.
+            label: Date format
+            placeholder: M d, Y
+            translate: false
+            type: text
+            width: 1/2
+          currencySymbol:
+            label: Currency symbol
+            placeholder: $
+            type: text
+            width: 1/2
+          postsPerPage:
+            label: Posts per page
+            placeholder: 10
+            translate: false
+            type: number
+
+          appearanceHeadline:
+            label: Appearance
+            numbered: false
+            type: headline
+          appearance:
+            default: light
+            empty: false
+            label: Default appearance
+            options:
+              dark: Dark
+              light: Light
+            translate: false
+            type: select
+          width:
+            label: Site width
+            max: 1600
+            min: 600
+            step: 8
+            translate: false
+            type: range
+          rounded:
+            label: Rounded corners
+            max: 32
+            min: 0
+            step: 1
+            translate: false
+            type: range
+            width: 1/2
+          roundedButtons:
+            label: Rounded buttons
+            max: 40
+            min: 0
+            step: 1
+            translate: false
+            type: range
+            width: 1/2
+
+          languageHeadline:
+            label: Language
+            numbered: false
+            type: headline
+          languageCode:
+            help: Common examples are "en" for English, "es" for Spanish, "fr" for France and so on.
+            label: Default language code
+            placeholder: en
+            spellcheck: false
+            translate: false
+            type: text
+
+          seoHeadline:
+            label: SEO
+            numbered: false
+            type: headline
+          schemaType:
+            default: organization
+            empty: false
+            help: Choose whether the site represents an organization or a person.
+            label: Type
+            options:
+              organization: Organization
+              person: Person
+            translate: false
+            type: select
+          schemaPerson:
+            label: Person
+            multiple: false
+            translate: false
+            type: users
+            when:
+              schemaType: person
+
+          social: fields/social
+
+          colorsHeadline:
+            label: Colors
+            numbered: false
+            type: headline
+          colorPrimary:
+            before: #
+            label: Primary color
+            pattern: ^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+            placeholder: 000
+            required: true
+            spellcheck: false
+            translate: false
+            type: text
+            width: 1/2
+          colorPrimaryDark:
+            default: same
+            empty: false
+            label: Primary color (dark mode)
+            options:
+              same: Same
+              white: White
+            translate: false
+            type: select
+            width: 1/2
+          colorBorder:
+            before: #
+            label: Border color
+            pattern: ^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+            placeholder: ececee
+            spellcheck: false
+            translate: false
+            type: text
+            width: 1/2
+          colorBorderDark:
+            before: #
+            label: Border color (dark mode)
+            pattern: ^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+            placeholder: 333333
+            spellcheck: false
+            translate: false
+            type: text
+            width: 1/2
+          colorBackground:
+            before: #
+            label: Background color
+            pattern: ^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+            placeholder: fff
+            spellcheck: false
+            translate: false
+            type: text
+            width: 1/2
+          colorBackgroundDark:
+            before: #
+            label: Background color dark
+            pattern: ^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+            placeholder: 000
+            spellcheck: false
+            translate: false
+            type: text
+            width: 1/2
+
+          typographyHeadline:
+            label: Typography
+            numbered: false
+            type: headline
+          fontBody:
+            default: default
+            empty: false
+            label: Body font
+            options:
+              default: Default
+              custom: Custom
+            translate: false
+            type: select
+          fontBodyEmbed:
+            buttons: false
+            help: Use this field if you are embedding your body font. Embed a selected font from <a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer">Google Fonts</a> or other library.
+            label: Body font embed
+            spellcheck: false
+            translate: false
+            type: textarea
+            when:
+              fontBody: custom
+          fontBodySelfHosted:
+            buttons: false
+            help: Use this field if you are self-hosting your body font.
+            label: Body font self-hosted
+            placeholder: '@font-face...'
+            spellcheck: false
+            translate: false
+            type: textarea
+            when:
+              fontBody: custom
+          fontBodyFamily:
+            help: Use the rules to specify font families.
+            label: Body font family
+            placeholder: "Lato", Helvetica, sans-serif
+            spellcheck: false
+            translate: false
+            type: text
+            when:
+              fontBody: custom
+          fontHeader:
+            default: default
+            empty: false
+            label: Header font
+            options:
+              default: Default
+              custom: Custom
+              same: Same as body font
+            translate: false
+            type: select
+          fontHeaderEmbed:
+            buttons: false
+            help: Use this field if you are embedding your header font. Embed a selected font from <a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer">Google Fonts</a> or other library.
+            label: Header font embed
+            spellcheck: false
+            translate: false
+            type: textarea
+            when:
+              fontHeader: custom
+          fontHeaderSelfHosted:
+            buttons: false
+            help: Use this field if you are self-hosting your header font.
+            label: Header font self-hosted
+            placeholder: '@font-face...'
+            spellcheck: false
+            translate: false
+            type: textarea
+            when:
+              fontHeader: custom
+          fontHeaderFamily:
+            help: Use the rules to specify font families.
+            label: Header font family
+            placeholder: "Lato", Helvetica, sans-serif
+            spellcheck: false
+            translate: false
+            type: text
+            when:
+              fontHeader: custom
+
+          heroHeadline:
+            label: Heading hero
+            numbered: false
+            type: headline
+          fontSizeHero:
+            label: Font size
+            max: 120
+            min: 8
+            step: 1
+            translate: false
+            type: range
+            width: 1/2
+          lineHeightHero:
+            label: Line height
+            max: 120
+            min: 8
+            step: 1
+            translate: false
+            type: range
+            width: 1/2
+          fontWeightHero:
+            default: '700'
+            empty: false
+            label: Font weight
+            options:
+              - value: '100'
+                text: 100 - Thin
+              - value: '200'
+                text: 200 - Extra-light
+              - value: '300'
+                text: 300 - Light
+              - value: '400'
+                text: 400 - Regular
+              - value: '500'
+                text: 500 - Medium
+              - value: '600'
+                text: 600 - Semi-bold
+              - value: '700'
+                text: 700 - Bold
+              - value: '800'
+                text: 800 - Extra-bold
+              - value: '900'
+                text: 900 - Black
+            translate: false
+            type: select
+
+          h1Headline:
+            label: Heading 1
+            numbered: false
+            type: headline
+          fontSizeH1:
+            label: Font size
+            max: 120
+            min: 8
+            step: 1
+            translate: false
+            type: range
+            width: 1/2
+          lineHeightH1:
+            label: Line height
+            max: 120
+            min: 8
+            step: 1
+            translate: false
+            type: range
+            width: 1/2
+          fontWeightH1:
+            default: '700'
+            empty: false
+            label: Font weight
+            options:
+              - value: '100'
+                text: 100 - Thin
+              - value: '200'
+                text: 200 - Extra-light
+              - value: '300'
+                text: 300 - Light
+              - value: '400'
+                text: 400 - Regular
+              - value: '500'
+                text: 500 - Medium
+              - value: '600'
+                text: 600 - Semi-bold
+              - value: '700'
+                text: 700 - Bold
+              - value: '800'
+                text: 800 - Extra-bold
+              - value: '900'
+                text: 900 - Black
+            translate: false
+            type: select
+
+          h2Headline:
+            label: Heading 2
+            numbered: false
+            type: headline
+          fontSizeH2:
+            label: Font size
+            max: 120
+            min: 8
+            step: 1
+            translate: false
+            type: range
+            width: 1/2
+          lineHeightH2:
+            label: Line height
+            max: 120
+            min: 8
+            step: 1
+            translate: false
+            type: range
+            width: 1/2
+          fontWeightH2:
+            default: '700'
+            empty: false
+            label: Font weight
+            options:
+              - value: '100'
+                text: 100 - Thin
+              - value: '200'
+                text: 200 - Extra-light
+              - value: '300'
+                text: 300 - Light
+              - value: '400'
+                text: 400 - Regular
+              - value: '500'
+                text: 500 - Medium
+              - value: '600'
+                text: 600 - Semi-bold
+              - value: '700'
+                text: 700 - Bold
+              - value: '800'
+                text: 800 - Extra-bold
+              - value: '900'
+                text: 900 - Black
+            translate: false
+            type: select
+
+          h3Headline:
+            label: Heading 3
+            numbered: false
+            type: headline
+          fontSizeH3:
+            label: Font size
+            max: 120
+            min: 8
+            step: 1
+            translate: false
+            type: range
+            width: 1/2
+          lineHeightH3:
+            label: Line height
+            max: 120
+            min: 8
+            step: 1
+            translate: false
+            type: range
+            width: 1/2
+          fontWeightH3:
+            default: '700'
+            empty: false
+            label: Font weight
+            options:
+              - value: '100'
+                text: 100 - Thin
+              - value: '200'
+                text: 200 - Extra-light
+              - value: '300'
+                text: 300 - Light
+              - value: '400'
+                text: 400 - Regular
+              - value: '500'
+                text: 500 - Medium
+              - value: '600'
+                text: 600 - Semi-bold
+              - value: '700'
+                text: 700 - Bold
+              - value: '800'
+                text: 800 - Extra-bold
+              - value: '900'
+                text: 900 - Black
+            translate: false
+            type: select
+
+          h4Headline:
+            label: Heading 4
+            numbered: false
+            type: headline
+          fontSizeH4:
+            label: Font size
+            max: 120
+            min: 8
+            step: 1
+            translate: false
+            type: range
+            width: 1/2
+          lineHeightH4:
+            label: Line height
+            max: 120
+            min: 8
+            step: 1
+            translate: false
+            type: range
+            width: 1/2
+          fontWeightH4:
+            default: '700'
+            empty: false
+            label: Font weight
+            options:
+              - value: '100'
+                text: 100 - Thin
+              - value: '200'
+                text: 200 - Extra-light
+              - value: '300'
+                text: 300 - Light
+              - value: '400'
+                text: 400 - Regular
+              - value: '500'
+                text: 500 - Medium
+              - value: '600'
+                text: 600 - Semi-bold
+              - value: '700'
+                text: 700 - Bold
+              - value: '800'
+                text: 800 - Extra-bold
+              - value: '900'
+                text: 900 - Black
+            translate: false
+            type: select
+
+          h5Headline:
+            label: Heading 5
+            numbered: false
+            type: headline
+          fontSizeH5:
+            label: Font size
+            max: 120
+            min: 8
+            step: 1
+            translate: false
+            type: range
+            width: 1/2
+          lineHeightH5:
+            label: Line height
+            max: 120
+            min: 8
+            step: 1
+            translate: false
+            type: range
+            width: 1/2
+          fontWeightH5:
+            default: '700'
+            empty: false
+            label: Font weight
+            options:
+              - value: '100'
+                text: 100 - Thin
+              - value: '200'
+                text: 200 - Extra-light
+              - value: '300'
+                text: 300 - Light
+              - value: '400'
+                text: 400 - Regular
+              - value: '500'
+                text: 500 - Medium
+              - value: '600'
+                text: 600 - Semi-bold
+              - value: '700'
+                text: 700 - Bold
+              - value: '800'
+                text: 800 - Extra-bold
+              - value: '900'
+                text: 900 - Black
+            translate: false
+            type: select
+
+          h6Headline:
+            label: Heading 6
+            numbered: false
+            type: headline
+          fontSizeH6:
+            label: Font size
+            max: 120
+            min: 8
+            step: 1
+            translate: false
+            type: range
+            width: 1/2
+          lineHeightH6:
+            label: Line height
+            max: 120
+            min: 8
+            step: 1
+            translate: false
+            type: range
+            width: 1/2
+          fontWeightH6:
+            default: '700'
+            empty: false
+            label: Font weight
+            options:
+              - value: '100'
+                text: 100 - Thin
+              - value: '200'
+                text: 200 - Extra-light
+              - value: '300'
+                text: 300 - Light
+              - value: '400'
+                text: 400 - Regular
+              - value: '500'
+                text: 500 - Medium
+              - value: '600'
+                text: 600 - Semi-bold
+              - value: '700'
+                text: 700 - Bold
+              - value: '800'
+                text: 800 - Extra-bold
+              - value: '900'
+                text: 900 - Black
+            translate: false
+            type: select
+
+          newsletterHeadline:
+            label: Newsletter
+            numbered: false
+            type: headline
+          newsletterHeading:
+            inline: true
+            label: Heading
+            marks:
+              - italic
+              - strike
+              - underline
+              - link
+            placeholder: Heading...
+            type: writer
+          newsletterText:
+            inline: true
+            label: Text
+            placeholder: Text...
+            type: writer
+          newsletterCode:
+            buttons: false
+            help: Paste the HTML code of the subscription form generated by your marketing platform.
+            label: HTML code
+            spellcheck: false
+            type: textarea
+          newsletterBackground:
+            extends: fields/background-fill-shadow
+            translate: false
+            fields:
+              borderBottom: false
+              borderTop: false
+
+          commentsHeadline:
+            label: Comments
+            numbered: false
+            type: headline
+          commentsCode:
+            buttons: false
+            help: Paste the HTML code from your commenting platform.
+            label: HTML code
+            spellcheck: false
+            translate: false
+            type: textarea
+
+          styleHeadline:
+            label: Style
+            numbered: false
+            type: headline
+          customCss:
+            buttons: false
+            help: Add your own CSS code here to customize the appearance and layout of your site.
+            label: Custom CSS
+            size: medium
+            spellcheck: false
+            translate: false
+            type: textarea
+
+          codeHeadline:
+            label: Code
+            numbered: false
+            type: headline
+          codeHeader:
+            buttons: false
+            help: Add custom scripts to the header of your site, such as Google Analytics.
+            label: Custom header code
+            size: medium
+            spellcheck: false
+            translate: false
+            type: textarea
+          codeFooter:
+            buttons: false
+            help: Add custom scripts to the footer of your site.
+            label: Custom footer code
+            size: medium
+            spellcheck: false
+            translate: false
+            type: textarea
+
+      - width: 1/2
+        sections:
+          content:
+            type: fields
+            fields:
+              mediaHeadline:
+                label: Media
+                numbered: false
+                type: headline
+              mediaResize:
+                help: Media files are automatically resized and optimized during upload. This only works for JPG/JPEG and all fields below are required.
+                label: Resize media files
+                text:
+                  - Inactive
+                  - Active
+                translate: false
+                type: toggle
+              mediaResizeHeight:
+                after: px
+                label: Max height
+                translate: false
+                type: number
+                when:
+                  mediaResize: true
+                width: 1/2
+              mediaResizeWidth:
+                after: px
+                label: Max width
+                translate: false
+                type: number
+                when:
+                  mediaResize: true
+                width: 1/2
+              mediaResizeThreshold:
+                after: kb
+                help: Specifies the size threshold after which files will be resized or optimized.
+                label: File size threshold
+                translate: false
+                type: number
+                when:
+                  mediaResize: true
+              mediaResizeQuality:
+                label: Quality
+                max: 100
+                min: 0
+                step: 10
+                translate: false
+                type: range
+                when:
+                  mediaResize: true
+
+              logoHeadline:
+                label: Logo
+                numbered: false
+                type: headline
+              logoType:
+                default: text
+                empty: false
+                label: Type
+                options:
+                  image: Image
+                  svg: SVG
+                  text: Text
+                  none: None
+                translate: false
+                type: select
+              logoImage:
+                label: Logo upload
+                max: 1
+                query: site.images.sortBy('date', 'desc')
+                translate: false
+                type: files
+                uploads: image
+                when:
+                  logoType: image
+                width: 1/2
+              logoImageDark:
+                label: Logo upload (dark mode)
+                max: 1
+                query: site.images.sortBy('date', 'desc')
+                translate: false
+                type: files
+                uploads: image
+                when:
+                  logoType: image
+                width: 1/2
+              logoSvg:
+                label: SVG code
+                translate: false
+                type: text
+                when:
+                  logoType: svg
+                width: 1/2
+              logoSvgDark:
+                label: SVG code (dark mode)
+                placeholder: Optional
+                translate: false
+                type: text
+                when:
+                  logoType: svg
+                width: 1/2
+              logoSvgWidth:
+                after: px
+                label: SVG width
+                translate: false
+                type: number
+                when:
+                  logoType: svg
+
+              iconHeadline:
+                label: Icon
+                numbered: false
+                type: headline
+              icon:
+                help: Icon should be square and at least 512px × 512px.
+                label: Icon upload
+                max: 1
+                query: site.images.sortBy('date', 'desc')
+                translate: false
+                type: files
+                uploads: image
+
+              coverHeadline:
+                label: Cover
+                numbered: false
+                type: headline
+              cover:
+                extends: fields/cover
+                help: The cover is added to your URL when shared on social media. Pages without a cover will use this image instead. We recommend at least 500px wide.
+                query: site.images.sortBy('date', 'desc')

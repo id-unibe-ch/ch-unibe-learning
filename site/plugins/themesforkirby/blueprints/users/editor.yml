@@ -1,0 +1,15 @@
+title: Editor
+description: Can create pages and posts.
+
+extends: users/default
+
+permissions:
+  access:
+    settings: false
+  site:
+    update: false
+  user:
+    changeRole: false
+    create: false
+    delete: false
+  users: false

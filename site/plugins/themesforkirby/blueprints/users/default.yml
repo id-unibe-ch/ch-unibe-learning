@@ -1,0 +1,16 @@
+title: User
+
+fields:
+  bio:
+    inline: true
+    label: Bio
+    placeholder: Bio...
+    type: writer
+  social:
+    extends: fields/social
+    fields:
+      header: false
+      footer: false
+  website:
+    label: Website
+    type: url

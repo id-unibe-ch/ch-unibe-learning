@@ -1,0 +1,13 @@
+.k-block .k-block-type-image-wrapper {
+  height: 100%;
+  max-height: 368px;
+  overflow: hidden;
+}
+
+.k-block.k-block-type-image img {
+  background: transparent;
+  background-color: transparent;
+  max-width: 560px;
+  padding: 0;
+  width: 100%;
+}

@@ -1,0 +1,12 @@
+{
+  "authors": [
+    {
+      "name": "Themes for Kirby",
+      "email": "hello@themesforkirby.com"
+    }
+  ],
+  "license": "Themes for Kirby",
+  "name": "tfk/block-products",
+  "type": "kirby-plugin",
+  "version": "4.2.0"
+}

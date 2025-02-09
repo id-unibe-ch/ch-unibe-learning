@@ -1,0 +1,57 @@
+columns:
+  account:
+    width: 1/3
+  header:
+    width: 1/3
+  footer:
+    width: 1/3
+label: Social profiles
+translate: false
+type: structure
+fields:
+  account:
+    default: twitter
+    empty: false
+    label: Account
+    options:
+      dribbble: Dribbble
+      facebook: Facebook
+      github: GitHub
+      instagram: Instagram
+      linkedin: LinkedIn
+      twitter: Twitter
+      youtube: YouTube
+    type: select
+  username:
+    before: @
+    label: Username
+    spellcheck: false
+    type: text
+  company:
+    label: Company account
+    text:
+      - Inactive
+      - Active
+    type: toggle
+    when:
+      account: linkedin
+  url:
+    help: If you don't have a username yet.
+    label: Link to profile
+    type: url
+    when:
+      account: youtube
+  header:
+    label: Header
+    text:
+      - Hide
+      - Show
+    type: toggle
+    width: 1/2
+  footer:
+    label: Footer
+    text:
+      - Hide
+      - Show
+    type: toggle
+    width: 1/2

@@ -1,0 +1,68 @@
+icon: video
+name: Video
+preview: video
+fields:
+  media:
+    label: File
+    max: 1
+    query: page.files.add(site.files).filterBy('template', 'video').sortBy('date', 'desc')
+    type: files
+    uploads: video
+  line:
+    type: line
+  alignBlock:
+    default: center
+    empty: false
+    label: Align
+    options:
+      center: Center
+      center--md: Center on mobile
+      left: Left
+      right: Right
+    type: select
+    width: 1/4
+  border:
+    label: Border
+    text:
+      - Inactive
+      - Active
+    type: toggle
+    width: 1/4
+  rounded:
+    default: true
+    label: Rounded
+    text:
+      - Inactive
+      - Active
+    type: toggle
+    width: 1/4
+  shadow:
+    default: none
+    empty: false
+    label: Shadow
+    options:
+      lg: Large
+      md: Medium
+      sm: Small
+      xs: Extra small
+      none: None
+    type: select
+    width: 1/4
+  height:
+    after: px
+    label: Height
+    placeholder: Optional
+    type: number
+    width: 1/2
+  width:
+    default: lg
+    empty: false
+    label: Width
+    options:
+      lg: Large
+      md: Medium
+      sm: Small
+      xs: Extra small
+    type: select
+    width: 1/2
+  animation: fields/animation
