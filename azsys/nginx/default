@@ -1,6 +1,6 @@
 server {
     #proxy_cache cache;
-        #proxy_cache_valid 200 1s;
+    #proxy_cache_valid 200 1s;
     listen 8080;
     listen [::]:8080;
     root /home/site/wwwroot;
@@ -8,16 +8,38 @@ server {
     server_name  example.com www.example.com; 
     port_in_redirect off;
 
+    access_log  /var/log/nginx/access.log;
+    error_log   /var/log/nginx/error.log;
+
     #Kirby
     default_type text/plain;
     add_header X-Content-Type-Options nosniff;
 
-    rewrite ^/(content|site|kirby)/(.*)$ /error last;
-    rewrite ^/\.(?!well-known/) /error last;
-    rewrite ^/(?!app\.webmanifest)[^/]+$ /index.php last;
+    # Don't hint these as folders
+    rewrite ^/(content|site|kirby)$ /error last;
+
+    # Block content
+    rewrite ^/content/(.*).(txt|md|mdown)$ /error last;
+
+    # Block all files in the site and kirby folder from being accessed directly
+    rewrite ^/(site|kirby)/(.*)$ /error last;
+
+    # Panel links
+    location /panel {
+        autoindex off;
+        try_files $uri $uri/ /panel/index.php?$query_string;
+    }
+
+    # Site links
+
+    # rewrite ^/(content|site|kirby)/(.*)$ /error last;
+    # rewrite ^/\.(?!well-known/) /error last;
+    # rewrite ^/(?!app\.webmanifest)[^/]+$ /index.php last;
 
     location / {
-        try_files $uri $uri/ /index.php$is_args$args;
+        #try_files $uri $uri/ /index.php$is_args$args;
+        autoindex off;
+        try_files $uri $uri/ /index.php?$query_string; #$uri&$args;
     }
     ##
 
