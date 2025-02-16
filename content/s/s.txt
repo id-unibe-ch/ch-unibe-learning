@@ -1,0 +1,100 @@
+Title: Search
+
+----
+
+Blocks: 
+
+----
+
+Heroheading: Search results:
+
+----
+
+Heroheadingfontsize: h1
+
+----
+
+Heroheadingfill: 
+
+----
+
+Herotext: Here’s what we’ve found.
+
+----
+
+Herobuttons: 
+
+----
+
+Heroblocks: 
+
+----
+
+Herobackground:
+
+- 
+  type: color
+  size: full-width
+  brightness: 'true'
+  color:
+    - 
+      fill: custom
+      custom: 001c31
+  gradient: [ ]
+  image: [ ]
+  svg: [ ]
+  border: 'false'
+  borderbottom: 'false'
+  shadow: none
+
+----
+
+Herocolumns: 1
+
+----
+
+Herocolumnwidth: equal
+
+----
+
+Heroalign: left
+
+----
+
+Herowidth: lg
+
+----
+
+Heropaddingbottom: false
+
+----
+
+Herovisibility: true
+
+----
+
+Background: 
+
+----
+
+Date: 2020-04-28
+
+----
+
+Cover: 
+
+----
+
+Customcss: 
+
+----
+
+Codeheader: 
+
+----
+
+Codefooter: 
+
+----
+
+Uuid: nRKPUgP06ems0R6n
