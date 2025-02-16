@@ -1,0 +1,29 @@
+Title: Characteristics of a modern workplace
+
+----
+
+Blocks: [{"content":{"text":"<p>A distributed workforce is a workforce that reaches beyond the restrictions of a traditional office environment. A distributed workforce is dispersed geographically over a wide area \u2013 domestically or internationally. By installing key technologies, distributed companies enable employees located anywhere to access all of the company's resources and software such as applications, data and e-mail without working within the confines of a physical company-operated facility.<\/p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>","aligncontent":"left","alignblock":"center","width":"none","background":[]},"id":"b3664f9a-3e95-49d3-89c9-87658d850cf0","isHidden":false,"type":"text"},{"content":{"text":"<ul><li>Sed ut perspiciatis unde omnis.<\/li><li>Ut enim ad minima veniam.<\/li><li>Et harum quidem rerum.<\/li><\/ul>","aligncontent":"left","alignblock":"center","width":"none"},"id":"71615f0a-6c3a-4d76-866f-d9287a91318c","isHidden":false,"type":"list"},{"content":{"text":"<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>","aligncontent":"left","alignblock":"center","width":"none","background":[]},"id":"3125cc2c-f293-4f81-b243-9e487d9a1d70","isHidden":false,"type":"text"},{"content":{"media":["file:\/\/icODPUUHJUP91Wdt"],"actualsize":"false","border":"false","rounded":"true","shadow":"none","link":"page","linkpage":[],"linkurl":"","linktarget":"false","aligncontent":"left","alignblock":"center","width":"none"},"id":"518c779b-77a3-438c-9f39-850cba885ef9","isHidden":false,"type":"image"},{"content":{"text":"<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.<\/p>","aligncontent":"left","alignblock":"center","width":"none","background":[]},"id":"70800582-5d56-483c-8fbf-0ac486a1d94c","isHidden":false,"type":"text"},{"content":{"text":"\"Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\"","caption":"","alignblock":"center","width":"none"},"id":"b4de6c2a-71d0-4696-aa1d-3b31f6412a79","isHidden":false,"type":"quote"},{"content":{"text":"<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.<\/p>","aligncontent":"left","alignblock":"center","width":"none","background":[]},"id":"64d94025-4090-4de3-80b0-638f72c2db27","isHidden":false,"type":"text"}]
+
+----
+
+Date: 2020-03-16
+
+----
+
+Author: 
+
+----
+
+Tags: Business, Technology
+
+----
+
+Externallink: 
+
+----
+
+Cover: - file://DkqVsyllkKR24YVH
+
+----
+
+Uuid: ywh071VKXrtVXr4K

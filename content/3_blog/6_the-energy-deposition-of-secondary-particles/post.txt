@@ -1,0 +1,29 @@
+Title: The energy deposition of secondary particles
+
+----
+
+Blocks: [{"content":{"text":"<p>In physics, mathematics, and related fields, a wave is a disturbance (change from equilibrium) of one or more fields such that the field values oscillate repeatedly about a stable equilibrium (resting) value. If the relative amplitude of oscillation at different points in the field remains constant, the wave is said to be a standing wave. If the relative amplitude at different points in the field changes, the wave is said to be a traveling wave. Waves can only exist in fields when there is a force that tends to restore the field to equilibrium.<\/p>","aligncontent":"left","alignblock":"center","width":"none","background":[]},"id":"657d2b08-ae8b-4ea8-bba3-f2d3a8535b89","isHidden":false,"type":"text"},{"content":{"text":"<ul><li>Sed ut perspiciatis unde omnis.<\/li><li>Ut enim ad minima veniam.<\/li><li>Et harum quidem rerum.<\/li><\/ul>","aligncontent":"left","alignblock":"center","width":"none"},"id":"b3fff9c9-e23a-45f4-b113-13412bd09dc6","isHidden":false,"type":"list"},{"content":{"text":"<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.<\/p>","aligncontent":"left","alignblock":"center","width":"none","background":[]},"id":"db65ebcd-8d0d-48e5-940e-ca2e8d678e64","isHidden":false,"type":"text"},{"content":{"text":"\"Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\"","caption":"","alignblock":"center","width":"none"},"id":"96acf054-882c-4a10-b9d4-d3546fe01d80","isHidden":false,"type":"quote"},{"content":{"text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>","aligncontent":"left","alignblock":"center","width":"none","background":[]},"id":"e90066c2-a026-4328-a252-5162edf4620c","isHidden":false,"type":"text"}]
+
+----
+
+Date: 2020-03-20
+
+----
+
+Author: 
+
+----
+
+Tags: Business, Design, Technology
+
+----
+
+Externallink: 
+
+----
+
+Cover: - file://kB5MCetVTQXzVBL7
+
+----
+
+Uuid: gYmWSKTnkCNTW7WK

@@ -1,0 +1,224 @@
+Title: Blog
+
+----
+
+Blocks: 
+
+----
+
+Heroheading: 
+
+----
+
+Heroheadingfontsize: h1
+
+----
+
+Heroheadingfill: 
+
+----
+
+Herotext: We explore new ideas, knowledge and experiences from the future of web, development and design.
+
+----
+
+Herobuttons: 
+
+----
+
+Heroblocks: 
+
+----
+
+Herobackground:
+
+- 
+  type: color
+  size: full-width
+  brightness: 'false'
+  color:
+    - 
+      fill: light
+      custom: ""
+      customdark: ""
+  gradient: [ ]
+  image: [ ]
+  svg: [ ]
+  border: 'false'
+  borderbottom: 'false'
+  shadow: none
+
+----
+
+Herocolumns: 1
+
+----
+
+Herocolumnwidth: equal
+
+----
+
+Heroalign: center
+
+----
+
+Herowidth: sm
+
+----
+
+Heropaddingbottom: false
+
+----
+
+Herovisibility: true
+
+----
+
+Align: left
+
+----
+
+Layout: list
+
+----
+
+Boxcolumns: 2
+
+----
+
+Cardscolumns: 
+
+----
+
+Gridcolumns: 2
+
+----
+
+Liststyle: default
+
+----
+
+Width: sm
+
+----
+
+Author: false
+
+----
+
+Datepublished: true
+
+----
+
+Media: true
+
+----
+
+Mediaborder: false
+
+----
+
+Mediarounded: true
+
+----
+
+Mediashadow: none
+
+----
+
+Mediafixedheight: true
+
+----
+
+Mediapositionhorizontal: center
+
+----
+
+Mediapositionvertical: center
+
+----
+
+Readmore: false
+
+----
+
+Readmoretext: 
+
+----
+
+Posttitlealign: center
+
+----
+
+Posttitlefontsize: h1
+
+----
+
+Posttitlewidth: none
+
+----
+
+Postmediaborder: false
+
+----
+
+Postwidth: 680
+
+----
+
+Postnewsletter: true
+
+----
+
+Postcomments: false
+
+----
+
+Postrelated: true
+
+----
+
+Postrelatedtitle: You might also like:
+
+----
+
+Postrelatedbackground:
+
+- 
+  type: color
+  brightness: 'false'
+  color:
+    - 
+      fill: light
+      custom: ""
+      customdark: ""
+  gradient: [ ]
+  bordertop: 'false'
+
+----
+
+Background: 
+
+----
+
+Date: 2021-06-07
+
+----
+
+Cover: 
+
+----
+
+Customcss: 
+
+----
+
+Codeheader: 
+
+----
+
+Codefooter: 
+
+----
+
+Uuid: KLlbm9XiU3CeICkM

@@ -1,0 +1,101 @@
+Title: Pricing
+
+----
+
+Blocks: [{"attrs":{"alignvertical":"top","gutter":"lg","onecolumn":"sm","paddingtop":"true","paddingbottom":"true","columnreverse":"false","visibility":"true","customid":"","customclass":"","background":[]},"columns":[{"blocks":[{"content":{"text":"Just getting started?","textfill":[],"level":"h3","fontsize":"h3","label":"","labelstyle":"default","labelposition":"top","aligncontent":"center","alignblock":"center","width":"sm","animation":[]},"id":"11c70b19-4ca5-4fbf-898b-85cfebb410d2","isHidden":false,"type":"heading"},{"content":{"text":"<p>We've written a blog post on how our tool helped over 1000 small to mid-sized businesses around the world.<\/p>","aligncontent":"center","alignblock":"center","width":"sm","background":[],"animation":[]},"id":"168b1530-df6d-4198-9745-98b7846f23a6","isHidden":false,"type":"text"},{"content":{"text":"Read More","style":"secondary","fullwidth":"false","link":"page","linkpage":["page:\/\/kvAzxo87fFqLv87M"],"linkurl":"","linktarget":"false","aligncontent":"center","alignblock":"center","width":"sm","animation":[]},"id":"8f256860-7e10-4752-a175-336fb1321f33","isHidden":false,"type":"button"},{"content":[],"id":"c9c2bb09-bee9-43ec-964b-ae3f955976d8","isHidden":false,"type":"spacer"}],"id":"008826e4-f2a5-4e3d-af47-ebb476403db7","width":"1\/1"}],"id":"d533b6ab-f084-4115-bbbc-4d7a9626def8"}]
+
+----
+
+Heroheading: Get started for free.
+
+----
+
+Heroheadingfontsize: h1
+
+----
+
+Heroheadingfill: 
+
+----
+
+Herotext: We make sure there is a pricing tier that fits your business. Best of all, we activate every feature during the 30 day trial, no strings attached.
+
+----
+
+Herobuttons: 
+
+----
+
+Heroblocks: [{"attrs":{"alignvertical":"top","gutter":"lg","onecolumn":"sm","paddingtop":"false","paddingbottom":"false","columnreverse":"false","visibility":"true","customid":"","customclass":""},"columns":[{"blocks":[{"content":{"icontype":"image","iconimage":[],"iconsvg":"","heading":"<strong>Pro<\/strong>","tag":"","price":"$99","pricedetails":"\/yr","text":"Automation with filters.","features":"<ul><li><p>Ut enim ad minima veniam.<\/p><\/li><li><p>Quis autem vel eum iure.<\/p><\/li><li><p>Sed ut perspiciatis unde omnis.<\/p><\/li><li><p>Nemo enim ipsam voluptatem.<\/p><\/li><li><p>Duis aute irure dolor.<\/p><\/li><\/ul>","buttontext":"Start Your 14-day Trial","buttonstyle":"primary","buttonfullwidth":"true","link":"page","linkpage":["page:\/\/kvAzxo87fFqLv87M"],"linkurl":"","linktarget":"false","aligncontent":"left","alignblock":"left","width":"lg","background":[{"type":"color","brightness":"false","color":[{"fill":"white","custom":""}],"gradient":[],"shadow":"none","border":"true"}],"animation":[]},"id":"7383d495-6c10-4619-97bc-c19a8bb64a7d","isHidden":false,"type":"pricing"}],"id":"811dc58c-c7be-4e14-bde0-0ab341a45583","width":"1\/1"}],"id":"1792d00d-3761-4d0d-aff0-c86dbd35c64f"}]
+
+----
+
+Herobackground:
+
+- 
+  type: color
+  size: full-width
+  brightness: 'false'
+  color: [ ]
+  gradient: [ ]
+  image: [ ]
+  svg:
+    - 
+      code: '<svg width="1440" height="901" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="48.122%" y1="25.001%" x2="53.755%" y2="100%" id="a"><stop stop-color="#00BDD7" offset="0%"/><stop stop-color="#575BDE" offset="100%"/></linearGradient></defs><path d="M139.77 390C21.955 559.526-21.38 682.86 9.77 760c46.726 115.711 130 140 130 140V390z" fill="url(#a)" transform="matrix(-1 0 0 1 139.77 1)" fill-rule="evenodd"></path></svg>'
+      positionhorizontal: left
+      positionvertical: bottom
+  border: 'false'
+  borderbottom: 'false'
+  shadow: none
+
+----
+
+Herocolumns: 2
+
+----
+
+Herocolumnwidth: equal
+
+----
+
+Heroalign: center--md
+
+----
+
+Herowidth: lg
+
+----
+
+Heropaddingbottom: true
+
+----
+
+Herovisibility: true
+
+----
+
+Background: 
+
+----
+
+Date: 2020-04-07
+
+----
+
+Cover: 
+
+----
+
+Customcss: 
+
+----
+
+Codeheader: 
+
+----
+
+Codefooter: 
+
+----
+
+Uuid: q31omswxdbUpOzMN

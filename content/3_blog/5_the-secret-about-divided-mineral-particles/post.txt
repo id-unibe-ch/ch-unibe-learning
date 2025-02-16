@@ -1,0 +1,29 @@
+Title: The secret about divided mineral particles
+
+----
+
+Blocks: [{"content":{"text":"<p>Sand is a granular material composed of finely divided rock and mineral particles. It is defined by size, being finer than gravel and coarser than silt. Sand can also refer to a textural class of soil or soil type; i.e., a soil containing more than 85 percent sand-sized particles by mass.<\/p><p>The composition of sand varies, depending on the local rock sources and conditions, but the most common constituent of sand in inland continental settings and non-tropical coastal settings is silica (silicon dioxide, or SiO2), usually in the form of quartz. The second most common type of sand is calcium carbonate, for example, aragonite, which has mostly been created, over the past half billion years, by various forms of life, like coral and shellfish. For example, it is the primary form of sand apparent in areas where reefs have dominated the ecosystem for millions of years like the Caribbean.<\/p>","aligncontent":"left","alignblock":"center","width":"none","background":[]},"id":"35a07eb3-ecd0-477f-af3e-e121361ce02d","isHidden":false,"type":"text"},{"content":{"media":["file:\/\/Mvc4s0kkqLwWlH6w"],"actualsize":"false","border":"false","rounded":"true","shadow":"none","link":"page","linkpage":[],"linkurl":"","linktarget":"false","aligncontent":"left","alignblock":"center","width":"none"},"id":"11e4a00b-b1d5-49c0-a509-ca2e96e4f1c1","isHidden":false,"type":"image"},{"content":{"text":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p>","aligncontent":"left","alignblock":"center","width":"none","background":[]},"id":"680bf2fe-5cda-41e7-9ef9-40e2bb8622a7","isHidden":false,"type":"text"},{"content":{"text":"<ul><li>Sed ut perspiciatis unde omnis.<\/li><li>Ut enim ad minima veniam.<\/li><li>Et harum quidem rerum.<\/li><\/ul>","aligncontent":"left","alignblock":"center","width":"none"},"id":"6387ce1f-136a-4606-bbcf-121029304c47","isHidden":false,"type":"list"},{"content":{"text":"<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>","aligncontent":"left","alignblock":"center","width":"none","background":[]},"id":"e4ff4422-3daf-4d6e-b6a6-3acf2ca6b08d","isHidden":false,"type":"text"},{"content":{"text":"\"Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.\"","caption":"","alignblock":"center","width":"none"},"id":"6abcc5e2-841e-4c45-8475-72bcb7fbfbcb","isHidden":false,"type":"quote"},{"content":{"text":"<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?<\/p><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.<\/p>","aligncontent":"left","alignblock":"center","width":"none","background":[]},"id":"b9e26fd9-eba5-4e4b-afbe-28855cd1c534","isHidden":false,"type":"text"}]
+
+----
+
+Date: 2020-04-05
+
+----
+
+Author: 
+
+----
+
+Tags: Business, Design, Technology, Travel
+
+----
+
+Externallink: 
+
+----
+
+Cover: - file://R8kpvUlxapmOSqUW
+
+----
+
+Uuid: C44IpqG9aqyQspPN

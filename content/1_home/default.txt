@@ -1,0 +1,110 @@
+Title: Home
+
+----
+
+Blocks: [{"attrs":{"alignvertical":"top","gutter":"lg","onecolumn":"sm","paddingtop":"true","paddingbottom":"true","columnreverse":"false","visibility":"true","customid":"","customclass":"","background":[]},"columns":[{"blocks":[{"content":{"icontype":"svg","iconimage":[],"iconsvg":"<svg width=\"72\" height=\"72\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><g fill=\"#555DDE\" fill-rule=\"evenodd\"><circle opacity=\".1\" cx=\"36\" cy=\"36\" r=\"36\"\/><path d=\"M47.55 27c-2.52 0-4.9.937-6.597 2.56L36 33.757 33.34 36h.017l-4.707 3.998c-1.12 1.07-2.607 1.656-4.2 1.656-3.273 0-5.933-2.526-5.933-5.654s2.66-5.654 5.933-5.654c1.593 0 3.08.585 4.27 1.723l1.978 1.673L33.34 31.5l-2.205-1.857C29.35 27.937 26.97 27 24.45 27 19.235 27 15 31.048 15 36s4.235 9 9.45 9c2.52 0 4.9-.937 6.598-2.56L36 38.259l.017.017L38.66 36h-.017l4.707-3.998c1.12-1.07 2.608-1.656 4.2-1.656 3.273 0 5.933 2.526 5.933 5.654s-2.66 5.654-5.933 5.654a6.119 6.119 0 01-4.27-1.723l-1.995-1.69-2.642 2.242 2.222 1.874c1.785 1.69 4.148 2.626 6.685 2.626 5.215 0 9.45-4.031 9.45-9C57 31.015 52.765 27 47.55 27z\" fill-rule=\"nonzero\"><\/path><\/g><\/svg>","heading":"Minimal Design","tag":"","text":"Nam libero tempore, cum soluta nobis est.","buttontext":"","buttonstyle":"primary","buttonfullwidth":"false","link":"page","linkpage":[],"linkurl":"","linktarget":"false","aligncontent":"center","alignblock":"left","width":"lg","background":[],"animation":[]},"id":"a281f1bf-0150-41cc-8cd5-42f0721e1b0b","isHidden":false,"type":"blurb"}],"id":"82123025-6bf7-405c-aea3-93cfff34f356","width":"1\/4"},{"blocks":[{"content":{"icontype":"svg","iconimage":[],"iconsvg":"<svg width=\"72\" height=\"72\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><g fill=\"#00BDD7\" fill-rule=\"evenodd\"><circle opacity=\".1\" cx=\"36\" cy=\"36\" r=\"36\"\/><path d=\"M22 47v4h28v-4H22zm9-8.4h10l1.8 4.4H47l-9.5-22h-3L25 43h4.2l1.8-4.4zm5-13.64L39.74 35h-7.48L36 24.96z\" fill-rule=\"nonzero\"><\/path><\/g><\/svg>","heading":"Rocket Fast","tag":"","text":"Nam libero tempore, cum soluta nobis est.","buttontext":"","buttonstyle":"primary","buttonfullwidth":"false","link":"page","linkpage":[],"linkurl":"","linktarget":"false","aligncontent":"center","alignblock":"left","width":"lg","background":[],"animation":[]},"id":"8edf6c02-48b2-4f09-8d45-3e1157b7f7f3","isHidden":false,"type":"blurb"}],"id":"a871a154-a865-498d-95cd-ddfb260fe9cf","width":"1\/4"},{"blocks":[{"content":{"icontype":"svg","iconimage":[],"iconsvg":"<svg width=\"72\" height=\"72\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><g fill=\"#CF5DDD\" fill-rule=\"evenodd\"><circle opacity=\".1\" cx=\"36\" cy=\"36\" r=\"36\"\/><path d=\"M30.46 34.76A7.83 7.83 0 0034 36.72l-5.26 13.64L26 53l-1-4zm11.08 0L47 49l-1 4-2.76-2.64L38 36.72a7.936 7.936 0 003.54-1.96zM38 19v4.36c2.32.84 4 3.04 4 5.64 0 3.32-2.68 6-6 6s-6-2.68-6-6c0-2.6 1.68-4.8 4-5.64V19h4zm-2 8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z\" fill-rule=\"nonzero\"><\/path><\/g><\/svg>","heading":"Modular Blocks","tag":"","text":"Nam libero tempore, cum soluta nobis est.","buttontext":"","buttonstyle":"primary","buttonfullwidth":"false","link":"page","linkpage":[],"linkurl":"","linktarget":"false","aligncontent":"center","alignblock":"left","width":"lg","background":[],"animation":[]},"id":"6501745f-8ce4-4c15-af39-b767cd048f75","isHidden":false,"type":"blurb"}],"id":"0c562bcf-4433-4714-81ff-87bbd082abdb","width":"1\/4"},{"blocks":[{"content":{"icontype":"svg","iconimage":[],"iconsvg":"<svg width=\"72\" height=\"72\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><g fill=\"#DD865D\" fill-rule=\"evenodd\"><circle opacity=\".1\" cx=\"36\" cy=\"36\" r=\"36\"\/><path d=\"M46.262 26.523L43.837 24 32.929 35.347l2.426 2.523 10.907-11.347zM53.557 24L35.355 42.935l-7.192-7.463-2.425 2.524L35.355 48 56 26.523 53.557 24zM16 37.996L25.617 48l2.426-2.523-9.6-10.005L16 37.996z\" fill-rule=\"nonzero\"><\/path><\/g><\/svg>","heading":"Customizable","tag":"","text":"Nam libero tempore, cum soluta nobis est.","buttontext":"","buttonstyle":"primary","buttonfullwidth":"false","link":"page","linkpage":[],"linkurl":"","linktarget":"false","aligncontent":"center","alignblock":"left","width":"lg","background":[],"animation":[]},"id":"619fd064-3444-486b-8209-52081b2d8076","isHidden":false,"type":"blurb"}],"id":"faa77a4f-6b80-47a3-84fe-6312d02ac53c","width":"1\/4"}],"id":"73b18203-58ab-411d-9fce-0e5608978e47"},{"attrs":{"alignvertical":"middle","gutter":"lg","onecolumn":"sm","paddingtop":"true","paddingbottom":"true","columnreverse":"true","visibility":"true","customid":"","customclass":"","background":[]},"columns":[{"blocks":[{"content":{"media":["file:\/\/C9SO6b7u4Yxx2DH5"],"actualsize":"false","border":"true","rounded":"true","shadow":"none","link":"page","linkpage":[],"linkurl":"","linktarget":"false","aligncontent":"left","alignblock":"left","width":"lg","animation":[]},"id":"3bbcfc34-337a-48e2-8ffa-ff0f13ae475e","isHidden":false,"type":"image"}],"id":"7ed0504f-6fda-45cf-a03f-2a13fd163f19","width":"1\/2"},{"blocks":[{"content":{"text":"Project tracking.","textfill":[],"level":"h3","fontsize":"h3","label":"","labelstyle":"default","labelposition":"top","aligncontent":"left","alignblock":"left","width":"lg","animation":[]},"id":"d6d78cd9-c824-4daa-911e-8b12719ee7e7","isHidden":false,"type":"heading"},{"content":{"text":"<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.<\/p>","aligncontent":"left","alignblock":"left","width":"lg","background":[],"animation":[]},"id":"eb067a8b-e9f9-4448-bdbb-4a2f8201bd7c","isHidden":false,"type":"text"},{"content":{"text":"Learn More","style":"secondary","fullwidth":"false","link":"page","linkpage":["page:\/\/q31omswxdbUpOzMN"],"linkurl":"","linktarget":"false","aligncontent":"left","alignblock":"left","width":"lg","animation":[]},"id":"2a96b90e-3d45-47ae-b551-0d36e7c9dc5c","isHidden":false,"type":"button"}],"id":"31281390-011b-45ad-89be-59463b47e7a1","width":"1\/2"}],"id":"81e7dd82-0332-4d33-9980-ad6c0998891c"},{"attrs":{"alignvertical":"middle","gutter":"lg","onecolumn":"sm","paddingtop":"true","paddingbottom":"true","columnreverse":"false","visibility":"true","customid":"","customclass":"","background":[]},"columns":[{"blocks":[{"content":{"text":"Tasks for teams.","textfill":[],"level":"h3","fontsize":"h3","label":"","labelstyle":"default","labelposition":"top","aligncontent":"left","alignblock":"left","width":"lg","animation":[]},"id":"b4c39501-078f-45d8-8be3-549faa562ea2","isHidden":false,"type":"heading"},{"content":{"text":"<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>","aligncontent":"left","alignblock":"left","width":"lg","background":[],"animation":[]},"id":"f76b2419-985f-41d5-b22b-8d97db18ee7d","isHidden":false,"type":"text"},{"content":{"text":"Learn More","style":"secondary","fullwidth":"false","link":"page","linkpage":["page:\/\/q31omswxdbUpOzMN"],"linkurl":"","linktarget":"false","aligncontent":"left","alignblock":"left","width":"lg","animation":[]},"id":"1c93c1fc-d3ad-46e4-b0ec-3395ec256625","isHidden":false,"type":"button"}],"id":"4f30a878-574a-4f77-a318-1b7614e5b069","width":"1\/2"},{"blocks":[{"content":{"media":["file:\/\/CQHV0bcQXypvrn2u"],"actualsize":"false","border":"true","rounded":"true","shadow":"none","link":"page","linkpage":[],"linkurl":"","linktarget":"false","aligncontent":"left","alignblock":"left","width":"lg","animation":[]},"id":"bc8d60a6-8263-47f2-821f-9e1d0bc9c136","isHidden":false,"type":"image"}],"id":"8c636857-d28a-455e-aafc-329041af9ba8","width":"1\/2"}],"id":"e6373dad-1eb2-4462-9992-9b3ff968ce4f"},{"attrs":{"alignvertical":"top","gutter":"lg","onecolumn":"sm","paddingtop":"true","paddingbottom":"true","columnreverse":"false","visibility":"true","customid":"","customclass":"","background":[]},"columns":[{"blocks":[{"content":{"text":"Over 20,000 paying customers.","textfill":[],"level":"h2","fontsize":"h2","label":"","labelstyle":"default","labelposition":"top","aligncontent":"center","alignblock":"center","width":"sm","animation":[]},"id":"40d1c1e0-43a2-4d15-a989-cb877c72f824","isHidden":false,"type":"heading"},{"content":{"text":"<p>Thousands of the most successful companies rely on our service.<\/p>","aligncontent":"center","alignblock":"center","width":"sm","background":[],"animation":[]},"id":"b0c7c447-c513-42c5-9f84-7921dbaebe84","isHidden":false,"type":"text"}],"id":"6bde98d7-d450-4bb3-b00d-a5d81edda1e2","width":"1\/1"}],"id":"a2fa6aa5-023d-478f-b3d2-af4b30b3e18b"},{"attrs":{"alignvertical":"top","gutter":"lg","onecolumn":"sm","paddingtop":"true","paddingbottom":"true","columnreverse":"false","visibility":"true","customid":"","customclass":"","background":[]},"columns":[{"blocks":[{"content":{"media":["file:\/\/8h3U8JgR4lPBHBFY"],"actualsize":"false","border":"false","rounded":"true","shadow":"none","link":"page","linkpage":[],"linkurl":"","linktarget":"false","aligncontent":"left","alignblock":"left","width":"lg","animation":[]},"id":"fee88115-233b-46a7-bff6-3b6074530d90","isHidden":false,"type":"image"}],"id":"faee35d0-f729-471a-b727-dd3c7d11a1b4","width":"1\/1"}],"id":"40421e0b-5f1b-454c-b090-71fcbd21e361"},{"attrs":{"alignvertical":"top","gutter":"lg","onecolumn":"sm","paddingtop":"true","paddingbottom":"true","columnreverse":"false","visibility":"true","customid":"","customclass":"","background":[]},"columns":[{"blocks":[{"content":{"text":"Start with a free trial.","textfill":[],"level":"h2","fontsize":"h2","label":"","labelstyle":"default","labelposition":"top","aligncontent":"center","alignblock":"center","width":"sm","animation":[]},"id":"fc9c6690-9ef1-4355-b2bc-3423b22d8cc1","isHidden":false,"type":"heading"},{"content":{"text":"<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.<\/p>","aligncontent":"center","alignblock":"center","width":"sm","background":[],"animation":[]},"id":"9bf1953e-c5e6-4e8b-93f4-849f176f21e7","isHidden":false,"type":"text"},{"content":{"text":"Get Started","style":"primary","fullwidth":"false","link":"page","linkpage":["page:\/\/q31omswxdbUpOzMN"],"linkurl":"","linktarget":"false","aligncontent":"center","alignblock":"center","width":"sm","animation":[]},"id":"c5efe50c-4e09-457d-bef0-f39d24036344","isHidden":false,"type":"button"}],"id":"7d3840e0-49a0-4c87-a031-06f139f41408","width":"1\/1"}],"id":"c6451f9e-7541-443f-b514-adfbfb62774f"},{"attrs":{"alignvertical":"top","gutter":"lg","onecolumn":"sm","paddingtop":"true","paddingbottom":"true","columnreverse":"false","visibility":"true","customid":"","customclass":"","background":[]},"columns":[{"blocks":[{"content":{"media":["file:\/\/VFUX2z2E9wGjC9LC","file:\/\/sNZmXU2eyYFdC47i","file:\/\/ETJtdmJgKY14NdFb"],"mediapositionhorizontal":"center","mediapositionvertical":"center","height":null,"border":"true","rounded":"true","shadow":"none","caption":"false","draggable":"true","autoplay":"false","autoplaytime":null,"thumbnails":"false","alignblock":"left","width":"lg","animation":[]},"id":"22677354-d2b3-4552-89ec-c085bbbb19dc","isHidden":false,"type":"slider"}],"id":"30439878-2bf1-4101-9362-75bca78245f1","width":"1\/1"}],"id":"1883f0b6-a4e4-4344-8db4-c9a626f944c3"},{"attrs":{"alignvertical":"top","gutter":"lg","onecolumn":"sm","paddingtop":"true","paddingbottom":"true","columnreverse":"false","visibility":"true","customid":"","customclass":"","background":[]},"columns":[{"blocks":[{"content":{"media":["file:\/\/mMSt7KIVKRA5ahrz"],"text":"\"Everything happening around me is very random. I love this app!\"","caption":"John Mayer, developer.","aligncontent":"left","alignblock":"center","width":"sm","background":[],"animation":[]},"id":"c86a2f8a-abea-48ff-8786-c9482fab94a2","isHidden":false,"type":"testimonial"}],"id":"28cf5de8-cd4b-491f-bc7d-177dd1b87a33","width":"1\/1"}],"id":"384a6cf3-fb7b-411f-8bdc-3a30d7701ce2"},{"attrs":{"alignvertical":"top","gutter":"lg","onecolumn":"sm","paddingtop":"true","paddingbottom":"true","columnreverse":"false","visibility":"true","customid":"","customclass":"","background":[{"type":"color","size":"full-width","brightness":"false","color":[],"gradient":[],"image":[],"svg":[{"code":"<svg width=\"1440\" height=\"900\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><defs><linearGradient x1=\"34.001%\" y1=\"25.001%\" x2=\"82%\" y2=\"100%\" id=\"a\"><stop stop-color=\"#00BDD7\" offset=\"0%\"\/><stop stop-color=\"#575BDE\" offset=\"100%\"\/><\/linearGradient><\/defs><path d=\"M1440 400c-23.948 86-66.667 172-128.155 258-61.489 86-152.104 166.667-271.845 242h400V400z\" fill=\"url(#a)\" transform=\"translate(0 1)\" fill-rule=\"evenodd\"><\/path><\/svg>","positionhorizontal":"right","positionvertical":"bottom"}],"border":"false","borderbottom":"false","bordertop":"false","shadow":"none"}]},"columns":[{"blocks":[{"content":{"text":"Latest blog posts.","textfill":[],"level":"h3","fontsize":"h3","label":"","labelstyle":"default","labelposition":"top","aligncontent":"center","alignblock":"center","width":"sm","animation":[]},"id":"22e9aa1f-f4b6-4131-932e-97c90d08f244","isHidden":false,"type":"heading"},{"content":{"text":"<p>Some of the latest articles from our team.<\/p>","aligncontent":"center","alignblock":"center","width":"sm","background":[],"animation":[]},"id":"b4167649-e8a1-4d15-8c50-851f28b08e37","isHidden":false,"type":"text"},{"content":[],"id":"75a2e598-2408-4c24-9092-457d2924abd7","isHidden":false,"type":"spacer"},{"content":{"source":"blog","postsperpage":4,"pagination":"false","sort":"date","layout":"grid","boxcolumns":"2","cardscolumns":"3","gridcolumns":"2","liststyle":"default","author":"false","datepublished":"true","media":"true","mediaborder":"false","mediarounded":"true","mediashadow":"none","mediafixedheight":"true","mediapositionhorizontal":"center","mediapositionvertical":"center","tags":"","readmore":"false","aligncontent":"left","alignblock":"center","width":"lg","animation":[]},"id":"d4d8eb1f-4d56-428b-a631-4187f97b955d","isHidden":false,"type":"posts"}],"id":"0f603b30-af27-4f46-ae65-b1722b674747","width":"1\/1"}],"id":"fe12fab2-34e1-4c35-b42c-8dbec0128469"}]
+
+----
+
+Heroheading: Design, develop and manage.
+
+----
+
+Heroheadingfontsize: h1
+
+----
+
+Heroheadingfill: 
+
+----
+
+Herotext: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+----
+
+Herobuttons:
+
+- 
+  text: Start Free Trial
+  style: primary
+  link: page
+  page:
+    - page://q31omswxdbUpOzMN
+  url: ""
+  target: 'false'
+
+----
+
+Heroblocks: [{"attrs":{"alignvertical":"top","gutter":"lg","onecolumn":"sm","paddingtop":"false","paddingbottom":"false","columnreverse":"false","visibility":"true","customid":"","customclass":""},"columns":[{"blocks":[{"content":{"media":["file:\/\/aRgERCw6d6QrJxQ9"],"actualsize":"false","border":"true","rounded":"true","shadow":"none","link":"page","linkpage":[],"linkurl":"","linktarget":"false","aligncontent":"left","alignblock":"left","width":"md","animation":[]},"id":"d5a5b23e-dfac-44e1-ac66-2bc3790ab239","isHidden":false,"type":"image"}],"id":"6b8d0cc8-9d3c-47be-81fc-ef7df03754ae","width":"1\/1"}],"id":"b3cfa16a-9a8d-4cef-95f0-ed3143202f11"}]
+
+----
+
+Herobackground:
+
+- 
+  type: color
+  size: full-width
+  brightness: 'false'
+  color: [ ]
+  gradient: [ ]
+  image: [ ]
+  svg:
+    - 
+      code: '<svg width="1440" height="900" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="41.368%" y1="25.001%" x2="67.266%" y2="100%" id="a"><stop stop-color="#00BDD7" offset="0%"/><stop stop-color="#575BDE" offset="100%"/></linearGradient></defs><path d="M1440 0l-271 35c-271 35-331.032 295-167.652 475S1440 900 1440 900V0z" fill="url(#a)" fill-rule="evenodd"/></svg>'
+      positionhorizontal: right
+      positionvertical: bottom
+  border: 'false'
+  borderbottom: 'false'
+  shadow: none
+
+----
+
+Herocolumns: 2
+
+----
+
+Herocolumnwidth: right
+
+----
+
+Heroalign: center--md
+
+----
+
+Herowidth: lg
+
+----
+
+Heropaddingbottom: true
+
+----
+
+Herovisibility: true
+
+----
+
+Background: 
+
+----
+
+Date: 2020-04-28
+
+----
+
+Cover: 
+
+----
+
+Customcss: 
+
+----
+
+Codeheader: 
+
+----
+
+Codefooter: 
+
+----
+
+Uuid: kvAzxo87fFqLv87M
