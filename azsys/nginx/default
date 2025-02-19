@@ -4,8 +4,8 @@ server {
     listen 8080;
     listen [::]:8080;
     root /home/site/wwwroot;
-    index  index.php index.html index.htm;
-    server_name  example.com www.example.com; 
+    index  index.php index.html;
+    server_name  ch-unibe-id-kcms-prod-develop-hcdueubfdnhwh7cn.switzerlandnorth-01.azurewebsites.net; 
     port_in_redirect off;
 
     access_log  /var/log/nginx/access.log;
@@ -15,30 +15,12 @@ server {
     default_type text/plain;
     add_header X-Content-Type-Options nosniff;
 
-    # Don't hint these as folders
-    rewrite ^/(content|site|kirby)$ /error last;
-
-    # Block content
-    rewrite ^/content/(.*).(txt|md|mdown)$ /error last;
-
-    # Block all files in the site and kirby folder from being accessed directly
-    rewrite ^/(site|kirby)/(.*)$ /error last;
-
-    # Panel links
-    location /panel {
-        autoindex off;
-        try_files $uri $uri/ /panel/index.php?$query_string;
-    }
-
     # Site links
-
-    # rewrite ^/(content|site|kirby)/(.*)$ /error last;
-    # rewrite ^/\.(?!well-known/) /error last;
-    # rewrite ^/(?!app\.webmanifest)[^/]+$ /index.php last;
+    rewrite ^/(content|site|kirby)/(.*)$ /error last;
+    rewrite ^/\.(?!well-known/) /error last;
+    rewrite ^/(?!app\.webmanifest)[^/]+$ /index.php last;
 
     location / {
-        #try_files $uri $uri/ /index.php$is_args$args;
-        autoindex off;
         try_files $uri $uri/ /index.php?$query_string; #$uri&$args;
     }
     ##

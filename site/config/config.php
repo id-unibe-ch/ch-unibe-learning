@@ -11,6 +11,7 @@ return [
 
   'panel' => true,
   'panel' => [
+      'install' => true,
     'css' => 'assets/build/css/panel.min.css'
   ],
 
