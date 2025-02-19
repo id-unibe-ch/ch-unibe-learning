@@ -6,8 +6,10 @@ function commaToDot($num) {
 }
 
 return [
+    'url' => getenv('KIRBY_URL'),
   'languages' => true,
 
+  'panel' => true,
   'panel' => [
     'css' => 'assets/build/css/panel.min.css'
   ],

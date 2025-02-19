@@ -4,6 +4,10 @@
 Icon
 .DS_Store
 
+# Visual Studio
+# ------------
+.vs/*
+
 # Temporary files
 # ---------------
 
