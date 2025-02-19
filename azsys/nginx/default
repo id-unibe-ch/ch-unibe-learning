@@ -45,6 +45,7 @@ server {
 
     # Add locations of phpmyadmin here.
     location ~* [^/]\.php(/|$) {
+        try_files $uri =404;
         fastcgi_split_path_info ^(.+?\.[Pp][Hh][Pp])(|/.*)$;
         fastcgi_pass 127.0.0.1:9000;
         include fastcgi_params;
