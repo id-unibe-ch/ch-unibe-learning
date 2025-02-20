@@ -6,9 +6,21 @@ function commaToDot($num) {
 }
 
 return [
-    'url' => getenv('KIRBY_URL'),
+  'debug' => false,
+  'url' => getenv('KIRBY_URL'),
+  'yaml.handler' => 'symfony', // already makes use of the more modern Symfony YAML parser: https://getkirby.com/docs/reference/system/options/yaml (will become the default in a future Kirby version)
+  
   'languages' => true,
-
+  'languages' => [
+      'detect' => true
+  ],
+  'content' => [
+    'extension' => 'txt'
+  ],
+  'markdown' => [
+    'extra' => true,
+    'breaks' => true
+  ],
   'panel' => true,
   'panel' => [
       'install' => true,
@@ -20,6 +32,60 @@ return [
         'tfk/*'  => false
     ]
   ],
+
+  'thathoff' => [
+        'oauth' => [
+            'providers' => [
+                'azure' => [
+                    'name'                   => 'University of Bern', // The name is optional
+                    'icon'                   => 'account',  // Pick any default Kirby icon for the login button (optional)
+                    'class'                  => "TheNetworg\OAuth2\Client\Provider\Azure",
+                    'tenant'                 => getenv('KIRBY_OIDC_TENANT_ID'),
+                    'clientId'               => getenv('KIRBY_OIDC_CLIENT_ID'),
+                    'clientSecret'           => getenv('KIRBY_OIDC_CLIENT_SECRET'),
+                    'redirectUri'            => getenv('KIRBY_OIDC_REDIRECT_URI'),
+                    //Optional using key pair instead of secret
+                    //'clientCertificatePrivateKey' => '{azure-client-certificate-private-key}',
+                    //Optional using key pair instead of secret
+                    //'clientCertificateThumbprint' => '{azure-client-certificate-thumbprint}',
+                    //Optional
+                    'scopes'            => ['openid email profile User.Read'],
+                    //Optional
+                    'defaultEndPointVersion' => '2.0'
+                ],
+                // 'custom' => [
+                //     // this one uses \League\OAuth2\Client\Provider\GenericProvider automatically
+                //     'name'                    => 'DIRECT TEST', // The name is optional
+                //     'clientId'                => getenv('KIRBY_OIDC_CLIENT_ID'),    // The client ID assigned to you by the provider
+                //     'clientSecret'            => getenv('KIRBY_OIDC_CLIENT_SECRET'),   // The client password assigned to you by the provider
+                //     'redirectUri'             => getenv('KIRBY_OIDC_REDIRECT_URI'),
+                //     'urlAuthorize'            => getenv('KIRBY_OIDC_URL_AUTHORIZE'),
+                //     'urlAccessToken'          => getenv('KIRBY_OIDC_URL_ACCESS_TOKEN'),
+                //     'urlResourceOwnerDetails' => getenv('KIRBY_OIDC_URL_RESOURCE_OWNER_DETAILS'),
+                //     'icon'                    => 'account',  // Pick any default Kirby icon for the login button (optional)
+                //     'scope'                   => 'openid email profile User.Read'  //specify the scope passed form the OIDC provider to kirby
+                // ],
+            ],
+            // Only allow logins for existing kirby users (don’t create new users)
+            'onlyExistingUsers' => false,
+            // Set the default role of newly created users.
+            'defaultRole' => 'nobody',
+            // Allow every valid user of all OAuth providers to login.
+            // For details see “Configure Allowed Users” below.
+            // DANGEROUS: Make sure you know what you’re doing when setting this to true!
+            'allowEveryone' => false,
+            // List of E-mail domains which are allowed to login
+            'domainWhitelist' => [
+                'unibe.ch'
+            ],
+            // List of E-mail addresses which are allowed to login
+            'emailWhitelist' => [
+                // For details see “Configure Allowed Users” below.
+            ],
+            // Remove the standard Kirby login form and only display OAuth options.
+            'onlyOauth' => true
+        ],
+    ],
 
   'routes' => [
     [
@@ -400,5 +466,13 @@ return [
         }
       }
     }
-  ]
-];
+  ],
+
+  'ready' => function ($kirbyLicense) {
+    $license_file = $kirbyLicense->root('license');
+    $license = getenv('KIRBY_LICENSE');
+
+    if ($license && !F::exists($license_file)) {
+        F::write($license_file, $license);
+    }
+  }
