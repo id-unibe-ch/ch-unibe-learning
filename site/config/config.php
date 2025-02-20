@@ -476,3 +476,4 @@ return [
         F::write($license_file, $license);
     }
   }
+];
