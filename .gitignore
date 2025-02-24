@@ -4,6 +4,10 @@
 Icon
 .DS_Store
 
+# Visual Studio
+# ------------
+.vs/*
+
 # Temporary files
 # ---------------
 
@@ -48,4 +52,3 @@ Icon
 # ---------------
 
 /site/config/.license
-/site/config/config.starterkit.test.php
