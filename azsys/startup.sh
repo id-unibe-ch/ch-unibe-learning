@@ -1,12 +1,12 @@
 # Check if Git is installed and install if not  
-if ! command -v git &> /dev/null  
-then  
-    echo "Git could not be found. Attempting to install Git..."  
-    apt-get update  
-    apt-get install git -y  
-else  
-    echo "Git is already installed."  
-fi 
+# if ! command -v git &> /dev/null  
+# then  
+#     echo "Git could not be found. Attempting to install Git..."  
+#     apt-get update  
+#     apt-get install git -y  
+# else  
+#     echo "Git is already installed."  
+# fi 
 # Rest off your web app congig
 # echo "Installing requirements.txt"
 
