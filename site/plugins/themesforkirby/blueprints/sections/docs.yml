@@ -1,0 +1,6 @@
+empty: No pages yet
+headline: Documentations
+info: "{{ page.date.toDate('M d, Y') }}"
+template:
+  - default
+type: pages
