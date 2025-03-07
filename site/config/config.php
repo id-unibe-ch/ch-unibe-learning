@@ -15,6 +15,9 @@ return [
   'languages' => [
     'detect' => true
   ],
+  'content' => [
+    'extension' => 'md'
+  ],
   'markdown' => [
     'extra' => true,
     'breaks' => true
