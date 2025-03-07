@@ -1,0 +1,119 @@
+title: Tutorials
+
+options:
+  changeSlug:
+    admin: true
+    author: false
+    editor: true
+  changeStatus:
+    admin: true
+    author: false
+    editor: true
+  changeTitle:
+    admin: true
+    author: false
+    editor: true
+  create:
+    admin: true
+    author: false
+    editor: true
+  delete:
+    admin: true
+    author: false
+    editor: true
+  duplicate:
+    admin: true
+    author: false
+    editor: true
+  update:
+    admin: true
+    author: false
+    editor: true
+
+status:
+  draft:
+    label: Draft
+    text: The page is in draft mode and only visible for logged in editors.
+  unlisted:
+    label: Unlisted
+    text: The page is public and accessible via URL.
+  listed:
+    label: Listed
+    text: The page is public and added to the main menu.
+
+tabs:
+
+  tutorials:
+    columns:
+
+      - width: 1/3
+        sections:
+          drafts:
+            extends: sections/tutorials
+            headline: Drafts
+            image: page.cover.toFile
+            status: draft
+          unlisted:
+            extends: sections/tutorials
+            headline: Unlisted
+            image: page.cover.toFile
+            status: unlisted
+
+      - width: 2/3
+        sections:
+          listed:
+            extends: sections/tutorials
+            headline: Published
+            image: page.cover.toFile
+            status: listed
+
+  content:
+    fields:
+      blocks: fields/layout
+
+  hero:
+    fields:
+      hero: fields/hero
+
+  settings:
+    sections:
+      content:
+        type: fields
+        fields:
+          background: fields/background-fill
+          date:
+            default: now
+            label: Published
+            translate: false
+            type: date
+          cover: fields/cover
+      files:
+        headline: Files
+        type: files
+
+  advanced:
+    fields:
+      customCss:
+        buttons: false
+        help: Add your own CSS code here to customize the appearance and layout of this page.
+        label: Custom CSS
+        size: medium
+        spellcheck: false
+        translate: false
+        type: textarea
+      codeHeader:
+        buttons: false
+        help: Add custom scripts to the header of this page.
+        label: Custom header code
+        size: medium
+        spellcheck: false
+        translate: false
+        type: textarea
+      codeFooter:
+        buttons: false
+        help: Add custom scripts to the footer of this page.
+        label: Custom footer code
+        size: medium
+        spellcheck: false
+        translate: false
+        type: textarea

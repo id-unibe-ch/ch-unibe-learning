@@ -3,4 +3,5 @@ headline: Documentations
 info: "{{ page.date.toDate('M d, Y') }}"
 template:
   - default
+  - docs
 type: pages

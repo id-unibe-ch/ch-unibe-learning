@@ -1,0 +1,7 @@
+empty: No pages yet
+headline: Tutorials
+info: "{{ page.date.toDate('M d, Y') }}"
+template:
+  - default
+  - tutorials
+type: pages
