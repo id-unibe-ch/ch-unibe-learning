@@ -14,6 +14,8 @@ tabs:
             template:
               - default
               - posts
+              - docs
+              - tutorials
               - products
             type: pages
           unlisted:
