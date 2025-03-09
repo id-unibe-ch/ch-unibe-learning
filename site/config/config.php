@@ -28,6 +28,8 @@ return [
     'css' => 'assets/build/css/panel.min.css'
   ],
 
+  'unibe.toc.headlines' => ['h2', 'h3', 'h4'],
+
   'updates' => [
     'plugins' => [
       'tfk/*'  => false
