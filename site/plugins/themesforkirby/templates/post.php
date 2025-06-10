@@ -73,7 +73,7 @@
       </div>
 
       <?php if (($page->parent()->postMedia()->bool() || $page->parent()->postMedia()->isEmpty()) && $cover = $page->cover()->toFile()): ?>
-        <div class="<?php if ($page->parent()->postMediaBorder()->bool()): ?>border border-img <?php endif ?>max-width-lg rounded space-bottom-3x">
+        <div class="<?php if ($page->parent()->postMediaBorder()->bool()): ?>border border-img <?php endif ?>max-width-sm rounded space-bottom-3x">
           <img class="full-width" loading="lazy" src="<?= $cover->url() ?>"<?php if ($cover->extension() !== 'svg'): ?> srcset="<?= $cover->srcset() ?>"<?php endif ?> width="<?= $cover->width() ?>" height="<?= $cover->height() ?>" alt="<?= $page->title() ?>">
         </div>
       <?php endif ?>
