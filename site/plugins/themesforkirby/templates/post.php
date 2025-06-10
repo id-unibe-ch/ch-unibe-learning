@@ -79,7 +79,7 @@
       <?php endif ?>
 
       <?php if ($page->blocks()->toBlocks()->first()): ?>
-        <div class="blocks max-width-lg paragraph-2x">
+        <div class="blocks max-width-lg paragraph">
 
           <?php $numBlock = 0; foreach ($page->blocks()->toBlocks() as $block): $numBlock = ++$numBlock; ?>
 
