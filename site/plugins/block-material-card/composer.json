@@ -1,0 +1,26 @@
+{
+    "name": "custom/kirby-material-card-block",
+    "description": "Material Design 3 Card Block for Kirby CMS",
+    "version": "1.0.0",
+    "type": "kirby-plugin",
+    "keywords": [
+        "kirby",
+        "kirby-cms",
+        "block",
+        "material-design",
+        "material-3",
+        "card"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Custom Developer"
+        }
+    ],
+    "require": {
+        "getkirby/cms": "^4.0"
+    },
+    "extra": {
+        "kirby": "^4.0"
+    }
+}
