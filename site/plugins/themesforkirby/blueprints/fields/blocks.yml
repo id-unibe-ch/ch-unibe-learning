@@ -12,6 +12,11 @@ fields:
           text: blocks/text
           button: blocks/button
           image: blocks/image
+      unibe:
+        label: UniBE
+        type: group
+        fieldsets:
+          materialcard: blocks/material-card
       text:
         label: Text
         type: group
