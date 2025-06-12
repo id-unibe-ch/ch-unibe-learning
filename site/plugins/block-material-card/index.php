@@ -1,6 +1,5 @@
 <?php
-
-Kirby::plugin('custom/block-material-card', [
+Kirby::plugin('unibe/block-material-card', [
   'blueprints' => [
     'blocks/material-card' => __DIR__ . '/blueprints/material-card.yml'
   ],

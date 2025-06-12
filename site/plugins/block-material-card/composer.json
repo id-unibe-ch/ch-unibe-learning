@@ -1,5 +1,5 @@
 {
-    "name": "custom/block-material-card",
+    "name": "unibe/block-material-card",
     "description": "Material Design 3 Card Block for Kirby CMS",
     "version": "1.0.0",
     "type": "kirby-plugin",
@@ -14,7 +14,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Custom Developer"
+            "name": "Michael Pfister"
         }
     ],
     "require": {
