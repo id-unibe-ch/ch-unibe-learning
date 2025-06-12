@@ -1,5 +1,5 @@
 {
-    "name": "custom/kirby-material-card-block",
+    "name": "custom/block-material-card",
     "description": "Material Design 3 Card Block for Kirby CMS",
     "version": "1.0.0",
     "type": "kirby-plugin",
