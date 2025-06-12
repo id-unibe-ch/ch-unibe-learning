@@ -24,6 +24,7 @@ fields:
         type: group
         fieldsets:
           materialcard: blocks/material-card
+          test: blocks/test
       text:
         label: Text
         type: group
