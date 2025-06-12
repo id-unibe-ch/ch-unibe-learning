@@ -23,7 +23,7 @@ fields:
         label: UniBE
         type: group
         fieldsets:
-          materialcard: blocks/material-card
+          materialcard: blocks/materialcard
           test: blocks/test
       text:
         label: Text

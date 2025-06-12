@@ -1,6 +1,6 @@
 icon: cards
 name: Material Card
-preview: material-card
+preview: materialcard
 wysiwyg: true
 fields:
   cardType:
