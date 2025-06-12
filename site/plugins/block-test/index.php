@@ -1,11 +1,11 @@
 <?php
 Kirby::plugin('unibe/block-test', [
   'blueprints' => [
-    'blocks/test' => __DIR__ . '/blueprints/testblock.yml',
+    'blocks/test' => __DIR__ . '/blueprints/test.yml',
     // more blueprints
   ],
   'snippets' => [
-    'blocks/test' => __DIR__ . '/snippets/testblock.php',
+    'blocks/test' => __DIR__ . '/snippets/test.php',
     // more snippets
   ]
 //   'translations' => [
