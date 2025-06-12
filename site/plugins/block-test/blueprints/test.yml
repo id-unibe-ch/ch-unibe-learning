@@ -1,7 +1,5 @@
 name: Test
 icon: box
-preview: test
-wysiwyg: true
 fields:
   boxType:
     label: Box Type
