@@ -574,7 +574,7 @@ tabs:
           fontBodyFamily:
             help: Use the rules to specify font families.
             label: Body font family
-            placeholder: "Lato", Helvetica, sans-serif
+            placeholder: '"Lato", Helvetica, sans-serif'
             spellcheck: false
             translate: false
             type: text
@@ -612,7 +612,7 @@ tabs:
           fontHeaderFamily:
             help: Use the rules to specify font families.
             label: Header font family
-            placeholder: "Lato", Helvetica, sans-serif
+            placeholder: '"Lato", Helvetica, sans-serif'
             spellcheck: false
             translate: false
             type: text
