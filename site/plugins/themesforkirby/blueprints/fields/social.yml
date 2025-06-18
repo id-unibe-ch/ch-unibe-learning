@@ -23,7 +23,7 @@ fields:
       youtube: YouTube
     type: select
   username:
-    before: @
+    before: "@"
     label: Username
     spellcheck: false
     type: text

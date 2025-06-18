@@ -9,7 +9,7 @@ function commaToDot($num)
 return [
   'debug' => false,
   'url' => getenv('KIRBY_URL'),
-  // 'yaml.handler' => 'symfony', // already makes use of the more modern Symfony YAML parser: https://getkirby.com/docs/reference/system/options/yaml (will become the default in a future Kirby version)
+  'yaml.handler' => 'symfony', // Enable the more modern Symfony YAML parser: https://getkirby.com/docs/reference/system/options/yaml (will become the default in a future Kirby version)
 
   'languages' => true,
   'languages' => [
