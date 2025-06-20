@@ -13,11 +13,32 @@ Kirby::plugin('unibe/github-docs', [
     ],    'templates' => [
         'github-docs' => __DIR__ . '/templates/github-docs.php',
         'github-doc-page' => __DIR__ . '/templates/github-doc-page-debug.php',
-        'github-api-test' => __DIR__ . '/templates/github-api-test.php'
+        'github-api-test' => __DIR__ . '/templates/github-api-test.php',
+        'plugin-test' => __DIR__ . '/templates/plugin-test.php'
     ],
     'snippets' => [
         'mermaid-renderer' => __DIR__ . '/snippets/mermaid-renderer.php'
     ],    'routes' => [
+        [
+            'pattern' => 'plugin-test',
+            'action' => function () {
+                $testPage = new \Kirby\Cms\Page([
+                    'slug' => 'plugin-test',
+                    'template' => 'plugin-test',
+                    'content' => [
+                        'title' => 'Plugin Test'
+                    ]
+                ]);
+                
+                return site()->visit($testPage);
+            }
+        ],
+        [
+            'pattern' => 'simple-test',
+            'action' => function () {
+                return new \Kirby\Http\Response('<h1>Simple Route Test</h1><p>If you see this, the routing is working!</p>', 'text/html');
+            }
+        ],
         [
             'pattern' => '([^/]+)/github-docs/([^/]+)',
             'action' => function ($parentSlug, $docPath) {
@@ -27,19 +48,19 @@ Kirby::plugin('unibe/github-docs', [
                 
                 if (!$parent) {
                     error_log("GitHub Docs Route: Parent page not found");
-                    return false;
+                    return new \Kirby\Http\Response('<h1>Error</h1><p>Parent page not found: ' . htmlspecialchars($parentSlug) . '</p>', 'text/html');
                 }
                 
                 if ($parent->intendedTemplate() !== 'github-docs') {
                     error_log("GitHub Docs Route: Parent is not github-docs template");
-                    return false;
+                    return new \Kirby\Http\Response('<h1>Error</h1><p>Parent page is not github-docs template. Found: ' . htmlspecialchars($parent->intendedTemplate()) . '</p>', 'text/html');
                 }
                 
                 $virtualPage = createGithubDocPage($parent, $docPath);
                 
                 if (!$virtualPage) {
                     error_log("GitHub Docs Route: Failed to create virtual page");
-                    return false;
+                    return new \Kirby\Http\Response('<h1>Error</h1><p>Failed to create virtual page for: ' . htmlspecialchars($docPath) . '</p>', 'text/html');
                 }
                 
                 error_log("GitHub Docs Route: Success, visiting virtual page");
@@ -52,7 +73,7 @@ Kirby::plugin('unibe/github-docs', [
                 $parent = site()->find($parentSlug);
                 
                 if (!$parent || $parent->intendedTemplate() !== 'github-docs') {
-                    return false;
+                    return new \Kirby\Http\Response('<h1>Error</h1><p>Parent page not found or not github-docs template</p>', 'text/html');
                 }
                 
                 // Create a simple test page
