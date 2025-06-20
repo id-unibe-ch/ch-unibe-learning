@@ -1,4 +1,4 @@
-title: Documentations
+title: GitHub Documentations
 
 options:
   changeSlug:
@@ -49,12 +49,12 @@ tabs:
       - width: 1/3
         sections:
           drafts:
-            extends: sections/docs
+            extends: sections/github-docs
             headline: Drafts
             image: page.cover.toFile
             status: draft
           unlisted:
-            extends: sections/docs
+            extends: sections/github-docs
             headline: Unlisted
             image: page.cover.toFile
             status: unlisted
@@ -62,7 +62,7 @@ tabs:
       - width: 2/3
         sections:
           listed:
-            extends: sections/docs
+            extends: sections/github-docs
             headline: Published
             image: page.cover.toFile
             status: listed

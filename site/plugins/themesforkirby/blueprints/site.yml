@@ -14,7 +14,7 @@ tabs:
             template:
               - default
               - posts
-              - docs
+              - github-docs
               - tutorials
               - products
             type: pages
