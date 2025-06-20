@@ -12,7 +12,8 @@ Kirby::plugin('unibe/github-docs', [
         'pages/github-doc-page' => __DIR__ . '/blueprints/github-doc-page.yml'
     ],    'templates' => [
         'github-docs' => __DIR__ . '/templates/github-docs.php',
-        'github-doc-page' => __DIR__ . '/templates/github-doc-page-debug.php'
+        'github-doc-page' => __DIR__ . '/templates/github-doc-page-debug.php',
+        'github-api-test' => __DIR__ . '/templates/github-api-test.php'
     ],
     'snippets' => [
         'mermaid-renderer' => __DIR__ . '/snippets/mermaid-renderer.php'
@@ -20,19 +21,51 @@ Kirby::plugin('unibe/github-docs', [
         [
             'pattern' => '([^/]+)/github-docs/([^/]+)',
             'action' => function ($parentSlug, $docPath) {
+                error_log("GitHub Docs Route: Parent=$parentSlug, Doc=$docPath");
+                
                 $parent = site()->find($parentSlug);
                 
-                if (!$parent || $parent->intendedTemplate() !== 'github-docs') {
+                if (!$parent) {
+                    error_log("GitHub Docs Route: Parent page not found");
+                    return false;
+                }
+                
+                if ($parent->intendedTemplate() !== 'github-docs') {
+                    error_log("GitHub Docs Route: Parent is not github-docs template");
                     return false;
                 }
                 
                 $virtualPage = createGithubDocPage($parent, $docPath);
                 
                 if (!$virtualPage) {
+                    error_log("GitHub Docs Route: Failed to create virtual page");
                     return false;
                 }
                 
+                error_log("GitHub Docs Route: Success, visiting virtual page");
                 return site()->visit($virtualPage);
+            }
+        ],
+        [
+            'pattern' => '([^/]+)/github-api-test',
+            'action' => function ($parentSlug) {
+                $parent = site()->find($parentSlug);
+                
+                if (!$parent || $parent->intendedTemplate() !== 'github-docs') {
+                    return false;
+                }
+                
+                // Create a simple test page
+                $testPage = new \Kirby\Cms\Page([
+                    'slug' => 'github-api-test',
+                    'template' => 'github-api-test',
+                    'parent' => $parent,
+                    'content' => [
+                        'title' => 'GitHub API Test'
+                    ]
+                ]);
+                
+                return site()->visit($testPage);
             }
         ]
     ],
@@ -53,6 +86,7 @@ function createGithubDocPage($parent, $docPath) {
     $token = $parent->github_api_token()->value();
     
     if (empty($repoUrl)) {
+        error_log("GitHub Docs: No repository URL configured");
         return null;
     }
     
@@ -65,10 +99,54 @@ function createGithubDocPage($parent, $docPath) {
             $filePath .= '.md';
         }
         
-        // Create virtual page using the factory
-        return GitHubDocPageFactory::create($parent, $filePath, $client);
+        error_log("GitHub Docs: Attempting to create page for " . $filePath);
+        
+        // Try to get file content directly first
+        $fileData = $client->getFileContent($filePath);
+        
+        if (!$fileData) {
+            error_log("GitHub Docs: File not found at " . $filePath);
+            
+            // Try to find the file in markdown files list
+            $markdownFiles = $client->getMarkdownFiles($docsPath);
+            foreach ($markdownFiles as $file) {
+                $fileSlug = Str::slug(str_replace('.md', '', basename($file['path'])));
+                if ($fileSlug === $docPath) {
+                    error_log("GitHub Docs: Found file via search: " . $file['path']);
+                    $fileData = $client->getFileContent($file['path']);
+                    $filePath = $file['path'];
+                    break;
+                }
+            }
+        }
+        
+        if (!$fileData) {
+            error_log("GitHub Docs: Still no file data found");
+            return null;
+        }
+        
+        // Create simple virtual page
+        $title = $client->extractTitle($fileData['content'], basename($filePath, '.md'));
+        $slug = Str::slug(basename($filePath, '.md'));
+        
+        $virtualPage = new \Kirby\Cms\Page([
+            'slug' => $slug,
+            'template' => 'github-doc-page',
+            'parent' => $parent,
+            'content' => [
+                'title' => $title,
+                'markdown_content' => $fileData['content'],
+                'github_file_path' => $filePath,
+                'github_raw_url' => $fileData['download_url'],
+                'repo_info' => json_encode($client->getRepoInfo())
+            ]
+        ]);
+        
+        error_log("GitHub Docs: Virtual page created successfully");
+        return $virtualPage;
         
     } catch (Exception $e) {
+        error_log("GitHub Docs: Exception creating page: " . $e->getMessage());
         return null;
     }
 }

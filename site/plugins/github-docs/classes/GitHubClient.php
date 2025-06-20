@@ -48,8 +48,7 @@ class GitHubClient {
             'branch' => $this->branch
         ];
     }
-    
-    /**
+      /**
      * Make API request to GitHub
      */
     protected function apiRequest($endpoint) {
@@ -61,25 +60,37 @@ class GitHubClient {
             return $this->cache[$cacheKey];
         }
         
-        $headers = [
-            'User-Agent' => 'Kirby-GitHub-Docs-Plugin'
+        $options = [
+            'headers' => [
+                'User-Agent' => 'Kirby-GitHub-Docs-Plugin',
+                'Accept' => 'application/vnd.github.v3+json'
+            ]
         ];
         
         if ($this->token) {
-            $headers['Authorization'] = 'token ' . $this->token;
+            $options['headers']['Authorization'] = 'Bearer ' . $this->token;
         }
         
         try {
-            $response = Remote::get($url, ['headers' => $headers]);
+            $response = Remote::get($url, $options);
+            
+            // Debug logging
+            error_log("GitHub API Request: " . $url);
+            error_log("Response code: " . $response->code());
             
             if ($response->code() === 200) {
                 $data = $response->json();
                 $this->cache[$cacheKey] = $data;
                 return $data;
+            } elseif ($response->code() === 404) {
+                error_log("GitHub API 404: " . $url);
+                return null;
+            } else {
+                error_log("GitHub API Error " . $response->code() . ": " . $response->content());
+                return null;
             }
-            
-            return null;
         } catch (Exception $e) {
+            error_log("GitHub API Exception: " . $e->getMessage());
             return null;
         }
     }
