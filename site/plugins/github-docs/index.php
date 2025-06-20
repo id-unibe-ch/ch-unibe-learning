@@ -10,10 +10,9 @@ Kirby::plugin('unibe/github-docs', [
     'blueprints' => [
         'pages/github-docs' => __DIR__ . '/blueprints/github-docs.yml',
         'pages/github-doc-page' => __DIR__ . '/blueprints/github-doc-page.yml'
-    ],
-    'templates' => [
+    ],    'templates' => [
         'github-docs' => __DIR__ . '/templates/github-docs.php',
-        'github-doc-page' => __DIR__ . '/templates/github-doc-page.php'
+        'github-doc-page' => __DIR__ . '/templates/github-doc-page-debug.php'
     ],
     'snippets' => [
         'mermaid-renderer' => __DIR__ . '/snippets/mermaid-renderer.php'
