@@ -1,7 +1,0 @@
-empty: No pages yet
-headline: GitHub Documentations
-info: "{{ page.date.toDate('M d, Y') }}"
-template:
-  - default
-  - github-docs
-type: pages
