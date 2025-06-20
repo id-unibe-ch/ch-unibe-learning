@@ -1,15 +1,15 @@
 title: GitHub Documentation Page
 
-icon: page
+icon: github
 
 options:
   changeSlug: false
-  changeStatus: false
+  changeStatus: true
   changeTemplate: false
   create: false
-  delete: false
+  delete: true
   duplicate: false
-  update: false
+  update: true
 
 tabs:
   content:
@@ -21,33 +21,37 @@ tabs:
           title:
             label: Title
             type: text
-            readonly: true
+            required: true
           
-          markdown_content:
+          text:
             label: Content
             type: textarea
-            readonly: true
-            buttons: false
             size: large
-            help: This content is automatically synced from GitHub
+            help: Markdown content synced from GitHub
           
-          github_info:
-            label: GitHub Information
-            type: info
-            text: |
-              **File Path:** {{ page.github_file_path }}
-              **Repository:** {{ page.parent.github_repo_url }}
-              **Branch:** {{ page.parent.github_branch }}
-              **Last Modified:** {{ page.last_modified }}
-
-  preview:
-    label: Preview
-    sections:
-      preview:
-        type: fields
-        fields:
-          rendered_content:
-            label: Rendered Content
+          github_path:
+            label: GitHub File Path
+            type: text
+            readonly: true
+            help: Path to the source file in the GitHub repository
+          
+          github_synced:
+            label: Synced from GitHub
+            type: toggle
+            readonly: true
+            default: true
+          
+          github_last_sync:
+            label: Last Sync
+            type: text
+            readonly: true
+            help: When this page was last synchronized from GitHub
+          
+          github_sha:
+            label: File SHA
+            type: text
+            readonly: true
+            help: GitHub file hash for change detection
             type: info
             text: |
               <div class="github-markdown-content">

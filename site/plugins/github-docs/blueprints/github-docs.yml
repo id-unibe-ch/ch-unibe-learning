@@ -84,11 +84,18 @@ tabs:
         sections:
           repository:
             type: fields
-            fields:
-              github_api_token:
+            fields:              github_api_token:
                 label: GitHub API Token (Optional)
                 type: text
                 help: Personal access token for private repositories or higher rate limits
+              
+              github_sync_interval:
+                label: Auto-sync Interval (hours)
+                type: number
+                default: 24
+                min: 1
+                max: 168
+                help: How often to automatically sync with GitHub (1-168 hours)
               
               include_images:
                 label: Include Images
@@ -128,11 +135,28 @@ tabs:
                 type: text
                 readonly: true
                 help: Current synchronization status
-              
-              total_pages:
+                total_pages:
                 label: Total Pages
                 type: number
                 readonly: true
+                help: Number of documentation pages currently synced
+          
+          sync_actions:
+            type: fields
+            fields:
+              sync_button:
+                label: Manual Sync
+                type: info
+                theme: positive
+                text: |
+                  Click to manually sync documentation from GitHub.
+                  This will create/update pages in the content folder.
+              
+              github_last_sync:
+                label: Last Sync Time
+                type: text
+                readonly: true
+                help: Timestamp of the last successful sync
                 help: Number of documentation pages found
               
               refresh:
