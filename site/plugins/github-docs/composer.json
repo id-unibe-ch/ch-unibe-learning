@@ -1,0 +1,36 @@
+{
+  "name": "unibe/kirby-github-docs",
+  "version": "1.0.0",
+  "description": "Display GitHub repository documentation as virtual pages in Kirby CMS",
+  "type": "kirby-plugin",
+  "keywords": [
+    "kirby",
+    "plugin", 
+    "github",
+    "documentation",
+    "markdown",
+    "virtual-content",
+    "mermaid"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "University of Bern",
+      "email": "support@unibe.ch"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "getkirby/cms": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "GitHubDocs\\": "classes/"
+    }
+  },
+  "extra": {
+    "kirby": {
+      "compatible": "^3.0.0"
+    }
+  }
+}

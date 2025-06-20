@@ -1,0 +1,56 @@
+title: GitHub Documentation Page
+
+icon: page
+
+options:
+  changeSlug: false
+  changeStatus: false
+  changeTemplate: false
+  create: false
+  delete: false
+  duplicate: false
+  update: false
+
+tabs:
+  content:
+    label: Content
+    sections:
+      content:
+        type: fields
+        fields:
+          title:
+            label: Title
+            type: text
+            readonly: true
+          
+          markdown_content:
+            label: Content
+            type: textarea
+            readonly: true
+            buttons: false
+            size: large
+            help: This content is automatically synced from GitHub
+          
+          github_info:
+            label: GitHub Information
+            type: info
+            text: |
+              **File Path:** {{ page.github_file_path }}
+              **Repository:** {{ page.parent.github_repo_url }}
+              **Branch:** {{ page.parent.github_branch }}
+              **Last Modified:** {{ page.last_modified }}
+
+  preview:
+    label: Preview
+    sections:
+      preview:
+        type: fields
+        fields:
+          rendered_content:
+            label: Rendered Content
+            type: info
+            text: |
+              <div class="github-markdown-content">
+                {{ page.markdown_content | kt | markdown }}
+              </div>
+            help: This is how the content will appear on the website

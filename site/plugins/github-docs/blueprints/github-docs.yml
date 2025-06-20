@@ -1,0 +1,141 @@
+title: GitHub Documentation
+
+icon: github
+
+status:
+  draft: Draft
+  unlisted: Unlisted
+  listed: Listed
+
+tabs:
+  content:
+    label: Content
+    columns:
+      - width: 2/3
+        sections:
+          content:
+            type: fields
+            fields:
+              title:
+                label: Title
+                type: text
+                required: true
+                help: The title of this documentation section
+              
+              github_repo_url:
+                label: GitHub Repository URL
+                type: url
+                required: true
+                help: The full GitHub repository URL (e.g., https://github.com/owner/repo)
+                placeholder: https://github.com/owner/repository
+              
+              github_branch:
+                label: Branch
+                type: text
+                default: main
+                help: The Git branch to read from
+                width: 1/2
+              
+              github_docs_path:
+                label: Documentation Path
+                type: text
+                default: docs
+                help: Path to documentation folder in the repository
+                width: 1/2
+              
+              description:
+                label: Description
+                type: textarea
+                help: Optional description of this documentation
+              
+              auto_update:
+                label: Auto Update
+                type: toggle
+                text: 
+                  - "Manual"
+                  - "Automatic"
+                default: true
+                help: Automatically fetch latest documentation from GitHub
+                width: 1/2
+              
+              cache_duration:
+                label: Cache Duration (hours)
+                type: number
+                default: 24
+                help: How long to cache GitHub content (in hours)
+                width: 1/2
+
+      - width: 1/3
+        sections:
+          pages:
+            headline: Documentation Pages
+            type: pages
+            status: all
+            info: "{{ page.github_file_path }}"
+            image: 
+              query: false
+            empty: No documentation pages found
+            help: Virtual pages created from GitHub repository
+
+  github:
+    label: GitHub Settings
+    columns:
+      - width: 1/2
+        sections:
+          repository:
+            type: fields
+            fields:
+              github_api_token:
+                label: GitHub API Token (Optional)
+                type: text
+                help: Personal access token for private repositories or higher rate limits
+              
+              include_images:
+                label: Include Images
+                type: toggle
+                default: true
+                help: Download and include images from the repository
+              
+              mermaid_support:
+                label: Mermaid Diagrams
+                type: toggle  
+                default: true
+                help: Enable Mermaid diagram rendering
+              
+              github_theme:
+                label: GitHub Markdown Theme
+                type: select
+                options:
+                  github: GitHub
+                  github-dark: GitHub Dark
+                  default: Default
+                default: github
+                help: Theme for rendering GitHub flavored markdown
+
+      - width: 1/2
+        sections:
+          status:
+            type: fields
+            fields:
+              last_sync:
+                label: Last Sync
+                type: text
+                readonly: true
+                help: When documentation was last synchronized
+              
+              sync_status:
+                label: Sync Status
+                type: text
+                readonly: true
+                help: Current synchronization status
+              
+              total_pages:
+                label: Total Pages
+                type: number
+                readonly: true
+                help: Number of documentation pages found
+              
+              refresh:
+                label: Manual Refresh
+                type: info
+                text: Use the refresh button below to manually sync with GitHub

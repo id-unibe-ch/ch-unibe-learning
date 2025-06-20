@@ -1,0 +1,40 @@
+{
+  "name": "kirby-github-docs",
+  "version": "1.0.0",
+  "description": "A Kirby CMS plugin for displaying GitHub repository documentation as virtual pages",
+  "keywords": [
+    "kirby",
+    "cms",
+    "plugin",
+    "github",
+    "documentation",
+    "markdown",
+    "virtual-content",
+    "mermaid"
+  ],
+  "author": "University of Bern",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/kirby-github-docs"
+  },
+  "kirby": {
+    "compatible": "^3.0.0"
+  },
+  "require": {
+    "php": ">=7.4",
+    "getkirby/cms": "^3.0"
+  },
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "devDependencies": {},
+  "files": [
+    "index.php",
+    "blueprints/",
+    "templates/", 
+    "snippets/",
+    "classes/",
+    "README.md"
+  ]
+}
