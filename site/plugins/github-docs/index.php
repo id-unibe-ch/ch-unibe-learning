@@ -38,7 +38,7 @@ Kirby::plugin('unibe/github-docs', [
                 return new \Kirby\Http\Response('<h1>Simple Route Test</h1><p>If you see this, the routing is working!</p>', 'text/html');
             }
         ],        [
-            'pattern' => '([^/]+)/github-docs/([^/]+)',
+            'pattern' => '([^/]+)/github-docs/(.+)',
             'action' => function ($parentSlug, $docPath) {
                 $debugInfo = [];
                 $debugInfo[] = "GitHub Docs Route: Parent=$parentSlug, Doc=$docPath";
@@ -167,8 +167,7 @@ function createGithubDocPage($parent, $docPath) {
     try {
         $client = new GitHubClient($repoUrl, $branch, $token);
         $debugInfo[] = "GitHub client created successfully";
-        
-        // Build full file path
+          // Build full file path - first try direct path
         $filePath = $docsPath . '/' . $docPath;
         if (!Str::endsWith($filePath, '.md')) {
             $filePath .= '.md';
@@ -180,16 +179,26 @@ function createGithubDocPage($parent, $docPath) {
         $fileData = $client->getFileContent($filePath);
         
         if (!$fileData) {
-            $debugInfo[] = "GitHub Docs: File not found at " . $filePath . ", searching in file list";
+            $debugInfo[] = "GitHub Docs: File not found at " . $filePath . ", searching recursively";
             
-            // Try to find the file in markdown files list
+            // Extract just the filename from docPath for searching
+            $searchFilename = basename($docPath);
+            if (!Str::endsWith($searchFilename, '.md')) {
+                $searchFilename .= '.md';
+            }
+            
+            $debugInfo[] = "GitHub Docs: Searching for filename: " . $searchFilename;
+            
+            // Get all markdown files recursively
             $markdownFiles = $client->getMarkdownFiles($docsPath);
             $debugInfo[] = "GitHub Docs: Found " . count($markdownFiles) . " markdown files";
             
             foreach ($markdownFiles as $file) {
-                $fileSlug = Str::slug(str_replace('.md', '', basename($file['path'])));
-                if ($fileSlug === $docPath) {
-                    $debugInfo[] = "GitHub Docs: Found file via search: " . $file['path'];
+                $filename = basename($file['path']);
+                $debugInfo[] = "GitHub Docs: Checking file: " . $file['path'] . " (filename: $filename)";
+                
+                if ($filename === $searchFilename) {
+                    $debugInfo[] = "GitHub Docs: Found matching file: " . $file['path'];
                     $fileData = $client->getFileContent($file['path']);
                     $filePath = $file['path'];
                     break;
@@ -248,7 +257,22 @@ function githubDocsPages($parent) {
     
     try {
         $client = new GitHubClient($repoUrl, $branch, $token);
-        return GitHubDocPageFactory::createFromDirectory($parent, $docsPath, $client);
+        $markdownFiles = $client->getMarkdownFiles($docsPath);
+        
+        $pages = [];
+        foreach ($markdownFiles as $file) {
+            $filename = basename($file['path'], '.md');
+            $slug = Str::slug($filename);
+            
+            $pages[] = [
+                'slug' => $slug,
+                'title' => ucwords(str_replace(['-', '_'], ' ', $filename)),
+                'path' => $file['path'],
+                'url' => $parent->url() . '/github-docs/' . $slug
+            ];
+        }
+        
+        return $pages;
         
     } catch (Exception $e) {
         return [];
