@@ -3,7 +3,6 @@
 require_once __DIR__ . '/classes/GitHubClient.php';
 
 use GitHubDocs\GitHubClient;
-use GitHubDocs\GitHubDocPageFactory;
 use Kirby\Toolkit\Str;
 
 Kirby::plugin('unibe/github-docs', [
@@ -41,42 +40,51 @@ Kirby::plugin('unibe/github-docs', [
         ],        [
             'pattern' => '([^/]+)/github-docs/([^/]+)',
             'action' => function ($parentSlug, $docPath) {
-                error_log("GitHub Docs Route: Parent=$parentSlug, Doc=$docPath");
+                $debugInfo = [];
+                $debugInfo[] = "GitHub Docs Route: Parent=$parentSlug, Doc=$docPath";
                 
                 $parent = site()->find($parentSlug);
                 
                 if (!$parent) {
-                    error_log("GitHub Docs Route: Parent page not found");
-                    return new \Kirby\Http\Response('<h1>Error</h1><p>Parent page not found: ' . htmlspecialchars($parentSlug) . '</p>', 'text/html');
+                    $debugInfo[] = "GitHub Docs Route: Parent page not found";
+                    return new \Kirby\Http\Response('<h1>Error</h1><p>Parent page not found: ' . htmlspecialchars($parentSlug) . '</p>' . 
+                        '<pre>' . implode("\n", $debugInfo) . '</pre>', 'text/html');
                 }
                 
                 // Check if this page has the github-docs template
-                $parentTemplate = $parent->intendedTemplate();
-                error_log("GitHub Docs Route: Parent template = " . $parentTemplate);
+                $parentTemplate = trim($parent->intendedTemplate());
+                $debugInfo[] = "GitHub Docs Route: Parent template = '" . $parentTemplate . "'";
                 
                 if ($parentTemplate !== 'github-docs') {
+                    $debugInfo[] = "GitHub Docs Route: Template mismatch - expected 'github-docs', got '" . $parentTemplate . "'";
                     return new \Kirby\Http\Response('<h1>Debug Info</h1>
                         <p>Parent slug: ' . htmlspecialchars($parentSlug) . '</p>
                         <p>Parent title: ' . htmlspecialchars($parent->title()) . '</p>
-                        <p>Parent intended template: ' . htmlspecialchars($parentTemplate) . '</p>
-                        <p>Expected: github-docs</p>
-                        <p>Check your page setup in the admin panel.</p>', 'text/html');
+                        <p>Parent intended template: "' . htmlspecialchars($parentTemplate) . '"</p>
+                        <p>Expected: "github-docs"</p>
+                        <p>Template length: ' . strlen($parentTemplate) . '</p>
+                        <p>Expected length: ' . strlen('github-docs') . '</p>
+                        <pre>' . implode("\n", $debugInfo) . '</pre>', 'text/html');
                 }
+                
+                $debugInfo[] = "GitHub Docs Route: Template check passed, creating virtual page";
                 
                 try {
                     $virtualPage = createGithubDocPage($parent, $docPath);
                     
                     if (!$virtualPage) {
-                        error_log("GitHub Docs Route: Failed to create virtual page");
-                        return new \Kirby\Http\Response('<h1>Error</h1><p>Failed to create virtual page for: ' . htmlspecialchars($docPath) . '</p><p>Check the GitHub repository configuration.</p>', 'text/html');
+                        $debugInfo[] = "GitHub Docs Route: Failed to create virtual page";
+                        return new \Kirby\Http\Response('<h1>Error</h1><p>Failed to create virtual page for: ' . htmlspecialchars($docPath) . '</p><p>Check the GitHub repository configuration.</p>' . 
+                            '<pre>' . implode("\n", $debugInfo) . '</pre>', 'text/html');
                     }
                     
-                    error_log("GitHub Docs Route: Success, visiting virtual page");
+                    $debugInfo[] = "GitHub Docs Route: Success, visiting virtual page";
                     return site()->visit($virtualPage);
                     
                 } catch (Exception $e) {
-                    error_log("GitHub Docs Route: Exception: " . $e->getMessage());
-                    return new \Kirby\Http\Response('<h1>Error</h1><p>Exception creating page: ' . htmlspecialchars($e->getMessage()) . '</p>', 'text/html');
+                    $debugInfo[] = "GitHub Docs Route: Exception: " . $e->getMessage();
+                    return new \Kirby\Http\Response('<h1>Error</h1><p>Exception creating page: ' . htmlspecialchars($e->getMessage()) . '</p>' . 
+                        '<pre>' . implode("\n", $debugInfo) . '</pre>', 'text/html');
                 }
             }
         ],
@@ -97,9 +105,36 @@ Kirby::plugin('unibe/github-docs', [
                     'content' => [
                         'title' => 'GitHub API Test'
                     ]
+                ]);                
+                return site()->visit($testPage);
+            }
+        ],
+        [
+            'pattern' => 'github-docs-test/([^/]+)',
+            'action' => function ($docPath) {
+                // Create a mock parent page with GitHub configuration for testing
+                $mockParent = new \Kirby\Cms\Page([
+                    'slug' => 'github-docs-test',
+                    'template' => 'github-docs',
+                    'content' => [
+                        'title' => 'Test GitHub Docs',                        'github_repo_url' => 'https://github.com/microsoft/vscode',
+                        'github_branch' => 'main',
+                        'github_docs_path' => 'docs'
+                    ]
                 ]);
                 
-                return site()->visit($testPage);
+                try {
+                    $virtualPage = createGithubDocPage($mockParent, $docPath);
+                    
+                    if (!$virtualPage) {
+                        return new \Kirby\Http\Response('<h1>Error</h1><p>Failed to create virtual page for: ' . htmlspecialchars($docPath) . '</p><p>Check the error details above.</p>', 'text/html');
+                    }
+                    
+                    return site()->visit($virtualPage);
+                    
+                } catch (Exception $e) {
+                    return new \Kirby\Http\Response('<h1>Test Error</h1><p>Exception: ' . htmlspecialchars($e->getMessage()) . '</p>', 'text/html');
+                }
             }
         ]
     ],
@@ -114,23 +149,24 @@ Kirby::plugin('unibe/github-docs', [
  * Create a virtual GitHub documentation page
  */
 function createGithubDocPage($parent, $docPath) {
-    error_log("Creating GitHub doc page for: $docPath");
+    $debugInfo = [];
+    $debugInfo[] = "Creating GitHub doc page for: $docPath";
     
     $repoUrl = $parent->github_repo_url()->value();
     $branch = $parent->github_branch()->or('main')->value();
     $docsPath = $parent->github_docs_path()->or('docs')->value();
     $token = $parent->github_api_token()->value();
     
-    error_log("Repository config: URL=$repoUrl, Branch=$branch, DocsPath=$docsPath");
+    $debugInfo[] = "Repository config: URL=$repoUrl, Branch=$branch, DocsPath=$docsPath";
     
     if (empty($repoUrl)) {
-        error_log("GitHub Docs: No repository URL configured");
-        return null;
+        $debugInfo[] = "GitHub Docs: No repository URL configured";
+        throw new Exception("No repository URL configured. Debug: " . implode("; ", $debugInfo));
     }
     
     try {
         $client = new GitHubClient($repoUrl, $branch, $token);
-        error_log("GitHub client created successfully");
+        $debugInfo[] = "GitHub client created successfully";
         
         // Build full file path
         $filePath = $docsPath . '/' . $docPath;
@@ -138,22 +174,22 @@ function createGithubDocPage($parent, $docPath) {
             $filePath .= '.md';
         }
         
-        error_log("GitHub Docs: Attempting to fetch file: " . $filePath);
+        $debugInfo[] = "GitHub Docs: Attempting to fetch file: " . $filePath;
         
         // Try to get file content directly first
         $fileData = $client->getFileContent($filePath);
         
         if (!$fileData) {
-            error_log("GitHub Docs: File not found at " . $filePath . ", searching in file list");
+            $debugInfo[] = "GitHub Docs: File not found at " . $filePath . ", searching in file list";
             
             // Try to find the file in markdown files list
             $markdownFiles = $client->getMarkdownFiles($docsPath);
-            error_log("GitHub Docs: Found " . count($markdownFiles) . " markdown files");
+            $debugInfo[] = "GitHub Docs: Found " . count($markdownFiles) . " markdown files";
             
             foreach ($markdownFiles as $file) {
                 $fileSlug = Str::slug(str_replace('.md', '', basename($file['path'])));
                 if ($fileSlug === $docPath) {
-                    error_log("GitHub Docs: Found file via search: " . $file['path']);
+                    $debugInfo[] = "GitHub Docs: Found file via search: " . $file['path'];
                     $fileData = $client->getFileContent($file['path']);
                     $filePath = $file['path'];
                     break;
@@ -162,38 +198,38 @@ function createGithubDocPage($parent, $docPath) {
         }
         
         if (!$fileData) {
-            error_log("GitHub Docs: Still no file data found");
-            return null;
+            $debugInfo[] = "GitHub Docs: Still no file data found";
+            throw new Exception("File data not found. Debug: " . implode("; ", $debugInfo));
         }
         
-        error_log("GitHub Docs: File data retrieved successfully, size: " . strlen($fileData['content']));
+        $debugInfo[] = "GitHub Docs: File data retrieved successfully, size: " . strlen($fileData['content']);
         
         // Create simple virtual page
         $title = $client->extractTitle($fileData['content'], basename($filePath, '.md'));
         $slug = Str::slug(basename($filePath, '.md'));
         
-        error_log("GitHub Docs: Creating virtual page with title: $title, slug: $slug");
-        
-        $virtualPage = new \Kirby\Cms\Page([
+        $debugInfo[] = "GitHub Docs: Creating virtual page with title: $title, slug: $slug";
+          $virtualPage = new \Kirby\Cms\Page([
             'slug' => $slug,
-            'template' => 'github-doc-page',
+            'template' => 'github-doc-page-debug',
             'parent' => $parent,
             'content' => [
                 'title' => $title,
                 'markdown_content' => $fileData['content'],
                 'github_file_path' => $filePath,
                 'github_raw_url' => $fileData['download_url'],
-                'repo_info' => json_encode($client->getRepoInfo())
+                'repo_info' => json_encode($client->getRepoInfo()),
+                'debug_info' => implode("\n", $debugInfo)
             ]
         ]);
         
-        error_log("GitHub Docs: Virtual page created successfully");
+        $debugInfo[] = "GitHub Docs: Virtual page created successfully";
         return $virtualPage;
         
     } catch (Exception $e) {
-        error_log("GitHub Docs: Exception creating page: " . $e->getMessage());
-        error_log("GitHub Docs: Stack trace: " . $e->getTraceAsString());
-        return null;
+        $debugInfo[] = "GitHub Docs: Exception creating page: " . $e->getMessage();
+        $debugInfo[] = "GitHub Docs: Stack trace: " . $e->getTraceAsString();
+        throw new Exception("Failed to create page: " . $e->getMessage() . ". Debug: " . implode("; ", $debugInfo));
     }
 }
 
