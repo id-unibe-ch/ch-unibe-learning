@@ -119,28 +119,76 @@ class GitHubClient {
         
         return null;
     }
-    
-    /**
-     * Get all markdown files in a directory
+      /**
+     * Get all markdown files in a directory with hierarchical structure
      */
-    public function getMarkdownFiles($path = '') {
+    public function getMarkdownFiles($path = '', $recursive = true) {
         $contents = $this->getDirectoryContents($path);
         $markdownFiles = [];
         
         if (is_array($contents)) {
             foreach ($contents as $item) {
                 if ($item['type'] === 'file' && Str::endsWith($item['name'], '.md')) {
+                    $item['level'] = substr_count($item['path'], '/');
+                    $item['parent_path'] = dirname($item['path']) === '.' ? '' : dirname($item['path']);
                     $markdownFiles[] = $item;
-                } elseif ($item['type'] === 'dir') {
+                } elseif ($item['type'] === 'dir' && $recursive) {
                     // Recursively get markdown files from subdirectories
                     $subPath = $path ? $path . '/' . $item['name'] : $item['name'];
-                    $subFiles = $this->getMarkdownFiles($subPath);
+                    $subFiles = $this->getMarkdownFiles($subPath, true);
                     $markdownFiles = array_merge($markdownFiles, $subFiles);
                 }
             }
         }
         
+        // Sort by path for consistent ordering
+        usort($markdownFiles, function($a, $b) {
+            return strcmp($a['path'], $b['path']);
+        });
+        
         return $markdownFiles;
+    }
+    
+    /**
+     * Build navigation tree from markdown files
+     */
+    public function buildNavigationTree($files, $basePath = '') {
+        $tree = [];
+        
+        foreach ($files as $file) {
+            $relativePath = str_replace($basePath . '/', '', $file['path']);
+            $pathParts = explode('/', $relativePath);
+            $current = &$tree;
+            
+            // Build nested structure
+            for ($i = 0; $i < count($pathParts) - 1; $i++) {
+                $dir = $pathParts[$i];
+                if (!isset($current[$dir])) {
+                    $current[$dir] = [
+                        'type' => 'directory',
+                        'name' => $dir,
+                        'title' => ucfirst(str_replace(['-', '_'], ' ', $dir)),
+                        'children' => []
+                    ];
+                }
+                $current = &$current[$dir]['children'];
+            }
+            
+            // Add the file
+            $fileName = end($pathParts);
+            $slug = str_replace('.md', '', $fileName);
+            $current[$slug] = [
+                'type' => 'file',
+                'name' => $fileName,
+                'slug' => $slug,
+                'title' => $this->extractTitle($this->getFileContent($file['path'])['content'] ?? '', ucfirst(str_replace(['-', '_'], ' ', $slug))),
+                'path' => $file['path'],
+                'size' => $file['size'],
+                'url' => $file['html_url'] ?? null
+            ];
+        }
+        
+        return $tree;
     }
     
     /**

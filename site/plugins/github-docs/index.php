@@ -17,10 +17,9 @@ Kirby::plugin('unibe/github-docs', [
     ],
     'snippets' => [
         'mermaid-renderer' => __DIR__ . '/snippets/mermaid-renderer.php'
-    ],
-    'routes' => [
+    ],    'routes' => [
         [
-            'pattern' => '(:any)/github-docs/(:all)',
+            'pattern' => '([^/]+)/github-docs/([^/]+)',
             'action' => function ($parentSlug, $docPath) {
                 $parent = site()->find($parentSlug);
                 

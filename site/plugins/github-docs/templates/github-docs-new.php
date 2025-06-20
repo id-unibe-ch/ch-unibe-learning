@@ -1,8 +1,5 @@
 <?php snippet('header') ?>
 
-<!-- GitHub Documentation Styles -->
-<link rel="stylesheet" href="<?= url('site/plugins/github-docs/assets/css/github-docs.css') ?>">
-
 <main class="github-docs-layout">
   <!-- Left Sidebar Navigation -->
   <aside class="github-docs-sidebar">
@@ -125,14 +122,10 @@
             </div>
           <?php } ?>
         <?php endif ?>
-      </div>    </div>
+      </div>
+    </div>
   </div>
 </main>
-
-<!-- GitHub Documentation JavaScript -->
-<script src="<?= url('site/plugins/github-docs/assets/js/github-docs.js') ?>"></script>
-
-<?php snippet('footer') ?>
 
 <style>
 .github-docs-layout {

@@ -1,0 +1,538 @@
+/* GitHub Documentation Plugin Styles */
+/* Inspired by Kirby CMS documentation design */
+
+.github-docs-layout {
+  display: flex;
+  min-height: calc(100vh - var(--header-height, 80px));
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Sidebar Navigation */
+.github-docs-sidebar {
+  width: 280px;
+  min-width: 280px;
+  background: #fafbfc;
+  border-right: 1px solid #e1e5e9;
+  padding: 2rem 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.github-docs-sidebar-header {
+  padding: 0 1.5rem 1.5rem;
+  border-bottom: 1px solid #e1e5e9;
+  margin-bottom: 1.5rem;
+}
+
+.github-docs-sidebar-header h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.github-docs-breadcrumb {
+  color: #0969da;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.github-docs-breadcrumb:hover {
+  text-decoration: underline;
+}
+
+.github-docs-repo-info {
+  margin-top: 0.75rem;
+}
+
+.github-docs-repo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #656d76;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.github-docs-repo-link:hover {
+  color: #0969da;
+  border-color: #0969da;
+  background: rgba(9, 105, 218, 0.05);
+}
+
+/* Navigation */
+.github-docs-navigation {
+  padding: 0 1rem;
+}
+
+.github-docs-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.github-docs-nav-list[data-level="0"] {
+  margin-bottom: 1rem;
+}
+
+.github-docs-nav-list[data-level="1"] {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  border-left: 1px solid #e1e5e9;
+  padding-left: 1rem;
+}
+
+.github-docs-nav-item {
+  margin-bottom: 0.25rem;
+}
+
+.github-docs-nav-directory-title {
+  display: block;
+  padding: 0.5rem 0;
+  font-weight: 600;
+  color: #24292f;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.github-docs-nav-link {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  color: #656d76;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  line-height: 1.3;
+  transition: all 0.15s ease;
+}
+
+.github-docs-nav-link:hover {
+  color: #0969da;
+  background: rgba(9, 105, 218, 0.08);
+}
+
+.github-docs-nav-item.is-active .github-docs-nav-link {
+  color: #0969da;
+  background: rgba(9, 105, 218, 0.12);
+  font-weight: 500;
+}
+
+.github-docs-nav-error,
+.github-docs-nav-empty {
+  padding: 1rem;
+  color: #656d76;
+  font-style: italic;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+/* Main Content */
+.github-docs-main {
+  flex: 1;
+  min-width: 0;
+  padding: 2rem 3rem;
+}
+
+.github-docs-content {
+  max-width: 800px;
+}
+
+/* Breadcrumb Navigation */
+.github-docs-breadcrumb-nav {
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
+  color: #656d76;
+}
+
+.github-docs-breadcrumb-link {
+  color: #0969da;
+  text-decoration: none;
+}
+
+.github-docs-breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
+.github-docs-breadcrumb-separator {
+  margin: 0 0.5rem;
+  color: #d0d7de;
+}
+
+.github-docs-breadcrumb-current {
+  color: #24292f;
+  font-weight: 500;
+}
+
+/* Page Header */
+.github-docs-page-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e1e5e9;
+}
+
+.github-docs-page-header h1 {
+  margin: 0 0 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #24292f;
+  line-height: 1.2;
+}
+
+.github-docs-page-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.github-docs-file-path {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #656d76;
+  font-size: 0.875rem;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Menlo, Consolas, "Liberation Mono", "Courier New", monospace;
+  background: #f6f8fa;
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+}
+
+.github-docs-external-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #0969da;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.github-docs-external-link:hover {
+  background: rgba(9, 105, 218, 0.05);
+  border-color: #0969da;
+}
+
+/* Article Content */
+.github-docs-article {
+  line-height: 1.6;
+  color: #24292f;
+}
+
+.github-docs-article h1,
+.github-docs-article h2,
+.github-docs-article h3,
+.github-docs-article h4,
+.github-docs-article h5,
+.github-docs-article h6 {
+  margin: 2rem 0 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #24292f;
+}
+
+.github-docs-article h1 {
+  font-size: 1.875rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e1e5e9;
+}
+
+.github-docs-article h2 {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e1e5e9;
+}
+
+.github-docs-article h3 {
+  font-size: 1.25rem;
+}
+
+.github-docs-article h4 {
+  font-size: 1.125rem;
+}
+
+.github-docs-article p {
+  margin: 1rem 0;
+}
+
+.github-docs-article img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 1rem 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.github-docs-article pre {
+  background: #f6f8fa;
+  border: 1px solid #e1e5e9;
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  margin: 1rem 0;
+}
+
+.github-docs-article code {
+  background: #f6f8fa;
+  padding: 0.125rem 0.25rem;
+  border-radius: 3px;
+  font-size: 0.875rem;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Menlo, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.github-docs-article pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+.github-docs-article blockquote {
+  margin: 1rem 0;
+  padding: 0 1rem;
+  border-left: 4px solid #d0d7de;
+  color: #656d76;
+}
+
+.github-docs-article ul,
+.github-docs-article ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.github-docs-article li {
+  margin: 0.5rem 0;
+}
+
+.github-docs-article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.875rem;
+}
+
+.github-docs-article th,
+.github-docs-article td {
+  padding: 0.75rem;
+  border: 1px solid #e1e5e9;
+  text-align: left;
+}
+
+.github-docs-article th {
+  background: #f6f8fa;
+  font-weight: 600;
+}
+
+/* Page Navigation */
+.github-docs-page-nav {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e1e5e9;
+}
+
+.github-docs-page-nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.github-docs-page-nav-prev,
+.github-docs-page-nav-next {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid #e1e5e9;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #24292f;
+  transition: all 0.15s ease;
+  flex: 1;
+  max-width: 300px;
+}
+
+.github-docs-page-nav-prev:hover,
+.github-docs-page-nav-next:hover {
+  border-color: #0969da;
+  background: rgba(9, 105, 218, 0.05);
+}
+
+.github-docs-page-nav-next {
+  text-align: right;
+  margin-left: auto;
+}
+
+.github-docs-page-nav-direction {
+  font-size: 0.875rem;
+  color: #656d76;
+  margin-bottom: 0.25rem;
+}
+
+.github-docs-page-nav-title {
+  font-weight: 500;
+  color: #0969da;
+}
+
+/* Mermaid Diagrams */
+.mermaid {
+  display: block;
+  text-align: center;
+  margin: 2rem 0;
+  background: #fafbfc;
+  border: 1px solid #e1e5e9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .github-docs-layout {
+    flex-direction: column;
+  }
+  
+  .github-docs-sidebar {
+    width: 100%;
+    min-width: auto;
+    height: auto;
+    position: static;
+    border-right: none;
+    border-bottom: 1px solid #e1e5e9;
+    padding: 1rem 0;
+  }
+  
+  .github-docs-main {
+    padding: 1.5rem;
+  }
+  
+  .github-docs-content {
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .github-docs-page-nav-links {
+    flex-direction: column;
+  }
+  
+  .github-docs-page-nav-next {
+    text-align: left;
+    margin-left: 0;
+  }
+  
+  .github-docs-page-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .github-docs-sidebar {
+    background: #0d1117;
+    border-color: #21262d;
+  }
+  
+  .github-docs-breadcrumb,
+  .github-docs-nav-link:hover,
+  .github-docs-nav-item.is-active .github-docs-nav-link,
+  .github-docs-breadcrumb-link,
+  .github-docs-external-link,
+  .github-docs-page-nav-title {
+    color: #58a6ff;
+  }
+  
+  .github-docs-nav-directory-title,
+  .github-docs-breadcrumb-current,
+  .github-docs-page-header h1,
+  .github-docs-article,
+  .github-docs-article h1,
+  .github-docs-article h2,
+  .github-docs-article h3,
+  .github-docs-article h4,
+  .github-docs-article h5,
+  .github-docs-article h6 {
+    color: #f0f6fc;
+  }
+  
+  .github-docs-nav-link,
+  .github-docs-file-path,
+  .github-docs-nav-error,
+  .github-docs-nav-empty,
+  .github-docs-breadcrumb-nav,
+  .github-docs-page-nav-direction {
+    color: #8b949e;
+  }
+  
+  .github-docs-repo-link,
+  .github-docs-external-link {
+    border-color: #30363d;
+  }
+  
+  .github-docs-repo-link:hover,
+  .github-docs-external-link:hover,
+  .github-docs-nav-link:hover,
+  .github-docs-nav-item.is-active .github-docs-nav-link {
+    background: rgba(88, 166, 255, 0.1);
+  }
+  
+  .github-docs-file-path,
+  .github-docs-article pre,
+  .mermaid {
+    background: #161b22;
+  }
+  
+  .github-docs-page-header,
+  .github-docs-sidebar-header,
+  .github-docs-page-nav,
+  .github-docs-article h1,
+  .github-docs-article h2 {
+    border-color: #21262d;
+  }
+  
+  .github-docs-article blockquote {
+    border-color: #30363d;
+    color: #8b949e;
+  }
+  
+  .github-docs-article th {
+    background: #161b22;
+  }
+  
+  .github-docs-article th,
+  .github-docs-article td,
+  .github-docs-article pre,
+  .mermaid {
+    border-color: #21262d;
+  }
+  
+  .github-docs-page-nav-prev,
+  .github-docs-page-nav-next {
+    border-color: #30363d;
+    color: #f0f6fc;
+  }
+  
+  .github-docs-page-nav-prev:hover,
+  .github-docs-page-nav-next:hover {
+    border-color: #58a6ff;
+    background: rgba(88, 166, 255, 0.1);
+  }
+}
