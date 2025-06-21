@@ -1,0 +1,101 @@
+:title: Sample AsciiDoc Document
+:author: University of Bern
+:description: This is a sample AsciiDoc document for testing conversion
+
+= Sample AsciiDoc Document
+
+This is a sample AsciiDoc document that demonstrates various formatting features that will be converted to Markdown with KirbyText.
+
+== Introduction
+
+AsciiDoc is a *lightweight markup language* for creating _formatted text documents_. It's similar to Markdown but offers more features and structure.
+
+=== Key Features
+
+* Rich formatting options
+* Table support
+* Code highlighting
+* Cross-references
+* And much more!
+
+== Code Examples
+
+Here's a simple Python code block:
+
+[source,python]
+----
+def hello_world():
+    print("Hello, World!")
+    return True
+
+if __name__ == "__main__":
+    hello_world()
+----
+
+And here's a generic code block:
+
+----
+This is a simple code block
+without syntax highlighting
+----
+
+== Links and Images
+
+You can create links like this: link:https://getkirby.com[Kirby CMS] or https://asciidoc.org[AsciiDoc Official Site].
+
+Images can be embedded like this:
+image::assets/sample-image.jpg[Sample Image Description]
+
+== Admonitions
+
+NOTE: This is an important note that will be converted to a KirbyText info block.
+
+TIP: Here's a helpful tip for users.
+
+IMPORTANT: This is critical information.
+
+WARNING: Be careful with this operation.
+
+== Tables
+
+|===
+|Column 1 |Column 2 |Column 3
+
+|Row 1, Col 1
+|Row 1, Col 2
+|Row 1, Col 3
+
+|Row 2, Col 1
+|Row 2, Col 2
+|Row 2, Col 3
+|===
+
+== Lists
+
+.Ordered List
+1. First item
+2. Second item
+3. Third item
+
+.Unordered List
+* Item one
+* Item two
+** Nested item
+** Another nested item
+* Item three
+
+== Text Formatting
+
+This text contains *bold*, _italic_, and `monospace` formatting.
+
+You can also use **strong emphasis** and __emphasized text__.
+
+== Cross References
+
+See <<introduction>> for more details about this document.
+
+This document demonstrates the footnote:[This is a footnote] feature as well.
+
+== Conclusion
+
+This sample document covers most of the common AsciiDoc features that the converter should handle when transforming to Markdown with KirbyText compatibility.

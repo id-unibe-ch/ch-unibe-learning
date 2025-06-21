@@ -1,0 +1,183 @@
+:title: Course Materials
+:course: Computer Science 101
+:semester: Fall 2024
+:instructor: Dr. Jane Smith
+
+= Computer Science 101: Course Materials
+
+Welcome to the course materials for *Computer Science 101*. This course introduces fundamental concepts in computer science and programming.
+
+== Course Overview
+
+=== Learning Objectives
+
+By the end of this course, students will be able to:
+
+1. Understand basic programming concepts
+2. Write simple programs in Python
+3. Analyze algorithm complexity
+4. Work with data structures
+
+=== Prerequisites
+
+* Basic mathematics knowledge
+* No prior programming experience required
+
+== Module 1: Introduction to Programming
+
+=== What is Programming?
+
+Programming is the process of creating _instructions_ for computers to follow. These instructions are written in special languages called *programming languages*.
+
+==== Popular Programming Languages
+
+* Python - Great for beginners
+* Java - Widely used in enterprise
+* JavaScript - Essential for web development
+* C++ - Performance-critical applications
+
+=== Your First Program
+
+Let's start with the classic "Hello, World!" program:
+
+[source,python]
+----
+# This is your first Python program
+print("Hello, World!")
+
+# Variables and basic operations
+name = "Student"
+age = 20
+print(f"Hello, {name}! You are {age} years old.")
+----
+
+TIP: Practice typing this code yourself rather than copying and pasting.
+
+== Module 2: Data Types and Variables
+
+=== Basic Data Types
+
+Python has several built-in data types:
+
+|===
+|Type |Description |Example
+
+|int
+|Whole numbers
+|42, -17, 0
+
+|float
+|Decimal numbers
+|3.14, -2.5, 0.0
+
+|str
+|Text strings
+|"Hello", 'World'
+
+|bool
+|True/False values
+|True, False
+|===
+
+=== Working with Variables
+
+Variables are like containers that store data:
+
+[source,python]
+----
+# Creating variables
+student_name = "Alice"
+student_age = 19
+student_gpa = 3.85
+is_enrolled = True
+
+# Using variables
+print(f"Student: {student_name}")
+print(f"Age: {student_age}")
+print(f"GPA: {student_gpa}")
+print(f"Enrolled: {is_enrolled}")
+----
+
+IMPORTANT: Variable names should be descriptive and follow Python naming conventions.
+
+== Assignment Guidelines
+
+=== Homework Policy
+
+* Assignments are due by 11:59 PM on the specified date
+* Late submissions receive a 10% penalty per day
+* No submissions accepted more than 3 days late
+
+WARNING: Plagiarism will result in course failure.
+
+=== Getting Help
+
+If you need assistance:
+
+1. Check the course materials first
+2. Ask questions during office hours
+3. Use the course discussion forum
+4. Contact the instructor via email: link:mailto:jane.smith@university.edu[jane.smith@university.edu]
+
+== Additional Resources
+
+For more information, visit:
+
+* link:https://python.org[Official Python Website]
+* link:https://docs.python.org/3/tutorial/[Python Tutorial]
+* https://realpython.com[Real Python Tutorials]
+
+Course website: link:https://courses.university.edu/cs101[CS101 Course Portal]
+
+== Office Hours
+
+|===
+|Day |Time |Location
+
+|Monday
+|2:00 PM - 4:00 PM
+|Room 205
+
+|Wednesday
+|10:00 AM - 12:00 PM
+|Room 205
+
+|Friday
+|1:00 PM - 3:00 PM
+|Online via Zoom
+|===
+
+NOTE: Office hours may be cancelled during exam weeks. Check announcements for updates.
+
+== Course Schedule
+
+.Week 1-4: Fundamentals
+* Variables and data types
+* Control structures
+* Functions
+* Basic input/output
+
+.Week 5-8: Data Structures
+* Lists and tuples
+* Dictionaries and sets
+* File handling
+* Error handling
+
+.Week 9-12: Advanced Topics
+* Object-oriented programming
+* Algorithms and complexity
+* Libraries and modules
+* Final project
+
+== Assessment
+
+Your final grade will be calculated as follows:
+
+* Homework assignments (40%)
+* Midterm exam (25%)
+* Final exam (25%)
+* Class participation (10%)
+
+See the <<course-schedule,course schedule>> for important dates.
+
+This course material demonstrates various AsciiDoc features including footnote:[Course materials updated for Fall 2024 semester] and cross-references.
