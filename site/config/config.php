@@ -36,6 +36,10 @@ return [
     ]
   ],
 
+  // Enable the GitHub Docs plugin
+  'thathoff.git-content.commit' => true,
+
+  // Enable oAuth2 login with Azure AD
   'thathoff' => [
     'oauth' => [
       'providers' => [
