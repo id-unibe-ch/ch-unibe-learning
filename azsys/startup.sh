@@ -1,12 +1,12 @@
 # Check if Git is installed and install if not  
-# if ! command -v git &> /dev/null  
-# then  
-#     echo "Git could not be found. Attempting to install Git..."  
-#     apt-get update  
-#     apt-get install git -y  
-# else  
-#     echo "Git is already installed."  
-# fi 
+if ! command -v git &> /dev/null  
+then  
+    echo "Git could not be found. Attempting to install Git..."  
+    apt-get update  
+    apt-get install git -y  
+else  
+    echo "Git is already installed."  
+fi 
 # Rest off your web app congig
 # echo "Installing requirements.txt"
 
@@ -33,3 +33,8 @@ echo "Installing Kirby CMS oAuth2 plugin"
 cd /home/site/wwwroot
 composer require thathoff/kirby-oauth
 composer require thenetworg/oauth2-azure
+
+# Kirby Git Content Plugin Installation
+echo "Installing Kirby Git Content plugin"
+cd /home/site/wwwroot
+composer require thathoff/kirby-git-content
