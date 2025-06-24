@@ -1,0 +1,48 @@
+name: Table of Contents
+icon: list
+preview: toc
+
+tabs:
+  content:
+    label: Content
+    fields:
+      title:
+        label: Title
+        type: text
+        placeholder: Table of Contents
+        help: Optional title for the table of contents
+        width: 1/2
+      
+      levels:
+        label: Heading Levels
+        type: multiselect
+        default: 
+          - h2
+          - h3
+        options:
+          h1: H1
+          h2: H2
+          h3: H3
+          h4: H4
+          h5: H5
+          h6: H6
+        help: Select which heading levels to include in the ToC
+        width: 1/2
+      
+      style:
+        label: Style
+        type: select
+        default: nested
+        options:
+          nested: Nested list
+          flat: Flat list
+          numbered: Numbered list
+        help: How to display the table of contents
+        width: 1/2
+      
+      collapsed:
+        label: Start Collapsed
+        type: toggle
+        default: false
+        help: Start with the ToC collapsed (only if JavaScript is enabled)
+        width: 1/2

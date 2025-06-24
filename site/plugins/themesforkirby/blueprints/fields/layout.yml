@@ -23,6 +23,7 @@ fields:
         label: UniBE
         type: group
         fieldsets:
+          toc: blocks/toc
           materialcard: blocks/materialcard
           test: blocks/test
       text:

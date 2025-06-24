@@ -1,6 +1,16 @@
 <?php
 
 Kirby::plugin('unibe/toc', [
+  'blueprints' => [
+    'blocks/toc' => __DIR__ . '/blueprints/blocks/toc.yml'
+  ],
+  'snippets' => [
+    'blocks/toc' => __DIR__ . '/snippets/blocks/toc.php'
+  ],
+  'assets' => [
+    'css/toc-block.css' => __DIR__ . '/assets/css/toc-block.css',
+    'js/toc-block.js' => __DIR__ . '/assets/js/toc-block.js'
+  ],
   'hooks' => [
     'kirbytext:after' => [
 
