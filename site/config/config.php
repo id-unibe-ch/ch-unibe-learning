@@ -28,6 +28,21 @@ return [
     'css' => 'assets/build/css/panel.min.css'
   ],
 
+  // Session configuration for OAuth authentication in Azure
+  'session' => [
+    'cookie' => [
+      'secure' => true,
+      'httpOnly' => true,
+      'sameSite' => 'Lax'
+    ],
+    'timeout' => 24 * 60 // 24 hours in minutes
+  ],
+
+  // API configuration for panel authentication
+  'api' => [
+    'allowImpersonation' => false
+  ],
+
   'unibe.toc.headlines' => ['h2', 'h3', 'h4'],
 
   'updates' => [
@@ -126,6 +141,16 @@ return [
   ],
 
   'hooks' => [
+    // Hook to ensure OAuth authentication works properly with panel
+    'thathoff.oauth.login:after' => function ($data) {
+      $user = $data['user'];
+      $session = kirby()->session();
+      
+      // Ensure session is properly initialized for panel access
+      $session->regenerate();
+      $session->commit();
+    },
+
     'site.update:after' => function ($newSite) {
       $css = '';
 

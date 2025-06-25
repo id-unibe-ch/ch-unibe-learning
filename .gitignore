@@ -52,3 +52,10 @@ Icon
 # ---------------
 
 /site/config/.license
+
+# Dependencies
+# ---------------
+
+/vendor/*
+!/vendor/index.html
+/composer.lock
