@@ -1,0 +1,264 @@
+/* Project Block Styles with Material Design 3 Progress Indicators */
+
+.project-block {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 16px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-block:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.project-block__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.project-block__info {
+  flex: 1;
+}
+
+.project-block__name {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.project-block__owner {
+  margin: 0 0 4px 0;
+  font-size: 0.875rem;
+  color: #666;
+  font-weight: 400;
+}
+
+.project-block__due-date {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #666;
+  font-weight: 400;
+}
+
+.project-block__status {
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+.project-block__status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.project-block__description {
+  margin-bottom: 20px;
+  color: #424242;
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+.project-block__progress {
+  margin-top: 20px;
+}
+
+.project-block__progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.project-block__progress-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #424242;
+}
+
+.project-block__progress-percentage {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #424242;
+}
+
+/* Material Design 3 Linear Progress Indicator */
+.progress-linear {
+  position: relative;
+  height: 4px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.progress-linear__track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e0e0e0;
+  border-radius: 2px;
+}
+
+.progress-linear__indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 2px;
+  transform-origin: left center;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* Material Design 3 Circular Progress Indicator */
+.progress-circular {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 8px auto;
+}
+
+.progress-circular__svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-circular__track {
+  fill: none;
+  stroke: #e0e0e0;
+  stroke-linecap: round;
+}
+
+.progress-circular__indicator {
+  fill: none;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.4s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.progress-circular__label {
+  position: absolute;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #424242;
+}
+
+/* Priority Indicators */
+.project-block--priority-low {
+  border-left: 4px solid #28a745;
+}
+
+.project-block--priority-medium {
+  border-left: 4px solid #ffc107;
+}
+
+.project-block--priority-high {
+  border-left: 4px solid #fd7e14;
+}
+
+.project-block--priority-critical {
+  border-left: 4px solid #dc3545;
+}
+
+/* Status-specific styles */
+.project-block[data-status="completed"] {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.project-block[data-status="cancelled"] {
+  opacity: 0.7;
+}
+
+.project-block[data-status="onhold"] {
+  background: linear-gradient(135deg, #fff9c4 0%, #fff3cd 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-block {
+    padding: 16px;
+    margin: 12px 0;
+  }
+  
+  .project-block__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .project-block__status {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+  
+  .project-block__name {
+    font-size: 1.25rem;
+  }
+}
+
+/* Animation for progress changes */
+@keyframes progressFill {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+.progress-linear__indicator {
+  animation: progressFill 0.8s cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+/* Accessibility improvements */
+.progress-linear[role="progressbar"],
+.progress-circular[role="progressbar"] {
+  position: relative;
+}
+
+.progress-linear[role="progressbar"]:focus,
+.progress-circular[role="progressbar"]:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .project-block {
+    background: #2d2d2d;
+    color: #ffffff;
+  }
+  
+  .project-block__name {
+    color: #ffffff;
+  }
+  
+  .project-block__owner,
+  .project-block__due-date,
+  .project-block__progress-label,
+  .project-block__progress-percentage {
+    color: #b3b3b3;
+  }
+  
+  .project-block__description {
+    color: #cccccc;
+  }
+  
+  .progress-linear__track,
+  .progress-circular__track {
+    stroke: #4a4a4a;
+  }
+}

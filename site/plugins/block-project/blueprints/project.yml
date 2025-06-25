@@ -1,0 +1,71 @@
+icon: progress
+name: Project Progress
+preview: project
+wysiwyg: true
+fields:
+  projectName:
+    label: Project Name
+    type: text
+    required: true
+    help: The name of the project
+    width: 1/2
+  projectOwner:
+    label: Project Owner
+    type: text
+    required: true
+    help: The person or team responsible for this project
+    width: 1/2
+  progress:
+    label: Progress (%)
+    type: number
+    min: 0
+    max: 100
+    default: 0
+    required: true
+    help: Project completion percentage (0-100)
+    width: 1/3
+  progressType:
+    label: Progress Indicator Type
+    type: select
+    default: linear
+    options:
+      linear: Linear Progress Bar
+      circular: Circular Progress Ring
+    width: 1/3
+  showPercentage:
+    label: Show Percentage Text
+    type: toggle
+    default: true
+    help: Display the percentage number alongside the progress indicator
+    width: 1/3
+  description:
+    label: Project Description
+    type: textarea
+    help: Optional description of the project
+    width: 1/1
+  status:
+    label: Project Status
+    type: select
+    default: active
+    options:
+      planning: Planning
+      active: Active
+      onhold: On Hold
+      completed: Completed
+      cancelled: Cancelled
+    width: 1/3
+  priority:
+    label: Priority Level
+    type: select
+    default: medium
+    options:
+      low: Low
+      medium: Medium
+      high: High
+      critical: Critical
+    width: 1/3
+  dueDate:
+    label: Due Date
+    type: date
+    help: Optional project deadline
+    width: 1/3

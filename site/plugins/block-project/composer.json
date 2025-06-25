@@ -1,0 +1,26 @@
+{
+    "name": "unibe/block-project",
+    "description": "A Kirby CMS block for displaying project progress with Material Design 3 progress indicators",
+    "version": "1.0.0",
+    "type": "kirby-plugin",
+    "keywords": [
+        "kirby",
+        "kirby-plugin",
+        "block",
+        "project",
+        "progress",
+        "material-design"
+    ],
+    "authors": [
+        {
+            "name": "University of Bern",
+            "email": "id@unibe.ch"
+        }
+    ],
+    "require": {
+        "getkirby/composer-installer": "^1.1"
+    },
+    "extra": {
+        "installer-name": "block-project"
+    }
+}
