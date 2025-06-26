@@ -17,8 +17,9 @@ $pageContent = $page->text()->kirbytext();
 $headings = [];
 $headlinePattern = implode('|', $levels);
 
-preg_match_all('!<(' . $headlinePattern . ')\s+id="([^"]+)"[^>]*><a href="#[^"]+">([^<]+)</a></\\1>!', $pageContent, $matches, PREG_SET_ORDER);
-// preg_match_all('<\s*(' . $headlinePattern . ')\s+id="([^"]+)"[^>]*>\s*<a[^>]*href="#([^"]+)"[^>]*>([^<]+)<\/a>\s*<\/\1>/i', $pageContent, $matches, PREG_SET_ORDER);
+
+preg_match_all('/<h(?P<level>[1-6])\s+id="(?P<id>[^"]+)"[^>]*>\s*<a\s+href="#(?P=id)"[^>]*>(?P<text>[^<]+)<\/a>\s*<\/h(?P=level)>/ix', $pageContent, $matches, PREG_SET_ORDER);
+// preg_match_all('!<(' . $headlinePattern . ')\s+id="([^"]+)"[^>]*><a href="#[^"]+">([^<]+)</a></\\1>!', $pageContent, $matches, PREG_SET_ORDER);
 
 foreach ($matches as $match) {
     $level = $match[1]; // h2, h3, etc.

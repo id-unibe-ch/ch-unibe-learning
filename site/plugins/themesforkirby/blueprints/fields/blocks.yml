@@ -17,9 +17,6 @@ fields:
         type: group
         fieldsets:
           toc: blocks/toc
-          materialcard: blocks/materialcard
-          test: blocks/test
-          project: blocks/project
       text:
         label: Text
         type: group
