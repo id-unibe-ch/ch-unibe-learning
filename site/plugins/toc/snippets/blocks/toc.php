@@ -21,7 +21,8 @@ $headlinePattern = implode('|', $levels);
 preg_match_all('/<(h[1-6])\s+id="([^"]+)"[^>]*>\s*<a\s+href="[^>]*">([^<]+)<\/a>\s*<\/h[1-6]>/ix', $pageContent, $matches, PREG_SET_ORDER);
 // preg_match_all('!<(' . $headlinePattern . ')\s+id="([^"]+)"[^>]*><a href="#[^"]+">([^<]+)</a></\\1>!', $pageContent, $matches, PREG_SET_ORDER);
 
-if ($headlines->count() >= 3): ?>
+$headlines = $page->text()->toBlocks()->filterBy('type', 'heading')->filterby('level', 'h2');
+if ($headlines->count() >= 1): ?>
   <nav class="toc">
     <h2>Table of Contents</h2>
     <ol>
