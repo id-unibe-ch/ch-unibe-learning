@@ -18,8 +18,20 @@ $headings = [];
 $headlinePattern = implode('|', $levels);
 
 
-preg_match_all('/<h(?P<level>[1-6])\s+id="(?P<id>[^"]+)"[^>]*>\s*<a\s+href="#(?P=id)"[^>]*>(?P<text>[^<]+)<\/a>\s*<\/h(?P=level)>/ix', $pageContent, $matches, PREG_SET_ORDER);
+preg_match_all('/<(h[1-6])\s+id="([^"]+)"[^>]*>\s*<a\s+href="[^>]*">([^<]+)<\/a>\s*<\/h[1-6]>/ix', $pageContent, $matches, PREG_SET_ORDER);
 // preg_match_all('!<(' . $headlinePattern . ')\s+id="([^"]+)"[^>]*><a href="#[^"]+">([^<]+)</a></\\1>!', $pageContent, $matches, PREG_SET_ORDER);
+
+if ($headlines->count() >= 3): ?>
+  <nav class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+      <?php foreach($headlines as $headline): ?>
+          <li><a href="<?= $page->url() . '/#' . Str::slug($headline->text()) ?>"><?= $headline->text() ?></a></li>
+      <?php endforeach ?>
+    </ol>
+
+  </nav>
+<?php endif ?>
 
 foreach ($matches as $match) {
     $level = $match[1]; // h2, h3, etc.
